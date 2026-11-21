@@ -1,6 +1,522 @@
-Priority Action List (Do These First)
-Tighten the Professional Summary (use the version above or similar).
-Convert 50–60% of experience bullets into stronger, more impactful statements.
-Complete or clean up the education line about computer certification.
-Move or de-emphasise the video section so experience comes higher.
-Add 2–3 more quantified or concrete results if you have them (even internal metrics are fine).
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debjit Ghosh | Senior Production Manager — Tea Bag Manufacturing & FMCG</title>
+  <style>
+    :root {
+      --navy: #0f2537;
+      --navy-light: #1b3b56;
+      --slate: #334155;
+      --muted: #64748b;
+      --gold: #b48a3e;
+      --bg: #f4f6f9;
+      --white: #ffffff;
+      --border: #dce3ec;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; }
+    body { background: var(--bg); color: var(--slate); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: var(--white);
+      padding: 3.25rem 1.5rem 2.75rem;
+      border-bottom: 4px solid var(--gold);
+    }
+    .hero-container {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2.25rem;
+    }
+    .avatar-wrap {
+      flex-shrink: 0;
+      width: 165px;
+      height: 165px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, var(--gold), #e2c275);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.28);
+    }
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 50%;
+      display: block;
+      background: #cbd5e1;
+    }
+    .hero-info { flex: 1; min-width: 280px; }
+    .hero-info h1 { font-size: 2.45rem; letter-spacing: 0.5px; font-weight: 700; margin-bottom: 0.2rem; }
+    .hero-subtitle { font-size: 1.08rem; color: #e2c275; font-weight: 600; margin-bottom: 0.35rem; }
+    .value-prop {
+      font-size: 0.98rem;
+      color: #f1f5f9;
+      font-style: italic;
+      margin-bottom: 0.9rem;
+      opacity: 0.95;
+    }
+    .contact-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1.35rem;
+      font-size: 0.91rem;
+      color: #e2e8f0;
+      margin-bottom: 1.35rem;
+    }
+    .contact-strip a:hover { color: #e2c275; text-decoration: underline; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.85rem; }
+    .btn-primary {
+      background: var(--gold);
+      color: #0f172a;
+      padding: 0.7rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,0.45);
+      color: var(--white);
+      padding: 0.68rem 1.3rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    main { max-width: 1060px; margin: 2.25rem auto; padding: 0 1.5rem; }
+    section { margin-bottom: 2.65rem; }
+    .section-title {
+      font-size: 1.3rem;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 700;
+      border-bottom: 2px solid var(--navy);
+      padding-bottom: 0.45rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Summary & Target Roles */
+    .summary-box {
+      background: var(--white);
+      padding: 1.55rem 1.65rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--navy);
+      box-shadow: 0 2px 10px rgba(15, 37, 55, 0.05);
+      font-size: 0.98rem;
+      margin-bottom: 1.15rem;
+    }
+    .target-banner {
+      background: #eef2f6;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 0.75rem 1.15rem;
+      font-size: 0.9rem;
+      color: var(--navy);
+      margin-bottom: 1.35rem;
+    }
+    .target-banner strong { color: var(--navy); }
+
+    /* Quantified KPI Strip */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+    }
+    .kpi-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 1.15rem 1rem;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-top: 3.5px solid var(--gold);
+      box-shadow: 0 2px 8px rgba(15, 37, 55, 0.04);
+    }
+    .kpi-card strong {
+      display: block;
+      font-size: 1.55rem;
+      color: var(--navy);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.25rem;
+    }
+    .kpi-card span {
+      font-size: 0.84rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Experience & Company Logos */
+    .exp-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 1.65rem;
+      margin-bottom: 1.35rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(15, 37, 55, 0.05);
+    }
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+    .company-brand { display: flex; align-items: center; gap: 1rem; }
+    .company-logo {
+      width: 62px;
+      height: 54px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      flex-shrink: 0;
+      text-align: center;
+      line-height: 1.1;
+    }
+    .logo-premier {
+      background: #0b3b2e;
+      color: #e2c275;
+      border: 1.5px solid #b48a3e;
+      font-size: 0.65rem;
+    }
+    .logo-abg {
+      background: #991b1b;
+      color: #fef08a;
+      border: 1.5px solid #ca8a04;
+      font-size: 0.85rem;
+    }
+    .exp-role h3 { color: var(--navy); font-size: 1.15rem; }
+    .exp-role .company-name { font-weight: 600; color: var(--navy-light); font-size: 0.96rem; }
+    .exp-date {
+      background: #eef2f6;
+      color: var(--navy);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .exp-list { padding-left: 1.25rem; font-size: 0.95rem; }
+    .exp-list li { margin-bottom: 0.5rem; }
+    .highlight-box {
+      margin-top: 1.1rem;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid var(--gold);
+      padding: 1rem 1.2rem;
+      border-radius: 6px;
+      font-size: 0.91rem;
+    }
+    .highlight-box strong { color: var(--navy); }
+    .highlight-note { display: block; margin-top: 0.45rem; font-size: 0.8rem; color: var(--muted); }
+
+    /* Competencies & Skills Grid */
+    .pyramid-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(15, 37, 55, 0.05);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .pyramid-card img {
+      max-width: 100%;
+      max-height: 620px;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      object-fit: contain;
+    }
+    .pyramid-card p { margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted); }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .card {
+      background: var(--white);
+      padding: 1.4rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(15, 37, 55, 0.04);
+    }
+    .card h3 {
+      color: var(--navy);
+      font-size: 1.02rem;
+      margin-bottom: 0.7rem;
+      border-bottom: 1px solid #eef2f6;
+      padding-bottom: 0.4rem;
+    }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .tag {
+      background: #eef2f6;
+      color: var(--navy);
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+      font-size: 0.84rem;
+      font-weight: 500;
+    }
+    .edu-list { list-style: none; font-size: 0.93rem; }
+    .edu-list li { padding: 0.45rem 0; border-bottom: 1px dashed #e2e8f0; }
+    .edu-list li:last-child { border-bottom: none; }
+
+    /* Video Showcase (Positioned Below Experience & Skills) */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .video-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(15, 37, 55, 0.05);
+    }
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      background: #0f172a;
+      display: block;
+    }
+    .video-caption { padding: 1.1rem 1.25rem; }
+    .video-caption h3 { color: var(--navy); font-size: 1.05rem; margin-bottom: 0.3rem; }
+    .video-caption p { color: var(--muted); font-size: 0.88rem; }
+
+    footer {
+      background: var(--navy);
+      color: #cbd5e1;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+    footer a { color: #e2c275; font-weight: 600; }
+
+    @media (max-width: 640px) {
+      .hero-container { flex-direction: column; text-align: center; }
+      .contact-strip, .cta-row { justify-content: center; }
+      .hero-info h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hero-container">
+    <div class="avatar-wrap">
+      <img
+        src="https://drive.google.com/thumbnail?id=15QPETMTucqIkzrt_ISol45n195MqxejH&sz=w1000"
+        onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/15QPETMTucqIkzrt_ISol45n195MqxejH';"
+        alt="Debjit Ghosh Portrait"
+      />
+    </div>
+    <div class="hero-info">
+      <h1>DEBJIT GHOSH</h1>
+      <div class="hero-subtitle">Senior Production Manager | Tea Bag Manufacturing | FMCG &amp; Food Processing</div>
+      <div class="value-prop">Driving operational efficiency, machine uptime &amp; food safety compliance in high-volume tea-bag manufacturing.</div>
+      <div class="contact-strip">
+        <span>📍 Howrah, West Bengal</span>
+        <a href="tel:+919051454677">📞 +91 9051454677</a>
+        <a href="mailto:debjit9051454677@gmail.com">✉️ debjit9051454677@gmail.com</a>
+        <a href="https://www.linkedin.com/in/debjit-ghosh-038348166" target="_blank" rel="noopener">🔗 LinkedIn Profile</a>
+      </div>
+      <div class="cta-row">
+        <a href="https://drive.google.com/uc?export=download&id=1JxYj5xR-KPGrpuyOwpJpf2tbMfxDFd1t" target="_blank" rel="noopener" class="btn-primary">⬇ Download CV (PDF)</a>
+        <a href="https://drive.google.com/file/d/1JxYj5xR-KPGrpuyOwpJpf2tbMfxDFd1t/view" target="_blank" rel="noopener" class="btn-outline">📄 View CV Online</a>
+        <a href="mailto:debjit9051454677@gmail.com" class="btn-outline">✉️ Contact Directly</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- 1. Executive Summary & Quantified Impact -->
+  <section>
+    <h2 class="section-title">Executive Summary &amp; Operational Impact</h2>
+    <div class="summary-box">
+      Senior Production Manager with <strong>10+ years of hands-on leadership</strong> in automated tea-bag manufacturing. Proven expertise in <strong>IMA &amp; Teepack lines</strong>, shop-floor execution, preventive maintenance, and quality systems (<strong>GMP, HACCP, FSSAI</strong>). Skilled at driving <strong>RCA/CAPA</strong>, improving machine utilisation, and coordinating cross-functional teams to deliver consistent output, cost control, and compliance in high-volume FMCG environments.
+    </div>
+    <div class="target-banner">
+      <strong>Target Roles &amp; Sectors:</strong> Senior Production Manager &bull; Production Manager &bull; Manufacturing / Plant Operations &bull; Production &amp; QC Leadership in FMCG, Food Processing &amp; Tea Manufacturing.
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <strong>10+ Years</strong>
+        <span>Automated Tea-Bag &amp; Packaging Line Leadership</span>
+      </div>
+      <div class="kpi-card">
+        <strong>+18%</strong>
+        <span>Production Efficiency Gain via Process Optimization</span>
+      </div>
+      <div class="kpi-card">
+        <strong>-12%</strong>
+        <span>Material Wastage Reduction Achieved Within 1 Year</span>
+      </div>
+      <div class="kpi-card">
+        <strong>80+ Staff</strong>
+        <span>Cross-Shift Shop-Floor Workforce Supervised</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Professional Experience (Elevated Above Videos) -->
+  <section>
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="company-brand">
+          <div class="company-logo logo-premier">
+            <span>🍃</span>
+            <span>PREMIER'S</span>
+          </div>
+          <div class="exp-role">
+            <h3>Senior Production Manager - Production &amp; QC</h3>
+            <div class="company-name">Premier Tea Limited | Kolkata, West Bengal</div>
+          </div>
+        </div>
+        <span class="exp-date">May 2026 – Present</span>
+      </div>
+      <ul class="exp-list">
+        <li>Lead end-to-end production operations across automated tea-bag lines, ensuring planned output, quality standards, and on-time dispatch delivery.</li>
+        <li>Drive RCA and CAPA processes to eliminate recurring machine breakdowns, improve overall equipment effectiveness (OEE), and maintain line continuity.</li>
+        <li>Coordinate cross-functional teams across Quality, Maintenance, Planning, Procurement, and Warehouse to streamline material flow and shift execution.</li>
+        <li>Enforce strict compliance with GMP, HACCP, FSSAI, ISO, and workplace safety protocols through structured shop-floor audits and documentation.</li>
+        <li>Monitor daily production KPIs, manpower deployment, and MIS reporting to support management cost-control and utilisation targets.</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Selected Business / Operational Contribution:</strong> Contributed as part of the Production Team to improved operating performance: company revenue reached approximately <strong>Rs. 44 lakh</strong> in the first seven months of FY 2026–27, compared with Rs. 51.76 lakh for the full FY 2025–26. Supported an operating environment with significantly lower machine maintenance expenses and a leaner workforce, while working towards the company's FY 2026–27 revenue objective of <strong>Rs. 1 crore</strong>.
+        <span class="highlight-note">Note: Performance figures and targets are based on company communication dated 17 November 2026; they represent company/production-team performance, not individually attributable revenue.</span>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="company-brand">
+          <div class="company-logo logo-abg">
+            <span>☀️</span>
+            <span>ABG</span>
+          </div>
+          <div class="exp-role">
+            <h3>Production Engineer - Operations</h3>
+            <div class="company-name">Aditya Birla Global Trading India Pvt. Ltd.</div>
+          </div>
+        </div>
+        <span class="exp-date">January 2016 – April 2026</span>
+      </div>
+      <ul class="exp-list">
+        <li>Owned operations, shift planning, and hands-on troubleshooting of <strong>IMA C28, IMA EC15, Teepack Constanta, and FFS packaging lines</strong> across a 10-year tenure.</li>
+        <li>Led preventive maintenance planning, breakdown response, spare-parts inventory coordination, and AMC vendor management to maximise machine uptime.</li>
+        <li>Supervised shop-floor operators and labour allocation while driving production efficiency (+18%) and packaging material waste reduction (-12%).</li>
+        <li>Supported new machinery procurement, installation commissioning, CIJ coding systems, and plant utility reliability (compressors &amp; premix units).</li>
+        <li>Executed HACCP implementation, ISO audit readiness, and production MIS/logbook governance to ensure zero critical compliance gaps.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Core Competencies & Pyramid of Skills -->
+  <section>
+    <h2 class="section-title">Core Competencies &amp; Pyramid of Skills</h2>
+
+    <div class="pyramid-card">
+      <img
+        src="https://drive.google.com/thumbnail?id=12goomvBMHSuE5hyteIBbQltBIPVgqm7K&sz=w1200"
+        onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/12goomvBMHSuE5hyteIBbQltBIPVgqm7K';"
+        alt="Debjit Ghosh Pyramid of Skills"
+      />
+      <p><strong>My Pyramid of Skills:</strong> From foundational technical mastery on IMA/Teepack lines to Kaizen, Lean strategy, and people leadership.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Tea Bag Machinery &amp; Packaging Utilities</h3>
+        <div class="tag-list">
+          <span class="tag">IMA C28</span>
+          <span class="tag">IMA EC15</span>
+          <span class="tag">Teepack Constanta</span>
+          <span class="tag">FFS Machines</span>
+          <span class="tag">CIJ Coding Systems</span>
+          <span class="tag">Premix Machines</span>
+          <span class="tag">Compressors &amp; Utilities</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Production &amp; Operations Management</h3>
+        <div class="tag-list">
+          <span class="tag">Production Planning &amp; Control (PPC)</span>
+          <span class="tag">OEE &amp; Uptime Optimization</span>
+          <span class="tag">Packaging Operations</span>
+          <span class="tag">Shop-Floor &amp; Manpower Supervision</span>
+          <span class="tag">Target Alignment</span>
+          <span class="tag">Machine Utilisation</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Quality, Compliance &amp; Lean Systems</h3>
+        <div class="tag-list">
+          <span class="tag">GMP &amp; HACCP</span>
+          <span class="tag">FSSAI Compliance</span>
+          <span class="tag">ISO Audit Support</span>
+          <span class="tag">RCA &amp; CAPA</span>
+          <span class="tag">Preventive Maintenance</span>
+          <span class="tag">5S &amp; Lean Manufacturing</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Coordination, Reporting &amp; ERP</h3>
+        <div class="tag-list">
+          <span class="tag">KPI &amp; MIS Reporting</span>
+          <span class="tag">SAP Exposure</span>
+          <span class="tag">Inventory &amp; Material Coordination</span>
+          <span class="tag">Spare Parts &amp; AMC Follow-up</span>
+          <span class="tag">Vendor &amp; Dispatch Coordination</span>
+          <span class="tag">Microsoft Office</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Education, Certifications & Languages -->
+  <section>
+    <h2 class="section-title">Education, Certifications &amp; Languages</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Education</h3>
+        <ul class="edu-list">
+          <li><strong>Bachelor of Commerce (B.Com)</strong> — University of Calcutta (2013)</li>
+          <li><strong>ITI (Fitter) - NCVT</strong> — Don Bosco Technical School (2015)</li>
+          <li><strong>ISC (2009) &amp; ICSE (2007)</strong> — Little Star High School</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Certifications &amp; Languages</h3>
+        <ul class="edu-list">
+          <li><strong>FOSTAC Certified</strong> — Food Safety Supervisor (FSSAI)</li>
+          <li><strong>Software Engineering Certification</strong> — Ramakrishna Mission Shilpa Mandira Computer Centre (2009)</li>
+          <li><strong>Microsoft Office Specialist</strong> — Ramakrishna Mission Shilpa Mandira Computer Centre (2008)</li>
+          <li><strong>SAP Exposure</strong> — Production Planning &amp; Inventory Operations</li>
+          <li><strong>Languages:</strong> Bengali (Native) | English (Fluent) | Hindi (Working Proficiency)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Video Presentations (Supporting Multimedia) -->
+  <section>
+    <h2 class="section-title">Executive Video Profile &amp; Career Walkthrough</h2>
+    <div class="video-grid">
+      <div class="video-card">
+        <iframe
+          clas

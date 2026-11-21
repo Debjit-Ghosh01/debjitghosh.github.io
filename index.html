@@ -171,36 +171,26 @@
       margin-bottom: 1.2rem;
     }
     .company-brand { display: flex; align-items: center; gap: 1.15rem; }
-    .company-logo {
-      width: 78px;
-      height: 70px;
+    .company-logo-img-wrap {
+      width: 84px;
+      height: 74px;
       border-radius: 10px;
+      background: var(--white);
+      border: 1.5px solid #cbd5e1;
+      padding: 6px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
       flex-shrink: 0;
-      text-align: center;
-      line-height: 1.15;
-      box-shadow: 0 3px 8px rgba(15, 37, 55, 0.12);
+      box-shadow: 0 3px 8px rgba(15, 37, 55, 0.10);
+      overflow: hidden;
     }
-    .logo-premier {
-      background: #0b3b2e;
-      color: #e2c275;
-      border: 2px solid #b48a3e;
-      font-size: 0.8rem;
-      letter-spacing: 0.4px;
+    .company-logo-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
     }
-    .logo-premier .logo-icon { font-size: 1.35rem; margin-bottom: 0.1rem; }
-    .logo-abg {
-      background: #991b1b;
-      color: #fef08a;
-      border: 2px solid #ca8a04;
-      font-size: 1.05rem;
-      letter-spacing: 0.6px;
-    }
-    .logo-abg .logo-icon { font-size: 1.35rem; margin-bottom: 0.1rem; }
     .exp-role h3 {
       color: var(--navy);
       font-size: 1.42rem;
@@ -401,9 +391,12 @@
     <div class="exp-card">
       <div class="exp-header">
         <div class="company-brand">
-          <div class="company-logo logo-premier">
-            <span class="logo-icon">🍃</span>
-            <span>PREMIER'S</span>
+          <div class="company-logo-img-wrap">
+            <img
+              src="https://drive.google.com/thumbnail?id=1249WwDpLzX-IeovxGHMecdUEJLvwD7yC&sz=w400"
+              onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1249WwDpLzX-IeovxGHMecdUEJLvwD7yC';"
+              alt="Premier's Tea Logo"
+            />
           </div>
           <div class="exp-role">
             <h3>Senior Production Manager - Production &amp; QC</h3>
@@ -429,9 +422,12 @@
     <div class="exp-card">
       <div class="exp-header">
         <div class="company-brand">
-          <div class="company-logo logo-abg">
-            <span class="logo-icon">☀️</span>
-            <span>ABG</span>
+          <div class="company-logo-img-wrap">
+            <img
+              src="https://drive.google.com/thumbnail?id=189QWHU_GXlBN71F5UN1hQ_iRNZjg_NdG&sz=w400"
+              onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/189QWHU_GXlBN71F5UN1hQ_iRNZjg_NdG';"
+              alt="Aditya Birla Group Logo"
+            />
           </div>
           <div class="exp-role">
             <h3>Production Engineer - Operations</h3>

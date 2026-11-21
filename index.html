@@ -10,14 +10,28 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://debjit-ghosh01.github.io/debjitghosh.github.io/" />
 
+  <!-- Performance Preconnects for Google Drive Media & Video Embeds -->
+  <link rel="preconnect" href="https://drive.google.com" crossorigin />
+  <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin />
+  <link rel="dns-prefetch" href="https://drive.google.com" />
+  <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
+
   <!-- Open Graph / Social Metadata -->
   <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Debjit Ghosh — Senior Production &amp; Manufacturing Professional" />
   <meta property="og:title" content="Debjit Ghosh | Senior Production &amp; Manufacturing Professional" />
   <meta property="og:description" content="10+ years of shop-floor and production management leadership across tea processing, automated tea-bag packaging, FMCG operations, quality systems (GMP, HACCP, FSSAI), and continuous improvement." />
   <meta property="og:url" content="https://debjit-ghosh01.github.io/debjitghosh.github.io/" />
   <meta property="og:image" content="https://drive.google.com/thumbnail?id=15QPETMTucqIkzrt_ISol45n195MqxejH&amp;sz=w1000" />
+  <meta property="og:image:alt" content="Debjit Ghosh — Senior Production and Manufacturing Professional" />
   <meta property="profile:first_name" content="Debjit" />
   <meta property="profile:last_name" content="Ghosh" />
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Debjit Ghosh | Senior Production &amp; Manufacturing Professional" />
+  <meta name="twitter:description" content="10+ years of practical experience in tea manufacturing, tea processing, FMCG operations, automated packaging (IMA, Teepack), quality control, and preventive maintenance coordination." />
+  <meta name="twitter:image" content="https://drive.google.com/thumbnail?id=15QPETMTucqIkzrt_ISol45n195MqxejH&amp;sz=w1000" />
 
   <!-- Structured Person Schema (Verified Public Details Only) -->
   <script type="application/ld+json">
@@ -79,12 +93,11 @@
       --gold-border: #e3d3b1;
       --ink: #1e293b;
       --slate: #475569;
-      --muted: #64748b;
+      --muted: #5a6a7e;
       --bg: #f6f8fa;
       --white: #ffffff;
       --border: #dde4ec;
       --shadow-sm: 0 1px 3px rgba(14, 36, 57, 0.06);
-      --shadow-md: 0 6px 20px rgba(14, 36, 57, 0.07);
       --radius: 8px;
     }
 
@@ -98,6 +111,16 @@
       scroll-behavior: smooth;
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background-color: var(--bg);
@@ -105,6 +128,7 @@
       line-height: 1.65;
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     a {
@@ -123,10 +147,10 @@
       top: -48px;
       left: 1rem;
       background: var(--gold);
-      color: var(--white);
+      color: #0e2439;
       padding: 0.5rem 1rem;
       border-radius: 4px;
-      font-weight: 600;
+      font-weight: 700;
       z-index: 1000;
       transition: top 0.2s ease;
     }
@@ -139,9 +163,8 @@
       position: sticky;
       top: 0;
       z-index: 900;
-      background: rgba(14, 36, 57, 0.97);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(14, 36, 57, 0.98);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       color: var(--white);
     }
 
@@ -189,7 +212,8 @@
       transition: color 0.2s ease, border-color 0.2s ease;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a.active {
       color: #ffffff;
       border-bottom-color: var(--gold);
     }
@@ -197,9 +221,9 @@
     .nav-toggle {
       display: none;
       background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.35);
       color: var(--white);
-      padding: 0.4rem 0.7rem;
+      padding: 0.4rem 0.75rem;
       border-radius: 5px;
       font-size: 0.88rem;
       font-weight: 600;
@@ -292,7 +316,7 @@
     }
 
     .hero-meta a {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
       transition: color 0.2s ease, border-color 0.2s ease;
     }
 
@@ -315,7 +339,7 @@
       padding: 0.65rem 1.25rem;
       border-radius: 6px;
       font-size: 0.9rem;
-      font-weight: 600;
+      font-weight: 700;
       transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
     }
 
@@ -324,25 +348,25 @@
     }
 
     .btn-gold {
-      background: var(--gold);
-      color: #ffffff;
-      border: 1px solid var(--gold);
+      background: #e2bd6b;
+      color: #0e2439;
+      border: 1px solid #e2bd6b;
     }
 
     .btn-gold:hover {
-      background: #966f2b;
-      border-color: #966f2b;
+      background: #d4ad57;
+      border-color: #d4ad57;
     }
 
     .btn-ghost {
       background: rgba(255, 255, 255, 0.08);
       color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.32);
+      border: 1px solid rgba(255, 255, 255, 0.35);
     }
 
     .btn-ghost:hover {
       background: rgba(255, 255, 255, 0.16);
-      border-color: rgba(255, 255, 255, 0.55);
+      border-color: rgba(255, 255, 255, 0.6);
     }
 
     /* Main Layout */
@@ -707,7 +731,7 @@
     .comp-num {
       font-size: 0.76rem;
       font-weight: 800;
-      color: var(--gold);
+      color: #8b651f;
       letter-spacing: 0.5px;
       display: block;
       margin-bottom: 0.2rem;
@@ -943,6 +967,47 @@
       font-weight: 600;
     }
 
+    /* Print Stylesheet for Clean Recruiter PDF Printing */
+    @media print {
+      .top-nav,
+      .hero-actions,
+      .contact-panel,
+      .skip-link,
+      #videos {
+        display: none !important;
+      }
+      body {
+        background: #ffffff;
+        color: #000000;
+        font-size: 11pt;
+      }
+      .hero {
+        background: #ffffff;
+        color: #0e2439;
+        border-bottom: 2px solid #0e2439;
+        padding: 1rem 0;
+      }
+      .hero-headline,
+      .hero-domain-strip,
+      .hero-summary-lead,
+      .hero-meta,
+      .hero-eyebrow {
+        color: #1e293b;
+      }
+      .section-block {
+        margin-bottom: 1.5rem;
+        break-inside: avoid;
+      }
+      .timeline-item,
+      .achievement-card,
+      .tech-card,
+      .compliance-card,
+      .edu-card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+
     /* Responsive Breakpoints */
     @media (max-width: 920px) {
       .achievements-grid,
@@ -1007,6 +1072,14 @@
       .exp-identity {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .timeline {
+        padding-left: 1.25rem;
+      }
+
+      .timeline-marker {
+        left: -1.25rem;
       }
     }
   </style>
@@ -1145,7 +1218,7 @@
         </div>
         <div class="achievement-basis">
           <strong>Measurement Context</strong>
-          Measured within a 1-year operational period by reconciling issued filter paper, envelopes, cartons, and laminates against finished good output in routine production and material tracking records.
+          Measured within a 1-year operational period by reconciling issued filter paper, envelopes, cartons, and laminates against finished-goods output in routine production and material tracking records.
         </div>
       </article>
 
@@ -1620,6 +1693,26 @@
         toggle.setAttribute("aria-expanded", "false");
       });
     }
+
+    // Active section highlight on scroll
+    var sections = document.querySelectorAll("main section[id]");
+    window.addEventListener("scroll", function () {
+      var scrollPos = window.scrollY + 120;
+      for (var j = 0; j < sections.length; j++) {
+        var sec = sections[j];
+        var top = sec.offsetTop;
+        var height = sec.offsetHeight;
+        var id = sec.getAttribute("id");
+        var link = links.querySelector('a[href="#' + id + '"]');
+        if (link) {
+          if (scrollPos >= top && scrollPos < top + height) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        }
+      }
+    }, { passive: true });
   })();
 </script>
 

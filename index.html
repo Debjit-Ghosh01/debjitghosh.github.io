@@ -135,9 +135,10 @@
       border: 1px solid var(--border);
       box-shadow: 0 2px 10px rgba(15, 37, 55, 0.05);
     }
-    .video-card video {
+    .video-frame {
       width: 100%;
       aspect-ratio: 16 / 9;
+      border: 0;
       background: #0f172a;
       display: block;
     }
@@ -166,16 +167,17 @@
     }
     .company-brand { display: flex; align-items: center; gap: 1rem; }
     .company-logo {
-      width: 54px;
-      height: 54px;
+      width: 56px;
+      height: 56px;
       border-radius: 8px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
       flex-shrink: 0;
+      text-align: center;
     }
     .logo-premier {
       background: #0b3b2e;
@@ -210,6 +212,29 @@
     }
     .highlight-box strong { color: var(--navy); }
     .highlight-note { display: block; margin-top: 0.45rem; font-size: 0.8rem; color: var(--muted); }
+
+    /* Skills Pyramid Infographic Showcase */
+    .pyramid-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(15, 37, 55, 0.05);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .pyramid-card img {
+      max-width: 100%;
+      max-height: 620px;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      object-fit: contain;
+    }
+    .pyramid-card p {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
 
     /* Competencies & Skills Grid */
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.25rem; }
@@ -263,7 +288,11 @@
 <header>
   <div class="hero-container">
     <div class="avatar-wrap">
-      <img src="profile.png" alt="Debjit Ghosh Portrait" />
+      <img
+        src="https://drive.google.com/thumbnail?id=15QPETMTucqIkzrt_ISol45n195MqxejH&sz=w1000"
+        onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/15QPETMTucqIkzrt_ISol45n195MqxejH';"
+        alt="Debjit Ghosh Portrait"
+      />
     </div>
     <div class="hero-info">
       <h1>DEBJIT GHOSH</h1>
@@ -275,8 +304,9 @@
         <a href="https://www.linkedin.com/in/debjit-ghosh-038348166" target="_blank" rel="noopener">🔗 LinkedIn Profile</a>
       </div>
       <div class="cta-row">
-        <a href="Debjit_Ghosh_CV.pdf" download="Debjit_Ghosh_CV.pdf" class="btn-primary">⬇ Download CV (PDF)</a>
-        <a href="mailto:debjit9051454677@gmail.com" class="btn-outline">Contact Directly</a>
+        <a href="https://drive.google.com/uc?export=download&id=1JxYj5xR-KPGrpuyOwpJpf2tbMfxDFd1t" target="_blank" rel="noopener" class="btn-primary">⬇ Download CV (PDF)</a>
+        <a href="https://drive.google.com/file/d/1JxYj5xR-KPGrpuyOwpJpf2tbMfxDFd1t/view" target="_blank" rel="noopener" class="btn-outline">📄 View CV Online</a>
+        <a href="mailto:debjit9051454677@gmail.com" class="btn-outline">✉️ Contact Directly</a>
       </div>
     </div>
   </div>
@@ -296,23 +326,29 @@
     <h2 class="section-title">Executive Video Profile &amp; Career Walkthrough</h2>
     <div class="video-grid">
       <div class="video-card">
-        <video controls preload="metadata" poster="profile.png">
-          <source src="intro_video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <iframe
+          class="video-frame"
+          src="https://drive.google.com/file/d/1E_3fgPM4nLEnlSGK9CNycpYpjhQyMoB2/preview"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Debjit Ghosh Executive Introduction Video">
+        </iframe>
         <div class="video-caption">
-          <h3>Executive Introduction (0:40)</h3>
-          <p>Personal introduction highlighting 10+ years in automated tea bag manufacturing, quality leadership, and plant operations.</p>
+          <h3>Executive Introduction</h3>
+          <p>Personal video introduction highlighting 10+ years in automated tea bag manufacturing, IMA/Teepack systems, and GMP/FSSAI quality leadership.</p>
         </div>
       </div>
       <div class="video-card">
-        <video controls preload="metadata">
-          <source src="career_overview.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <iframe
+          class="video-frame"
+          src="https://drive.google.com/file/d/1fuCK3D9vri3yvFVf8cMSuOKabIA6S4ES/preview"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Debjit Ghosh Career DNA & Operational Overview Video">
+        </iframe>
         <div class="video-caption">
-          <h3>Career &amp; Operational Capabilities Overview</h3>
-          <p>Visual walkthrough of technical mastery across IMA/Teepack lines, RCA &amp; CAPA frameworks, GMP/HACCP compliance, and leadership milestones.</p>
+          <h3>Career &amp; Operational Capabilities Walkthrough</h3>
+          <p>In-depth visual overview of manufacturing leadership, technical machinery mastery, RCA &amp; CAPA frameworks, and career milestones.</p>
         </div>
       </div>
     </div>
@@ -326,154 +362,6 @@
     <div class="exp-card">
       <div class="exp-header">
         <div class="company-brand">
-          <div class="company-logo logo-premier" title="Premier Tea Limited">
-            <!-- Custom SVG Brand Emblem -->
-            <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 6C13 11 10 18 14 26C17 31 23 31 26 26C30 18 27 11 20 6Z" stroke="#e2c275" stroke-width="2.2"/>
-              <path d="M20 11V29M20 18L15 14M20 22L25 18" stroke="#e2c275" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="exp-role">
-            <h3>Senior Production Manager - Production &amp; QC</h3>
-            <div class="company-name">Premier Tea Limited | Kolkata, West Bengal</div>
-          </div>
-        </div>
-        <span class="exp-date">May 2026 – Present</span>
-      </div>
-      <ul class="exp-list">
-        <li>Lead day-to-day production operations and coordinate production activities to meet planned output, quality, and delivery requirements.</li>
-        <li>Coordinate with Quality, Maintenance, Planning, Procurement, Warehouse, and other functions for smooth production flow.</li>
-        <li>Manage manpower deployment, shift allocation, machine utilisation, production monitoring, and shop-floor priorities.</li>
-        <li>Drive process discipline, root-cause analysis (RCA), corrective and preventive actions (CAPA), and continuous improvement initiatives.</li>
-        <li>Support compliance with GMP, HACCP, FSSAI, ISO, and workplace safety requirements through process adherence and documentation.</li>
-        <li>Monitor production KPIs and operational issues; prepare and review routine production and MIS information for management.</li>
-        <li>Coordinate machine breakdown response, preventive maintenance activities, and follow-up on pending technical issues.</li>
-      </ul>
-      <div class="highlight-box">
-        <strong>Selected Business / Operational Contribution:</strong> Contributed as part of the Production Team to improved operating performance: company revenue reached approximately <strong>Rs. 44 lakh</strong> in the first seven months of FY 2026–27, compared with Rs. 51.76 lakh for the full FY 2025–26. Supported an operating environment with significantly lower machine maintenance expenses and a leaner workforce, while working towards the company's FY 2026–27 revenue objective of <strong>Rs. 1 crore</strong>.
-        <span class="highlight-note">Note: Performance figures and targets are based on company communication dated 17 November 2026; they represent company/production-team performance, not individually attributable revenue.</span>
-      </div>
-    </div>
-
-    <!-- Aditya Birla Global Trading -->
-    <div class="exp-card">
-      <div class="exp-header">
-        <div class="company-brand">
-          <div class="company-logo logo-abg" title="Aditya Birla Global Trading India Pvt. Ltd.">
-            <!-- Custom SVG Corporate Sunburst Emblem -->
-            <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="24" r="7" fill="#fef08a"/>
-              <path d="M20 7V13M9 12L13 16M31 12L27 16M5 24H10M30 24H35" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M7 31H33" stroke="#fef08a" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="exp-role">
-            <h3>Production Engineer - Operations</h3>
-            <div class="company-name">Aditya Birla Global Trading India Pvt. Ltd.</div>
-          </div>
-        </div>
-        <span class="exp-date">January 2016 – April 2026</span>
-      </div>
-      <ul class="exp-list">
-        <li>Worked in tea bag manufacturing and packaging operations with responsibility spanning machine operation, production alignment, shop-floor supervision, and maintenance coordination.</li>
-        <li>Handled production planning, operator and labour allocation, production tracking, machine log books, and process-flow coordination.</li>
-        <li>Operated and supported troubleshooting of <strong>IMA C28, IMA EC15, Teepack Constanta, FFS machines, compressors, and CIJ coding systems</strong>.</li>
-        <li>Coordinated preventive maintenance, breakdown attendance, spare-parts requirements, AMC follow-up, and vendor/service support.</li>
-        <li>Supported procurement and machine purchase activities, including technical coordination and follow-up with suppliers.</li>
-        <li>Coordinated material availability, inventory and stock requirements, warehouse activities, and dispatch-related production requirements.</li>
-        <li>Supported quality systems, HACCP implementation, ISO audit activities, production documentation, and process improvement initiatives.</li>
-        <li>Supervised operators and shop-floor manpower while maintaining production discipline, safety, and process continuity.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Core Competencies & Technical Skills -->
-  <section>
-    <h2 class="section-title">Core Competencies &amp; Technical Expertise</h2>
-    <div class="grid-2">
-      <div class="card">
-        <h3>Tea Bag Machinery &amp; Packaging Utilities</h3>
-        <div class="tag-list">
-          <span class="tag">IMA C28</span>
-          <span class="tag">IMA EC15</span>
-          <span class="tag">Teepack Constanta</span>
-          <span class="tag">FFS Machines</span>
-          <span class="tag">CIJ Coding Systems</span>
-          <span class="tag">Premix Machines</span>
-          <span class="tag">Compressors &amp; Utilities</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Production &amp; Operations Management</h3>
-        <div class="tag-list">
-          <span class="tag">Production Planning &amp; Control (PPC)</span>
-          <span class="tag">Tea Bag Manufacturing</span>
-          <span class="tag">Packaging Operations</span>
-          <span class="tag">Target Alignment</span>
-          <span class="tag">Shop-Floor &amp; Manpower Supervision</span>
-          <span class="tag">Machine Utilisation</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Quality, Compliance &amp; Lean Systems</h3>
-        <div class="tag-list">
-          <span class="tag">GMP &amp; HACCP</span>
-          <span class="tag">FSSAI Compliance</span>
-          <span class="tag">ISO Audit Support</span>
-          <span class="tag">RCA &amp; CAPA</span>
-          <span class="tag">Preventive Maintenance</span>
-          <span class="tag">5S &amp; Lean Manufacturing</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Coordination, Reporting &amp; ERP</h3>
-        <div class="tag-list">
-          <span class="tag">KPI &amp; MIS Reporting</span>
-          <span class="tag">SAP Exposure</span>
-          <span class="tag">Inventory &amp; Material Coordination</span>
-          <span class="tag">Spare Parts &amp; AMC Follow-up</span>
-          <span class="tag">Vendor &amp; Dispatch Coordination</span>
-          <span class="tag">Microsoft Office</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education, Certifications & Languages -->
-  <section>
-    <h2 class="section-title">Education, Certifications &amp; Languages</h2>
-    <div class="grid-2">
-      <div class="card">
-        <h3>Education</h3>
-        <ul class="edu-list">
-          <li><strong>Bachelor of Commerce (B.Com)</strong> — University of Calcutta (2013)</li>
-          <li><strong>ITI (Fitter) - NCVT</strong> — Don Bosco Technical School (2015)</li>
-          <li><strong>Computer Software Engineering / Computer Engineering Certification</strong></li>
-          <li><strong>ISC (2009) &amp; ICSE (2007)</strong> — Little Star High School</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Certifications &amp; Languages</h3>
-        <ul class="edu-list">
-          <li><strong>FOSTAC Certified</strong> (Food Safety Supervisor)</li>
-          <li><strong>Microsoft Office Specialist</strong></li>
-          <li><strong>Computer Engineering Certification</strong></li>
-          <li><strong>SAP Exposure</strong></li>
-          <li><strong>Languages:</strong> Bengali (Native) | English (Fluent) | Hindi (Working Proficiency)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <p><strong>Debjit Ghosh</strong> — Senior Production Manager | Howrah, West Bengal</p>
-  <p style="margin-top: 0.4rem;">
-    <a href="tel:+919051454677">+91 9051454677</a> &nbsp;|&nbsp;
-    <a href="mailto:debjit9051454677@gmail.com">debjit9051454677@gmail.com</a> &nbsp;|&nbsp;
-    <a href="https://www.linkedin.com/in/debjit-ghosh-038348166" target="_blank" rel="noopener">LinkedIn</a>
-  </p>
-</footer>
-
-</body>
-</html>
+          <div class="company-logo logo-premier" title="Premier's Tea Limited">
+            <svg width="26" height="26" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 5C13 10 10 17 14 25C17 30 23 30 26 25C30 17 27 10 20 5Z" stroke="#e2c27

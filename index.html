@@ -92,16 +92,16 @@
     }
 
     main { max-width: 1060px; margin: 2.25rem auto; padding: 0 1.5rem; }
-    section { margin-bottom: 2.65rem; }
+    section { margin-bottom: 2.75rem; }
     .section-title {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       color: var(--navy);
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      font-weight: 700;
-      border-bottom: 2px solid var(--navy);
-      padding-bottom: 0.45rem;
-      margin-bottom: 1.25rem;
+      font-weight: 800;
+      border-bottom: 2.5px solid var(--navy);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.35rem;
     }
 
     .summary-box {
@@ -155,26 +155,26 @@
     .exp-card {
       background: var(--white);
       border-radius: 8px;
-      padding: 1.65rem;
-      margin-bottom: 1.35rem;
+      padding: 1.85rem;
+      margin-bottom: 1.5rem;
       border: 1px solid var(--border);
       box-shadow: 0 2px 10px rgba(15, 37, 55, 0.05);
     }
     .exp-header {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      gap: 1rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1rem;
-      margin-bottom: 1rem;
+      gap: 1.25rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.2rem;
     }
-    .company-brand { display: flex; align-items: center; gap: 1rem; }
+    .company-brand { display: flex; align-items: center; gap: 1.15rem; }
     .company-logo {
-      width: 62px;
-      height: 54px;
-      border-radius: 8px;
+      width: 78px;
+      height: 70px;
+      border-radius: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -182,38 +182,55 @@
       font-weight: 800;
       flex-shrink: 0;
       text-align: center;
-      line-height: 1.1;
+      line-height: 1.15;
+      box-shadow: 0 3px 8px rgba(15, 37, 55, 0.12);
     }
     .logo-premier {
       background: #0b3b2e;
       color: #e2c275;
-      border: 1.5px solid #b48a3e;
-      font-size: 0.65rem;
+      border: 2px solid #b48a3e;
+      font-size: 0.8rem;
+      letter-spacing: 0.4px;
     }
+    .logo-premier .logo-icon { font-size: 1.35rem; margin-bottom: 0.1rem; }
     .logo-abg {
       background: #991b1b;
       color: #fef08a;
-      border: 1.5px solid #ca8a04;
-      font-size: 0.85rem;
+      border: 2px solid #ca8a04;
+      font-size: 1.05rem;
+      letter-spacing: 0.6px;
     }
-    .exp-role h3 { color: var(--navy); font-size: 1.15rem; }
-    .exp-role .company-name { font-weight: 600; color: var(--navy-light); font-size: 0.96rem; }
+    .logo-abg .logo-icon { font-size: 1.35rem; margin-bottom: 0.1rem; }
+    .exp-role h3 {
+      color: var(--navy);
+      font-size: 1.42rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.25rem;
+    }
+    .exp-role .company-name {
+      font-weight: 700;
+      color: var(--navy-light);
+      font-size: 1.12rem;
+    }
     .exp-date {
       background: #eef2f6;
       color: var(--navy);
-      padding: 0.35rem 0.85rem;
+      padding: 0.42rem 0.95rem;
       border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: 1px solid #cbd5e1;
+      white-space: nowrap;
     }
     .exp-list { padding-left: 1.25rem; font-size: 0.95rem; }
-    .exp-list li { margin-bottom: 0.5rem; }
+    .exp-list li { margin-bottom: 0.55rem; }
     .highlight-box {
-      margin-top: 1.1rem;
+      margin-top: 1.2rem;
       background: #f8fafc;
       border: 1px solid #cbd5e1;
       border-left: 4px solid var(--gold);
-      padding: 1rem 1.2rem;
+      padding: 1.05rem 1.25rem;
       border-radius: 6px;
       font-size: 0.91rem;
     }
@@ -241,17 +258,18 @@
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
     .card {
       background: var(--white);
-      padding: 1.4rem;
+      padding: 1.45rem;
       border-radius: 8px;
       border: 1px solid var(--border);
       box-shadow: 0 2px 8px rgba(15, 37, 55, 0.04);
     }
     .card h3 {
       color: var(--navy);
-      font-size: 1.02rem;
-      margin-bottom: 0.7rem;
-      border-bottom: 1px solid #eef2f6;
-      padding-bottom: 0.4rem;
+      font-size: 1.12rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      border-bottom: 1.5px solid #eef2f6;
+      padding-bottom: 0.45rem;
     }
     .tag-list { display: flex; flex-wrap: wrap; gap: 0.45rem; }
     .tag {
@@ -268,7 +286,7 @@
 
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
     }
     .video-card {
@@ -277,6 +295,8 @@
       overflow: hidden;
       border: 1px solid var(--border);
       box-shadow: 0 2px 10px rgba(15, 37, 55, 0.05);
+      display: flex;
+      flex-direction: column;
     }
     .video-frame {
       width: 100%;
@@ -285,9 +305,16 @@
       background: #0f172a;
       display: block;
     }
-    .video-caption { padding: 1.1rem 1.25rem; }
-    .video-caption h3 { color: var(--navy); font-size: 1.05rem; margin-bottom: 0.3rem; }
-    .video-caption p { color: var(--muted); font-size: 0.88rem; }
+    .video-caption { padding: 1.15rem 1.25rem; flex: 1; }
+    .video-caption h3 { color: var(--navy); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .video-caption p { color: var(--muted); font-size: 0.88rem; margin-bottom: 0.65rem; }
+    .video-fallback-link {
+      display: inline-block;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--navy-light);
+      text-decoration: underline;
+    }
 
     footer {
       background: var(--navy);
@@ -301,8 +328,11 @@
 
     @media (max-width: 640px) {
       .hero-container { flex-direction: column; text-align: center; }
+      .company-brand { flex-direction: column; text-align: center; }
+      .exp-header { justify-content: center; text-align: center; }
       .contact-strip, .cta-row { justify-content: center; }
       .hero-info h1 { font-size: 2rem; }
+      .exp-role h3 { font-size: 1.25rem; }
     }
   </style>
 </head>
@@ -372,7 +402,7 @@
       <div class="exp-header">
         <div class="company-brand">
           <div class="company-logo logo-premier">
-            <span>🍃</span>
+            <span class="logo-icon">🍃</span>
             <span>PREMIER'S</span>
           </div>
           <div class="exp-role">
@@ -383,15 +413,15 @@
         <span class="exp-date">May 2026 – Present</span>
       </div>
       <ul class="exp-list">
-        <li>Lead end-to-end <strong>domestic and export production operations</strong> across automated tea-bag lines, <strong>bulk tea packing, caddies, and custom client orders</strong>—ensuring planned output, export quality standards, and on-time dispatch delivery.</li>
+        <li>Lead end-to-end <strong>domestic and export production operations</strong> across automated tea-bag lines (<strong>IMA C28 &amp; IMA EC15</strong>), <strong>FFS lines, bulk tea packing, caddies, and custom client orders</strong>—ensuring planned output, export quality standards, and on-time dispatch delivery.</li>
         <li>Manage multi-format SKU scheduling, custom packaging BOM alignment, and line-clearance protocols to support diverse private-label and export specifications without compromising OEE.</li>
         <li>Drive RCA and CAPA processes to eliminate recurring machine breakdowns, improve overall equipment effectiveness, and maintain line continuity.</li>
         <li>Coordinate cross-functional teams across Quality, Maintenance, Planning, Procurement, and Warehouse to streamline material flow and export shipment readiness.</li>
         <li>Enforce strict compliance with GMP, HACCP, FSSAI, ISO, and workplace safety protocols through structured shop-floor audits and documentation.</li>
       </ul>
       <div class="highlight-box">
-        <strong>Selected Business / Operational Contribution:</strong> Contributed as part of the Production Team to improved operating performance: company revenue reached approximately <strong>Rs. 44 lakh</strong> in the first seven months of FY 2026–27, compared with Rs. 51.76 lakh for the full FY 2025–26. Supported an operating environment with significantly lower machine maintenance expenses and a leaner workforce, while working towards the company's FY 2026–27 revenue objective of <strong>Rs. 1 crore</strong>.
-        <span class="highlight-note">Note: Performance figures and targets are based on company communication dated 17 November 2026; they represent company/production-team performance, not individually attributable revenue.</span>
+        <strong>Premier Tea Limited — Production Team Achievement:</strong> Contributed as part of the Production Team to improved operating performance: company revenue reached approximately <strong>Rs. 44 lakh</strong> in the first seven months of FY 2026–27, compared with Rs. 51.76 lakh for the full FY 2025–26. Supported an operating environment with significantly lower machine maintenance expenses and a leaner workforce, while working towards the company's FY 2026–27 revenue objective of <strong>Rs. 1 crore</strong>.
+        <span class="highlight-note">Note: Performance figures and targets are based on company communication dated 17 November 2026; they represent Premier Tea Limited company/production-team performance, not individually attributable revenue.</span>
       </div>
     </div>
 
@@ -399,7 +429,7 @@
       <div class="exp-header">
         <div class="company-brand">
           <div class="company-logo logo-abg">
-            <span>☀️</span>
+            <span class="logo-icon">☀️</span>
             <span>ABG</span>
           </div>
           <div class="exp-role">
@@ -506,7 +536,7 @@
   </section>
 
   <section>
-    <h2 class="section-title">Executive Video Profile</h2>
+    <h2 class="section-title">Executive Video Profiles</h2>
     <div class="video-grid">
       <div class="video-card">
         <iframe
@@ -519,6 +549,21 @@
         <div class="video-caption">
           <h3>Executive Introduction</h3>
           <p>Personal video introduction highlighting 10+ years in automated tea-bag &amp; FMCG manufacturing, IMA/Teepack systems, and GMP/FSSAI quality leadership.</p>
+          <a href="https://drive.google.com/file/d/1E_3fgPM4nLEnlSGK9CNycpYpjhQyMoB2/view" target="_blank" rel="noopener" class="video-fallback-link">↗ Watch directly on Google Drive</a>
+        </div>
+      </div>
+      <div class="video-card">
+        <iframe
+          class="video-frame"
+          src="https://drive.google.com/file/d/1fuCK3D9vri3yvFVf8cMSuOKabIA6S4ES/preview"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          title="Debjit Ghosh Career DNA & Operational Overview Video">
+        </iframe>
+        <div class="video-caption">
+          <h3>Career DNA &amp; Operational Overview</h3>
+          <p>Detailed walkthrough of shop-floor leadership, B.Com + ITI Fitter foundation, RCA/CAPA systems, and multi-line packaging expertise.</p>
+          <a href="https://drive.google.com/file/d/1fuCK3D9vri3yvFVf8cMSuOKabIA6S4ES/view" target="_blank" rel="noopener" class="video-fallback-link">↗ Watch directly on Google Drive</a>
         </div>
       </div>
     </div>

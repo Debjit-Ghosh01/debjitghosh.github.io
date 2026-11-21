@@ -235,7 +235,7 @@
       background: var(--navy);
       color: var(--white);
       border-bottom: 3px solid var(--gold);
-      padding: 3.25rem 1.5rem 3rem;
+      padding: 3rem 1.5rem 2.75rem;
     }
 
     .hero-inner {
@@ -302,7 +302,7 @@
       font-size: 0.96rem;
       color: #e2e8f0;
       max-width: 780px;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.15rem;
       line-height: 1.65;
     }
 
@@ -312,7 +312,7 @@
       gap: 0.55rem 1.35rem;
       font-size: 0.89rem;
       color: #dbe4ee;
-      margin-bottom: 1.45rem;
+      margin-bottom: 1.4rem;
     }
 
     .hero-meta a {
@@ -369,11 +369,49 @@
       border-color: rgba(255, 255, 255, 0.6);
     }
 
+    /* 30-Second Recruiter Snapshot Bar */
+    .recruiter-snapshot {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 1.15rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .snapshot-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .snap-cell {
+      border-left: 3px solid var(--gold);
+      padding-left: 0.85rem;
+    }
+
+    .snap-label {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .snap-value {
+      font-size: 0.91rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.35;
+    }
+
     /* Main Layout */
     main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 3.5rem;
+      padding: 2.35rem 1.5rem 3.5rem;
     }
 
     .section-block {
@@ -427,17 +465,38 @@
       margin-bottom: 0;
     }
 
+    .recruiter-fit-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1rem;
+    }
+
     .role-alignment-bar {
       background: var(--navy-soft);
       border: 1px solid #d4dfec;
       border-radius: var(--radius);
-      padding: 0.95rem 1.25rem;
+      padding: 1rem 1.25rem;
       font-size: 0.9rem;
       color: var(--navy);
     }
 
     .role-alignment-bar strong {
       font-weight: 700;
+    }
+
+    .availability-box {
+      background: var(--gold-tint);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      font-size: 0.89rem;
+      color: var(--ink);
+    }
+
+    .availability-box strong {
+      color: var(--navy);
+      display: block;
+      margin-bottom: 0.2rem;
     }
 
     /* Documented Achievements Grid */
@@ -1010,10 +1069,14 @@
 
     /* Responsive Breakpoints */
     @media (max-width: 920px) {
+      .snapshot-inner,
       .achievements-grid,
       .competencies-grid,
       .compliance-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      .recruiter-fit-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1059,6 +1122,7 @@
     }
 
     @media (max-width: 560px) {
+      .snapshot-inner,
       .achievements-grid,
       .competencies-grid,
       .compliance-grid {
@@ -1166,6 +1230,28 @@
   </div>
 </header>
 
+<!-- 30-Second Recruiter Snapshot Strip -->
+<div class="recruiter-snapshot" role="region" aria-label="Recruiter Quick Snapshot">
+  <div class="snapshot-inner">
+    <div class="snap-cell">
+      <span class="snap-label">Domain &amp; Tenure</span>
+      <span class="snap-value">10+ Years &bull; Tea Processing &amp; FMCG Packaging</span>
+    </div>
+    <div class="snap-cell">
+      <span class="snap-label">Core Lines &amp; Formats</span>
+      <span class="snap-value">IMA, Teepack, FFS, Cleaning, Blending, Bulk &amp; Caddies</span>
+    </div>
+    <div class="snap-cell">
+      <span class="snap-label">Food Safety &amp; Foundation</span>
+      <span class="snap-value">FSSAI FoSTaC Certified &bull; GMP / HACCP &bull; B.Com + ITI Fitter</span>
+    </div>
+    <div class="snap-cell">
+      <span class="snap-label">Hiring &amp; Mobility</span>
+      <span class="snap-value">Open to Senior Production Roles &bull; Notice &amp; Location Discussable</span>
+    </div>
+  </div>
+</div>
+
 <main id="main-content">
 
   <!-- 1. Professional Summary -->
@@ -1182,8 +1268,14 @@
         Combines deep hands-on machinery troubleshooting and mechanical fundamentals (ITI Fitter + B.Com) with structured production planning and control (PPC), quality assurance coordination (GMP, HACCP, FSSAI, ISO audit support), preventive maintenance vendor follow-up, and continuous improvement (RCA, CAPA, 5S). Proven capability in directly supervising 80+ shop-floor personnel and aligning Quality, Maintenance, Planning, Procurement, and Warehouse teams to meet output, food-safety, and dispatch commitments.
       </p>
     </div>
-    <div class="role-alignment-bar">
-      <strong>Target Opportunities:</strong> Senior Production Manager &bull; Production Manager &bull; Manufacturing Manager &bull; Production &amp; QC Manager &bull; Packaging Operations Manager &bull; Production Excellence Manager (Tea Manufacturing, Food Processing &amp; FMCG).
+    <div class="recruiter-fit-grid">
+      <div class="role-alignment-bar">
+        <strong>Target Roles:</strong> Senior Production Manager &bull; Production Manager &bull; Manufacturing Manager &bull; Production &amp; QC Manager &bull; Packaging Operations Manager &bull; Production Excellence Manager (Tea Manufacturing, Food Processing &amp; FMCG).
+      </div>
+      <div class="availability-box">
+        <strong>Availability &amp; Location</strong>
+        Based in Howrah / Kolkata, West Bengal. Open to leadership opportunities in West Bengal and across India; notice period and joining timeline available upon discussion.
+      </div>
     </div>
   </section>
 
@@ -1303,7 +1395,7 @@
               <h3>Production Engineer – Operations</h3>
               <div class="exp-company">Aditya Birla Global Trading India Pvt. Ltd.</div>
               <div class="designation-note">
-                Official HR designation: Technician; functional responsibilities performed in production operations.
+                Official HR designation: Technician; functional responsibilities performed in production operations across a 10-year progressive tenure.
               </div>
             </div>
           </div>
@@ -1694,7 +1786,6 @@
       });
     }
 
-    // Active section highlight on scroll
     var sections = document.querySelectorAll("main section[id]");
     window.addEventListener("scroll", function () {
       var scrollPos = window.scrollY + 120;

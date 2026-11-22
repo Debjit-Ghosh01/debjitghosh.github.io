@@ -10,11 +10,16 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://debjit-ghosh01.github.io/debjitghosh.github.io/" />
 
-  <!-- Performance Preconnects for Google Drive Media & Video Embeds -->
+  <!-- Performance Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://drive.google.com" crossorigin />
   <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin />
   <link rel="dns-prefetch" href="https://drive.google.com" />
   <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
+
+  <!-- Editorial + Precision Geometric Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Open Graph / Social Metadata -->
   <meta property="og:type" content="profile" />
@@ -33,7 +38,7 @@
   <meta name="twitter:description" content="10+ years of practical experience in tea manufacturing, tea processing, FMCG operations, automated packaging (IMA, Teepack), quality control, and preventive maintenance coordination." />
   <meta name="twitter:image" content="https://drive.google.com/thumbnail?id=15QPETMTucqIkzrt_ISol45n195MqxejH&amp;sz=w1000" />
 
-  <!-- Structured Person Schema (Verified Public Details Only) -->
+  <!-- Structured Person Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -85,27 +90,38 @@
 
   <style>
     :root {
-      /* Executive Industrial & Modern Corporate Palette */
-      --slate-navy: #0F172A;
-      --slate-navy-mid: #1E293B;
-      --slate-navy-soft: #F1F5F9;
-      --amber: #D97706;
-      --amber-bright: #F59E0B;
-      --amber-tint: #FFFBEB;
-      --amber-border: #FDE68A;
-      --emerald: #059669;
-      --emerald-dark: #047857;
-      --emerald-tint: #ECFDF5;
-      --emerald-border: #A7F3D0;
-      --ink: #0F172A;
-      --body-text: #334155;
-      --muted: #64748B;
-      --bg: #F8FAFC;
-      --white: #FFFFFF;
-      --border: #E2E8F0;
-      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
-      --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
-      --radius: 10px;
+      /* Architectural Slate, Tea-Botanical Emerald & Industrial Amber System */
+      --obsidian: #0B131E;
+      --slate-900: #0F172A;
+      --slate-800: #1E293B;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748B;
+      --slate-200: #E2E8F0;
+      --slate-100: #F1F5F9;
+      --canvas: #F8FAFC;
+      --surface: #FFFFFF;
+
+      --emerald-700: #047857;
+      --emerald-600: #059669;
+      --emerald-50: #ECFDF5;
+      --emerald-200: #A7F3D0;
+
+      --amber-700: #B45309;
+      --amber-600: #D97706;
+      --amber-500: #F59E0B;
+      --amber-50: #FFFBEB;
+      --amber-200: #FDE68A;
+
+      --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 6px 16px -4px rgba(15, 23, 42, 0.05);
+      --shadow-elevated: 0 20px 35px -10px rgba(15, 23, 42, 0.14), 0 8px 14px -6px rgba(15, 23, 42, 0.06);
     }
 
     * {
@@ -119,9 +135,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
+      html { scroll-behavior: auto; }
       *, *::before, *::after {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
@@ -129,13 +143,18 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--body-text);
+      font-family: var(--font-sans);
+      background-color: var(--canvas);
+      color: var(--slate-700);
       line-height: 1.65;
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      color: var(--slate-900);
     }
 
     a {
@@ -146,222 +165,288 @@
     a:focus-visible,
     button:focus-visible,
     summary:focus-visible {
-      outline: 2.5px solid var(--amber);
+      outline: 2.5px solid var(--amber-500);
       outline-offset: 2px;
     }
 
     .skip-link {
       position: absolute;
-      top: -48px;
+      top: -52px;
       left: 1rem;
-      background: var(--amber);
-      color: var(--white);
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
+      background: var(--amber-600);
+      color: var(--surface);
+      padding: 0.55rem 1.1rem;
+      border-radius: var(--radius-sm);
       font-weight: 700;
+      font-size: 0.88rem;
       z-index: 1000;
       transition: top 0.2s ease;
     }
-    .skip-link:focus {
-      top: 0.75rem;
-    }
+    .skip-link:focus { top: 0.85rem; }
 
-    /* Top Corporate Navigation */
+    /* =========================================================
+       FLOATING GLASSMORPHIC EXECUTIVE NAVBAR
+    ========================================================= */
     .top-nav {
       position: sticky;
       top: 0;
       z-index: 900;
-      background: rgba(15, 23, 42, 0.97);
-      backdrop-filter: blur(8px);
+      background: rgba(11, 19, 30, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      color: var(--white);
+      color: var(--surface);
     }
 
     .nav-inner {
-      max-width: 1140px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 0.8rem 1.5rem;
+      padding: 0.85rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 1.25rem;
     }
 
     .nav-brand {
-      font-weight: 800;
-      font-size: 0.96rem;
-      letter-spacing: 0.5px;
-      color: var(--white);
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.65rem;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.98rem;
+      letter-spacing: 0.4px;
+      color: var(--surface);
     }
 
-    .brand-accent {
-      width: 10px;
-      height: 10px;
-      border-radius: 2px;
-      background: var(--amber);
-      box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.3);
-      display: inline-block;
-      flex-shrink: 0;
+    .brand-monogram {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      background: linear-gradient(135deg, var(--emerald-600), var(--amber-600));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--surface);
+      letter-spacing: -0.5px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.35rem;
+      gap: 1.4rem;
       list-style: none;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: #CBD5E1;
     }
 
     .nav-links a {
-      padding: 0.3rem 0;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s ease, border-color 0.2s ease;
+      padding: 0.35rem 0;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 2px;
+      background: var(--amber-500);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.22s ease;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      color: var(--white);
-      border-bottom-color: var(--amber);
+      color: var(--surface);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta-mini {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--surface);
+      padding: 0.42rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta-mini:hover {
+      background: var(--amber-600);
+      border-color: var(--amber-600);
     }
 
     .nav-toggle {
       display: none;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: var(--white);
-      padding: 0.4rem 0.75rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--surface);
+      padding: 0.42rem 0.8rem;
       border-radius: 6px;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
     }
 
-    /* Executive Split Hero Section */
+    /* =========================================================
+       ARCHITECTURAL DARK-TO-LIGHT SPLIT HERO
+    ========================================================= */
     .hero {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 3.5rem 1.5rem 3.25rem;
+      background: radial-gradient(circle at 88% 18%, rgba(5, 150, 105, 0.18), transparent 42%),
+                  radial-gradient(circle at 12% 85%, rgba(217, 119, 6, 0.14), transparent 45%),
+                  linear-gradient(155deg, #090F18 0%, #0F172A 55%, #162238 100%);
+      color: var(--surface);
+      padding: 3.75rem 1.5rem 5.5rem;
       position: relative;
       overflow: hidden;
     }
 
-    /* Subtle Industrial Grid Background */
+    /* CAD / Blueprint Precision Grid Overlay */
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
       pointer-events: none;
     }
 
-    .hero-split {
+    .hero-container {
       position: relative;
       z-index: 1;
-      max-width: 1140px;
+      max-width: 1180px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
-      gap: 2.75rem;
+      grid-template-columns: 1.28fr 0.92fr;
+      gap: 3rem;
       align-items: center;
     }
 
-    .quick-overview-badge {
+    .status-pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      background: var(--emerald-tint);
-      color: var(--emerald-dark);
-      border: 1px solid var(--emerald-border);
-      padding: 0.35rem 0.85rem;
+      gap: 0.55rem;
+      background: rgba(5, 150, 105, 0.16);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: #6EE7B7;
+      padding: 0.38rem 0.95rem;
       border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
-      margin-bottom: 1rem;
+      margin-bottom: 1.15rem;
     }
 
-    .badge-pulse {
-      width: 8px;
-      height: 8px;
+    .status-dot {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: var(--emerald);
-      display: inline-block;
+      background: #34D399;
+      box-shadow: 0 0 8px #34D399;
     }
 
     .hero-left h1 {
-      font-size: 2.65rem;
+      font-size: 3rem;
       font-weight: 800;
-      color: var(--slate-navy);
-      letter-spacing: -0.6px;
-      line-height: 1.12;
-      margin-bottom: 0.45rem;
+      color: var(--surface);
+      letter-spacing: -0.9px;
+      line-height: 1.08;
+      margin-bottom: 0.55rem;
     }
 
-    .hero-role-title {
-      font-size: 1.2rem;
+    .hero-subtitle {
+      font-size: 1.25rem;
       font-weight: 700;
-      color: var(--amber);
-      margin-bottom: 0.45rem;
+      color: var(--amber-500);
+      margin-bottom: 0.65rem;
+      letter-spacing: -0.2px;
     }
 
-    .hero-specialties {
-      font-size: 0.92rem;
+    .hero-domain-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .domain-chip {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #E2E8F0;
+      padding: 0.25rem 0.65rem;
+      border-radius: 5px;
+      font-size: 0.78rem;
       font-weight: 600;
-      color: var(--slate-navy-mid);
-      margin-bottom: 1.1rem;
     }
 
     .hero-bio {
-      font-size: 0.98rem;
-      color: var(--body-text);
-      line-height: 1.68;
-      margin-bottom: 1.35rem;
-      max-width: 600px;
+      font-size: 0.99rem;
+      color: #CBD5E1;
+      line-height: 1.72;
+      margin-bottom: 1.45rem;
+      max-width: 610px;
     }
 
-    .hero-contact-line {
+    .hero-meta-bar {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem 1.25rem;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
+      gap: 0.65rem 1.4rem;
+      font-size: 0.87rem;
+      color: #94A3B8;
+      margin-bottom: 1.75rem;
     }
 
-    .hero-contact-line a {
-      color: var(--slate-navy);
-      border-bottom: 1px solid #CBD5E1;
+    .hero-meta-bar span,
+    .hero-meta-bar a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-meta-bar a {
+      color: #E2E8F0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.22);
       transition: color 0.2s ease, border-color 0.2s ease;
     }
 
-    .hero-contact-line a:hover {
-      color: var(--amber);
-      border-bottom-color: var(--amber);
+    .hero-meta-bar a:hover {
+      color: var(--amber-500);
+      border-bottom-color: var(--amber-500);
     }
 
-    .hero-cta-group {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.8rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.45rem;
-      padding: 0.7rem 1.3rem;
-      border-radius: 7px;
+      gap: 0.5rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
       font-size: 0.9rem;
       font-weight: 700;
       transition: all 0.2s ease;
@@ -369,466 +454,538 @@
     }
 
     .btn:hover {
-      transform: translateY(-1px);
+      transform: translateY(-2px);
     }
 
-    .btn-primary-navy {
-      background: var(--slate-navy);
-      color: var(--white);
-      border: 1px solid var(--slate-navy);
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.16);
+    .btn-amber {
+      background: var(--amber-600);
+      color: var(--surface);
+      border: 1px solid var(--amber-600);
+      box-shadow: 0 8px 20px -4px rgba(217, 119, 6, 0.45);
     }
 
-    .btn-primary-navy:hover {
-      background: var(--slate-navy-mid);
-      border-color: var(--slate-navy-mid);
+    .btn-amber:hover {
+      background: var(--amber-700);
+      border-color: var(--amber-700);
     }
 
     .btn-emerald {
-      background: var(--emerald);
-      color: var(--white);
-      border: 1px solid var(--emerald);
+      background: var(--emerald-600);
+      color: var(--surface);
+      border: 1px solid var(--emerald-600);
+      box-shadow: 0 8px 20px -4px rgba(5, 150, 105, 0.38);
     }
 
     .btn-emerald:hover {
-      background: var(--emerald-dark);
-      border-color: var(--emerald-dark);
+      background: var(--emerald-700);
+      border-color: var(--emerald-700);
     }
 
-    .btn-outline {
-      background: var(--white);
-      color: var(--slate-navy);
-      border: 1px solid #CBD5E1;
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.24);
     }
 
-    .btn-outline:hover {
-      background: var(--slate-navy-soft);
-      border-color: var(--slate-navy);
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.45);
     }
 
-    /* Hero Right Column: Portrait in Geometric Badge + Quick-Glance Key Stats */
-    .hero-right {
-      background: var(--slate-navy-soft);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.65rem;
-      display: grid;
-      grid-template-columns: 154px 1fr;
-      gap: 1.35rem;
-      align-items: center;
-      box-shadow: var(--shadow-md);
+    /* Hero Right Column: Executive Dossier Card */
+    .hero-dossier {
+      background: rgba(30, 41, 59, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
       position: relative;
     }
 
-    .hero-right::before {
+    .hero-dossier::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1.5rem;
+      right: 1.5rem;
+      height: 3px;
+      border-radius: 0 0 4px 4px;
+      background: linear-gradient(90deg, var(--emerald-500, #10B981), var(--amber-500));
+    }
+
+    .dossier-top {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .portrait-frame {
+      position: relative;
+      width: 112px;
+      height: 126px;
+      border-radius: 12px;
+      padding: 3px;
+      background: linear-gradient(145deg, var(--amber-500), var(--emerald-600));
+      flex-shrink: 0;
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      border-radius: 9px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      background: var(--slate-800);
+    }
+
+    .dossier-id-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--amber-500);
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .dossier-id-title {
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--surface);
+      line-height: 1.3;
+      margin-bottom: 0.35rem;
+    }
+
+    .dossier-id-sub {
+      font-size: 0.82rem;
+      color: #94A3B8;
+      line-height: 1.4;
+    }
+
+    .dossier-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+    }
+
+    .dossier-row {
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-left: 3px solid var(--emerald-600);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.9rem;
+    }
+
+    .dossier-row.amber {
+      border-left-color: var(--amber-500);
+    }
+
+    .dossier-row-k {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.69rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #94A3B8;
+      margin-bottom: 0.1rem;
+    }
+
+    .dossier-row-v {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #F8FAFC;
+      line-height: 1.35;
+    }
+
+    /* =========================================================
+       FLOATING OVERLAPPING KPI IMPACT BAR
+    ========================================================= */
+    .kpi-bridge {
+      max-width: 1180px;
+      margin: -3.1rem auto 0;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .kpi-bar {
+      background: var(--surface);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-elevated);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: hidden;
+    }
+
+    .kpi-cell {
+      padding: 1.65rem 1.75rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .kpi-cell:not(:last-child) {
+      border-right: 1px solid var(--slate-200);
+    }
+
+    .kpi-cell::before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       height: 4px;
-      border-radius: 14px 14px 0 0;
-      background: linear-gradient(90deg, var(--slate-navy) 0%, var(--emerald) 55%, var(--amber) 100%);
+      background: var(--amber-600);
     }
 
-    .geometric-portrait-badge {
-      position: relative;
-      width: 154px;
-      height: 176px;
-      border-radius: 14px;
-      padding: 5px;
-      background: linear-gradient(145deg, var(--slate-navy) 0%, var(--emerald) 100%);
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
+    .kpi-cell.emerald::before {
+      background: var(--emerald-600);
     }
 
-    .geometric-portrait-badge::after {
-      content: "";
-      position: absolute;
-      inset: -6px;
-      border: 1.5px dashed rgba(217, 119, 6, 0.55);
-      border-radius: 18px;
-      pointer-events: none;
+    .kpi-cell.navy::before {
+      background: var(--slate-900);
     }
 
-    .geometric-portrait-badge img {
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      background: #CBD5E1;
-    }
-
-    .glance-stats-stack {
+    .kpi-metric-row {
       display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
-    .glance-stat-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 3.5px solid var(--emerald);
-      border-radius: 8px;
-      padding: 0.65rem 0.85rem;
+    .kpi-val {
+      font-family: var(--font-mono);
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: var(--amber-600);
+      line-height: 1;
     }
 
-    .glance-stat-item.amber {
-      border-left-color: var(--amber);
+    .kpi-cell.emerald .kpi-val {
+      color: var(--emerald-600);
     }
 
-    .glance-stat-label {
+    .kpi-cell.navy .kpi-val {
+      color: var(--slate-900);
+    }
+
+    .kpi-name {
+      font-family: var(--font-display);
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.25;
+    }
+
+    .kpi-context {
+      font-size: 0.83rem;
+      color: var(--slate-600);
+      line-height: 1.5;
+      padding-top: 0.65rem;
+      margin-top: 0.45rem;
+      border-top: 1px dashed var(--slate-200);
+    }
+
+    /* =========================================================
+       MAIN CONTAINER & ARCHITECTURAL SECTION HEADERS
+    ========================================================= */
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 4.5rem;
+    }
+
+    .section-block {
+      margin-bottom: 4rem;
+      scroll-margin-top: 82px;
+    }
+
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .section-kicker {
       display: block;
-      font-size: 0.71rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--muted);
+      letter-spacing: 1px;
+      color: var(--emerald-700);
+      margin-bottom: 0.25rem;
     }
 
-    .glance-stat-val {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--slate-navy);
-      line-height: 1.3;
+    .section-head h2 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      letter-spacing: -0.4px;
+      line-height: 1.2;
     }
 
-    /* Bold High-Contrast KPI Impact Bar */
-    .kpi-impact-bar {
-      background: var(--slate-navy);
-      color: var(--white);
-      border-top: 3px solid var(--amber);
-      border-bottom: 3px solid var(--emerald);
-      padding: 1.75rem 1.5rem;
+    .section-note {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--slate-500);
     }
 
-    .kpi-impact-inner {
-      max-width: 1140px;
-      margin: 0 auto;
+    /* =========================================================
+       1. EXECUTIVE SUMMARY & TARGET ALIGNMENT
+    ========================================================= */
+    .summary-layout {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1.65fr 1fr;
       gap: 1.5rem;
       align-items: stretch;
     }
 
-    .kpi-pillar {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 1.25rem 1.35rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .summary-prose-card {
+      background: var(--surface);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-card);
     }
 
-    .kpi-pillar-top {
-      display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
-      margin-bottom: 0.45rem;
-    }
-
-    .kpi-number {
-      font-size: 2.15rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--amber-bright);
-      line-height: 1;
-    }
-
-    .kpi-pillar.emerald .kpi-number {
-      color: #34D399;
-    }
-
-    .kpi-label {
-      font-size: 1.02rem;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.25;
-    }
-
-    .kpi-method {
-      font-size: 0.82rem;
-      color: #CBD5E1;
-      line-height: 1.48;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 0.55rem;
-      margin-top: 0.35rem;
-    }
-
-    /* Main Container */
-    main {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 2.75rem 1.5rem 4rem;
-    }
-
-    .section-block {
-      margin-bottom: 3.25rem;
-      scroll-margin-top: 76px;
-    }
-
-    .section-header {
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 0.6rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 0.5rem;
-      position: relative;
-    }
-
-    .section-header::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 72px;
-      height: 2.5px;
-      background: var(--amber);
-    }
-
-    .section-header h2 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--slate-navy);
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-
-    .section-subtitle {
-      font-size: 0.86rem;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    /* Executive Summary Card */
-    .summary-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--slate-navy);
-      border-radius: var(--radius);
-      padding: 1.75rem 1.85rem;
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 1.25rem;
-    }
-
-    .summary-card p {
-      color: var(--ink);
+    .summary-prose-card p {
       font-size: 0.98rem;
-      margin-bottom: 0.9rem;
+      color: var(--slate-700);
+      margin-bottom: 1rem;
     }
 
-    .summary-card p:last-child {
+    .summary-prose-card p:last-child {
       margin-bottom: 0;
     }
 
-    .role-fit-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
+    .summary-prose-card strong {
+      color: var(--slate-900);
+    }
+
+    .summary-sidebar {
+      display: flex;
+      flex-direction: column;
       gap: 1rem;
     }
 
-    .role-box {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 3.5px solid var(--emerald);
-      border-radius: var(--radius);
-      padding: 1rem 1.25rem;
-      font-size: 0.9rem;
-      color: var(--ink);
+    .side-panel {
+      background: var(--surface);
+      border: 1px solid var(--slate-200);
+      border-left: 4px solid var(--emerald-600);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.45rem;
+      box-shadow: var(--shadow-card);
+      flex: 1;
     }
 
-    .role-box strong {
-      color: var(--emerald-dark);
+    .side-panel.amber {
+      border-left-color: var(--amber-600);
+      background: var(--amber-50);
+      border-color: var(--amber-200);
     }
 
-    .mobility-box {
-      background: var(--amber-tint);
-      border: 1px solid var(--amber-border);
-      border-radius: var(--radius);
-      padding: 1rem 1.25rem;
-      font-size: 0.88rem;
-      color: var(--ink);
+    .side-panel h3 {
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--slate-900);
+      margin-bottom: 0.5rem;
     }
 
-    .mobility-box strong {
-      color: var(--slate-navy);
-      display: block;
-      margin-bottom: 0.15rem;
+    .side-panel p {
+      font-size: 0.89rem;
+      color: var(--slate-700);
+      line-height: 1.55;
     }
 
-    /* Experience & Vertical Timeline with Expandable Cards */
+    /* =========================================================
+       2. EXPERIENCE & VERTICAL TIMELINE
+    ========================================================= */
     .timeline {
       position: relative;
-      padding-left: 2rem;
+      padding-left: 2.25rem;
     }
 
     .timeline::before {
       content: "";
       position: absolute;
-      left: 7px;
-      top: 10px;
-      bottom: 10px;
-      width: 2.5px;
-      background: linear-gradient(180deg, var(--emerald) 0%, var(--slate-navy) 100%);
+      left: 9px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--emerald-600) 0%, var(--slate-900) 100%);
     }
 
-    .timeline-card {
+    .exp-card {
       position: relative;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.85rem;
-      margin-bottom: 1.75rem;
-      box-shadow: var(--shadow-sm);
+      background: var(--surface);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-card);
     }
 
-    .timeline-card:last-child {
+    .exp-card:last-child {
       margin-bottom: 0;
     }
 
-    .timeline-node {
+    .timeline-dot {
       position: absolute;
-      left: -2rem;
-      top: 2rem;
-      width: 16px;
-      height: 16px;
+      left: -2.25rem;
+      top: 2.15rem;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
-      background: var(--slate-navy);
-      border: 3.5px solid var(--amber);
-      box-shadow: 0 0 0 3px var(--white);
+      background: var(--slate-900);
+      border: 4px solid var(--amber-500);
+      box-shadow: 0 0 0 4px var(--canvas);
     }
 
-    .exp-header {
+    .exp-top {
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
       justify-content: space-between;
       gap: 1rem;
-      padding-bottom: 1.1rem;
-      margin-bottom: 1.15rem;
-      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--slate-200);
     }
 
-    .exp-brand {
+    .exp-identity {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.15rem;
     }
 
-    .company-badge {
-      width: 72px;
-      height: 62px;
-      border-radius: 8px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 6px;
+    .logo-tile {
+      width: 74px;
+      height: 64px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--slate-200);
+      padding: 7px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
     }
 
-    .company-badge img {
+    .logo-tile img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
       display: block;
     }
 
-    .exp-heading h3 {
-      font-size: 1.24rem;
+    .exp-role-info h3 {
+      font-size: 1.3rem;
       font-weight: 800;
-      color: var(--slate-navy);
-      line-height: 1.25;
-      margin-bottom: 0.2rem;
+      color: var(--slate-900);
+      line-height: 1.22;
+      margin-bottom: 0.25rem;
     }
 
-    .exp-company-name {
-      font-size: 0.98rem;
+    .exp-company {
+      font-size: 1rem;
       font-weight: 700;
-      color: var(--emerald-dark);
+      color: var(--emerald-700);
     }
 
-    .hr-disclosure {
+    .hr-note-pill {
       display: inline-block;
-      margin-top: 0.45rem;
-      background: var(--slate-navy-soft);
-      border: 1px solid #CBD5E1;
-      color: var(--slate-navy);
+      margin-top: 0.5rem;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      color: var(--slate-800);
       font-size: 0.82rem;
       font-weight: 600;
-      padding: 0.25rem 0.7rem;
-      border-radius: 5px;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
     }
 
-    .exp-date-pill {
-      background: var(--slate-navy);
-      color: var(--white);
-      padding: 0.38rem 0.9rem;
+    .date-badge {
+      font-family: var(--font-mono);
+      background: var(--slate-900);
+      color: var(--surface);
+      padding: 0.42rem 0.95rem;
       border-radius: 999px;
-      font-size: 0.83rem;
-      font-weight: 700;
+      font-size: 0.8rem;
+      font-weight: 600;
       white-space: nowrap;
     }
 
-    /* Highlighted Operational Wins Strip inside Timeline */
-    .wins-strip {
+    .wins-ribbon {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.55rem;
-      margin-bottom: 1.15rem;
+      gap: 0.5rem;
+      margin-bottom: 1.35rem;
     }
 
-    .win-chip {
-      background: var(--emerald-tint);
-      color: var(--emerald-dark);
-      border: 1px solid var(--emerald-border);
+    .win-pill {
+      background: var(--emerald-50);
+      color: var(--emerald-700);
+      border: 1px solid var(--emerald-200);
       padding: 0.32rem 0.75rem;
       border-radius: 6px;
-      font-size: 0.81rem;
+      font-size: 0.8rem;
       font-weight: 700;
     }
 
-    .win-chip.amber {
-      background: var(--amber-tint);
-      color: #92400E;
-      border-color: var(--amber-border);
+    .win-pill.amber {
+      background: var(--amber-50);
+      color: var(--amber-700);
+      border-color: var(--amber-200);
     }
 
-    .clean-list {
+    .bullet-list {
       padding-left: 1.25rem;
-      font-size: 0.94rem;
-      color: var(--body-text);
+      font-size: 0.95rem;
+      color: var(--slate-700);
     }
 
-    .clean-list li {
-      margin-bottom: 0.5rem;
+    .bullet-list li {
+      margin-bottom: 0.55rem;
     }
 
-    .clean-list li strong {
-      color: var(--slate-navy);
+    .bullet-list li strong {
+      color: var(--slate-900);
     }
 
-    /* Expandable Achievement Details (<details>) */
-    .expandable-wins {
-      margin-top: 1.15rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--slate-navy-soft);
+    /* Expandable Details Accordion */
+    .exp-accordion {
+      margin-top: 1.35rem;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      background: var(--slate-100);
       overflow: hidden;
     }
 
-    .expandable-wins summary {
-      padding: 0.8rem 1.1rem;
-      font-size: 0.88rem;
+    .exp-accordion summary {
+      padding: 0.85rem 1.2rem;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
       font-weight: 700;
-      color: var(--slate-navy);
+      color: var(--slate-900);
       cursor: pointer;
       list-style: none;
       display: flex;
@@ -837,393 +994,424 @@
       user-select: none;
     }
 
-    .expandable-wins summary::-webkit-details-marker {
+    .exp-accordion summary::-webkit-details-marker {
       display: none;
     }
 
-    .expandable-wins summary::after {
-      content: "+ Expand Details";
-      font-size: 0.78rem;
+    .exp-accordion summary::after {
+      content: "+ Expand";
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
       font-weight: 700;
-      color: var(--amber);
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
+      color: var(--amber-700);
+      background: var(--surface);
+      border: 1px solid var(--slate-200);
+      padding: 0.22rem 0.65rem;
+      border-radius: 5px;
     }
 
-    .expandable-wins[open] summary::after {
-      content: "− Collapse Details";
+    .exp-accordion[open] summary::after {
+      content: "− Collapse";
     }
 
-    .expandable-body {
-      padding: 0.95rem 1.2rem 1.15rem;
-      background: var(--white);
-      border-top: 1px solid var(--border);
+    .exp-accordion-content {
+      padding: 1.1rem 1.3rem 1.25rem;
+      background: var(--surface);
+      border-top: 1px solid var(--slate-200);
     }
 
-    /* Categorized Machinery & Tech Grid */
+    /* =========================================================
+       3. CATEGORIZED MACHINERY & TECH GRID
+    ========================================================= */
     .machinery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+      gap: 1.5rem;
     }
 
-    .machine-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-top: 3.5px solid var(--slate-navy);
-      border-radius: var(--radius);
-      padding: 1.45rem;
-      box-shadow: var(--shadow-sm);
+    .tech-module {
+      background: var(--surface);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 1.65rem;
+      box-shadow: var(--shadow-card);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      position: relative;
+      overflow: hidden;
     }
 
-    .machine-card.emerald-top {
-      border-top-color: var(--emerald);
+    .tech-module::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--emerald-600);
     }
 
-    .machine-card.amber-top {
-      border-top-color: var(--amber);
+    .tech-module.amber::before {
+      background: var(--amber-600);
     }
 
-    .machine-card-tier {
+    .tech-module.navy::before {
+      background: var(--slate-900);
+    }
+
+    .module-tag {
       display: inline-block;
-      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--emerald-dark);
-      background: var(--emerald-tint);
-      border: 1px solid var(--emerald-border);
-      padding: 0.2rem 0.55rem;
-      border-radius: 4px;
-      margin-bottom: 0.55rem;
+      letter-spacing: 0.6px;
+      color: var(--emerald-700);
+      background: var(--emerald-50);
+      border: 1px solid var(--emerald-200);
+      padding: 0.24rem 0.6rem;
+      border-radius: 5px;
+      margin-bottom: 0.7rem;
     }
 
-    .machine-card-tier.amber {
-      color: #92400E;
-      background: var(--amber-tint);
-      border-color: var(--amber-border);
+    .tech-module.amber .module-tag {
+      color: var(--amber-700);
+      background: var(--amber-50);
+      border-color: var(--amber-200);
     }
 
-    .machine-card h3 {
-      font-size: 1.08rem;
+    .tech-module.navy .module-tag {
+      color: var(--slate-800);
+      background: var(--slate-100);
+      border-color: var(--slate-200);
+    }
+
+    .tech-module h3 {
+      font-size: 1.15rem;
       font-weight: 800;
-      color: var(--slate-navy);
-      margin-bottom: 0.55rem;
+      color: var(--slate-900);
+      margin-bottom: 0.6rem;
     }
 
-    .machine-card p {
-      font-size: 0.88rem;
-      color: var(--body-text);
-      margin-bottom: 1rem;
+    .tech-module p {
+      font-size: 0.9rem;
+      color: var(--slate-600);
+      margin-bottom: 1.15rem;
+      line-height: 1.58;
     }
 
-    .tech-badge-list {
+    .badge-cluster {
       display: flex;
       flex-wrap: wrap;
       gap: 0.45rem;
     }
 
-    .tech-badge {
-      background: var(--slate-navy-soft);
-      color: var(--slate-navy);
-      border: 1px solid #CBD5E1;
-      padding: 0.3rem 0.68rem;
-      border-radius: 5px;
-      font-size: 0.82rem;
-      font-weight: 700;
+    .machine-badge {
+      font-family: var(--font-mono);
+      font-size: 0.79rem;
+      font-weight: 600;
+      padding: 0.34rem 0.72rem;
+      border-radius: 6px;
+      background: var(--slate-100);
+      color: var(--slate-800);
+      border: 1px solid var(--slate-200);
     }
 
-    .tech-badge.highlight {
-      background: var(--slate-navy);
-      color: var(--white);
-      border-color: var(--slate-navy);
+    .machine-badge.primary {
+      background: var(--slate-900);
+      color: var(--surface);
+      border-color: var(--slate-900);
     }
 
-    /* Core Competencies (12 Operational Pillars) */
+    /* =========================================================
+       4. CORE COMPETENCIES & SIDE-BY-SIDE VISUAL FRAMEWORKS
+    ========================================================= */
     .competencies-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+      gap: 1.1rem;
     }
 
-    .comp-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.15rem 1.2rem;
-      box-shadow: var(--shadow-sm);
+    .pillar-card {
+      background: var(--surface);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.35rem;
+      box-shadow: var(--shadow-card);
+      transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
-    .comp-index {
-      font-size: 0.76rem;
-      font-weight: 800;
-      color: var(--amber);
-      letter-spacing: 0.5px;
-      display: block;
-      margin-bottom: 0.2rem;
+    .pillar-card:hover {
+      border-color: var(--emerald-600);
+      transform: translateY(-2px);
     }
 
-    .comp-card h3 {
-      font-size: 0.96rem;
+    .pillar-code {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
       font-weight: 700;
-      color: var(--slate-navy);
+      color: var(--amber-600);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .pillar-card h3 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--slate-900);
       margin-bottom: 0.35rem;
     }
 
-    .comp-card p {
-      font-size: 0.85rem;
-      color: var(--body-text);
-      line-height: 1.5;
+    .pillar-card p {
+      font-size: 0.86rem;
+      color: var(--slate-600);
+      line-height: 1.52;
     }
 
-    /* Side-by-Side Visual Frameworks (Skill Pyramid + Newly Requested Visual) */
-    .visual-showcase-grid {
-      margin-top: 1.75rem;
+    /* Side-by-Side Visual Showcase */
+    .visual-pair {
+      margin-top: 2rem;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       align-items: stretch;
     }
 
-    .visual-box {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.35rem;
-      box-shadow: var(--shadow-sm);
+    .visual-card {
+      background: var(--surface);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 1.45rem;
+      box-shadow: var(--shadow-card);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       text-align: center;
     }
 
-    .visual-box img {
+    .visual-img-stage {
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 0.65rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .visual-img-stage img {
       width: 100%;
       max-height: 520px;
       object-fit: contain;
       border-radius: 6px;
-      border: 1px solid var(--border);
-      background: var(--slate-navy-soft);
+      display: block;
     }
 
-    .visual-box figcaption {
-      margin-top: 0.85rem;
-      font-size: 0.86rem;
-      color: var(--muted);
-      line-height: 1.45;
+    .visual-card figcaption {
+      margin-top: 0.95rem;
+      font-size: 0.87rem;
+      color: var(--slate-600);
+      line-height: 1.5;
     }
 
-    .visual-box figcaption strong {
-      color: var(--slate-navy);
+    .visual-card figcaption strong {
+      color: var(--slate-900);
     }
 
-    /* Quality, Compliance & Systems */
+    /* =========================================================
+       5. QUALITY, FOOD SAFETY & COMPLIANCE SYSTEMS
+    ========================================================= */
     .compliance-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+      gap: 1.5rem;
     }
 
-    .compliance-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--emerald);
-      border-radius: var(--radius);
-      padding: 1.45rem;
-      box-shadow: var(--shadow-sm);
+    .compliance-box {
+      background: var(--surface);
+      border: 1px solid var(--slate-200);
+      border-top: 3.5px solid var(--emerald-600);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem;
+      box-shadow: var(--shadow-card);
     }
 
-    .compliance-card h3 {
-      font-size: 1.02rem;
-      font-weight: 700;
-      color: var(--slate-navy);
-      margin-bottom: 0.65rem;
-      padding-bottom: 0.45rem;
-      border-bottom: 1px solid var(--border);
+    .compliance-box h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 1px solid var(--slate-200);
     }
 
-    /* Education & Verified Credentials */
+    /* =========================================================
+       6. EDUCATION & VERIFIED CREDENTIALS
+    ========================================================= */
     .edu-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
+      gap: 1.5rem;
     }
 
-    .edu-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      box-shadow: var(--shadow-sm);
+    .edu-box {
+      background: var(--surface);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 1.65rem;
+      box-shadow: var(--shadow-card);
     }
 
-    .edu-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--slate-navy);
-      margin-bottom: 0.85rem;
-      padding-bottom: 0.45rem;
-      border-bottom: 1px solid var(--border);
+    .edu-box h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 1px solid var(--slate-200);
     }
 
-    .credential-list {
+    .cred-list {
       list-style: none;
-      font-size: 0.91rem;
     }
 
-    .credential-list li {
-      padding: 0.55rem 0;
-      border-bottom: 1px dashed var(--border);
+    .cred-list li {
+      padding: 0.65rem 0;
+      border-bottom: 1px dashed var(--slate-200);
+      font-size: 0.93rem;
+      color: var(--slate-900);
     }
 
-    .credential-list li:last-child {
+    .cred-list li:last-child {
       border-bottom: none;
       padding-bottom: 0;
     }
 
-    .credential-meta {
+    .cred-sub {
       display: block;
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-top: 0.1rem;
+      font-size: 0.83rem;
+      color: var(--slate-500);
+      margin-top: 0.15rem;
     }
 
-    /* Video Introductions */
+    /* =========================================================
+       7. VIDEO INTRODUCTIONS
+    ========================================================= */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
     }
 
-    .video-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+    .video-box {
+      background: var(--surface);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-card);
       display: flex;
       flex-direction: column;
     }
 
-    .video-embed {
+    .video-frame {
       width: 100%;
       aspect-ratio: 16 / 9;
       border: 0;
-      background: var(--slate-navy);
+      background: var(--slate-900);
       display: block;
     }
 
-    .video-body {
-      padding: 1.2rem 1.35rem;
+    .video-caption {
+      padding: 1.35rem 1.5rem;
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .video-body h3 {
-      font-size: 1.04rem;
-      font-weight: 700;
-      color: var(--slate-navy);
-      margin-bottom: 0.35rem;
+    .video-caption h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 0.4rem;
     }
 
-    .video-body p {
-      font-size: 0.87rem;
-      color: var(--body-text);
-      margin-bottom: 0.75rem;
+    .video-caption p {
+      font-size: 0.88rem;
+      color: var(--slate-600);
+      margin-bottom: 0.85rem;
     }
 
-    .direct-link {
-      font-size: 0.84rem;
+    .drive-link {
+      font-size: 0.85rem;
       font-weight: 700;
-      color: var(--emerald-dark);
+      color: var(--emerald-700);
       text-decoration: underline;
     }
 
-    /* Contact & Footer */
-    .contact-panel {
-      background: var(--slate-navy);
-      color: var(--white);
-      border-top: 4px solid var(--amber);
-      border-radius: var(--radius);
-      padding: 2rem;
+    /* =========================================================
+       8. EXECUTIVE CONTACT CALLOUT & FOOTER
+    ========================================================= */
+    .cta-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: var(--surface);
+      border-radius: var(--radius-lg);
+      border-top: 4px solid var(--amber-600);
+      padding: 2.25rem;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 1.5rem;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-elevated);
     }
 
-    .contact-panel h3 {
-      font-size: 1.2rem;
+    .cta-banner h3 {
+      font-size: 1.3rem;
       font-weight: 800;
-      color: var(--white);
+      color: var(--surface);
       margin-bottom: 0.35rem;
     }
 
-    .contact-panel p {
-      font-size: 0.92rem;
+    .cta-banner p {
+      font-size: 0.93rem;
       color: #CBD5E1;
       max-width: 560px;
     }
 
-    .contact-links {
+    .cta-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
     }
 
-    .btn-amber-solid {
-      background: var(--amber);
-      color: var(--white);
-      border: 1px solid var(--amber);
-    }
-
-    .btn-amber-solid:hover {
-      background: #B45309;
-      border-color: #B45309;
-    }
-
-    .btn-ghost-light {
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.28);
-    }
-
-    .btn-ghost-light:hover {
-      background: rgba(255, 255, 255, 0.16);
-      border-color: var(--white);
-    }
-
     footer {
-      background: #090D16;
+      background: var(--obsidian);
       color: #94A3B8;
       text-align: center;
-      padding: 2rem 1.5rem;
+      padding: 2.25rem 1.5rem;
       font-size: 0.88rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     footer strong {
-      color: var(--white);
+      color: var(--surface);
     }
 
     footer a {
-      color: var(--amber-bright);
+      color: var(--amber-500);
       font-weight: 600;
     }
 
-    /* Print Stylesheet */
+    /* =========================================================
+       PRINT STYLESHEET
+    ========================================================= */
     @media print {
       .top-nav,
-      .hero-cta-group,
-      .contact-panel,
+      .hero-actions,
+      .cta-banner,
       .skip-link,
       #videos {
         display: none !important;
@@ -1233,35 +1421,58 @@
         color: #000000;
         font-size: 11pt;
       }
-      .kpi-impact-bar {
-        background: #F1F5F9;
+      .hero {
+        background: #FFFFFF;
+        color: #0F172A;
+        padding: 1rem 0;
+      }
+      .hero-left h1,
+      .hero-bio,
+      .hero-meta-bar a,
+      .dossier-id-title,
+      .dossier-row-v {
         color: #0F172A;
       }
-      .kpi-pillar {
+      .hero-dossier {
+        background: #F8FAFC;
         border: 1px solid #CBD5E1;
+        box-shadow: none;
       }
-      .kpi-number,
-      .kpi-label,
-      .kpi-method {
-        color: #0F172A;
+      .kpi-bridge {
+        margin-top: 1rem;
       }
     }
 
-    /* Responsive Breakpoints */
-    @media (max-width: 960px) {
-      .hero-split {
+    /* =========================================================
+       RESPONSIVE BREAKPOINTS
+    ========================================================= */
+    @media (max-width: 980px) {
+      .hero-container {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.25rem;
       }
 
-      .kpi-impact-inner,
+      .hero-left h1 {
+        font-size: 2.45rem;
+      }
+
+      .kpi-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .kpi-cell:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid var(--slate-200);
+      }
+
+      .summary-layout,
       .machinery-grid,
       .competencies-grid,
       .compliance-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .role-fit-grid {
+      .summary-layout {
         grid-template-columns: 1fr;
       }
     }
@@ -1271,14 +1482,18 @@
         display: inline-block;
       }
 
+      .nav-cta-mini {
+        display: none;
+      }
+
       .nav-links {
         display: none;
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-        padding-top: 0.75rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.12);
-        gap: 0.65rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        gap: 0.7rem;
       }
 
       .nav-inner {
@@ -1289,7 +1504,7 @@
         display: flex;
       }
 
-      .visual-showcase-grid,
+      .visual-pair,
       .edu-grid,
       .video-grid {
         grid-template-columns: 1fr;
@@ -1297,39 +1512,38 @@
     }
 
     @media (max-width: 580px) {
+      .hero {
+        padding: 2.75rem 1.25rem 4.5rem;
+      }
+
       .hero-left h1 {
-        font-size: 2rem;
+        font-size: 2.05rem;
       }
 
-      .hero-right {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
+      .dossier-top {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .glance-stats-stack {
-        width: 100%;
-        text-align: left;
-      }
-
-      .kpi-impact-inner,
       .machinery-grid,
       .competencies-grid,
       .compliance-grid {
         grid-template-columns: 1fr;
       }
 
-      .exp-brand {
+      .exp-identity {
         flex-direction: column;
         align-items: flex-start;
       }
 
       .timeline {
-        padding-left: 1.35rem;
+        padding-left: 1.5rem;
       }
 
-      .timeline-node {
-        left: -1.35rem;
+      .timeline-dot {
+        left: -1.5rem;
+        width: 16px;
+        height: 16px;
       }
     }
   </style>
@@ -1338,10 +1552,11 @@
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
+<!-- Sticky Glassmorphic Corporate Navigation -->
 <nav class="top-nav" aria-label="Primary Navigation">
   <div class="nav-inner">
     <a href="#top" class="nav-brand">
-      <span class="brand-accent" aria-hidden="true"></span>
+      <span class="brand-monogram" aria-hidden="true">DG</span>
       <span>DEBJIT GHOSH</span>
     </a>
     <button
@@ -1362,35 +1577,50 @@
       <li><a href="#education">Education</a></li>
       <li><a href="#videos">Videos</a></li>
     </ul>
+    <a
+      href="https://drive.google.com/uc?export=download&amp;id=1qTdYLF2kCX2ypAVDBZVrm82FYcen8hA2"
+      target="_blank"
+      rel="noopener"
+      class="nav-cta-mini"
+    >
+      Download CV
+    </a>
   </div>
 </nav>
 
-<!-- Split Executive Hero Section -->
+<!-- Executive Industrial Split Hero -->
 <header class="hero" id="top">
-  <div class="hero-split">
-    <!-- Left Side: Quick Overview Badge, Executive Bio Statement & Quick Contact Buttons -->
+  <div class="hero-container">
+    <!-- Left Column: Quick Overview Badge, Executive Bio Statement & Action Buttons -->
     <div class="hero-left">
-      <div class="quick-overview-badge">
-        <span class="badge-pulse" aria-hidden="true"></span>
+      <div class="status-pill">
+        <span class="status-dot" aria-hidden="true"></span>
         <span>Quick Overview &bull; 10+ Years Tea &amp; FMCG Operations</span>
       </div>
       <h1>DEBJIT GHOSH</h1>
-      <div class="hero-role-title">Senior Production &amp; Manufacturing Professional</div>
-      <div class="hero-specialties">Tea Manufacturing | FMCG | Food Processing | Production Planning | Quality Control | Packaging Operations</div>
+      <div class="hero-subtitle">Senior Production &amp; Manufacturing Professional</div>
+      <div class="hero-domain-tags">
+        <span class="domain-chip">Tea Manufacturing</span>
+        <span class="domain-chip">Tea Processing</span>
+        <span class="domain-chip">FMCG &amp; Food Processing</span>
+        <span class="domain-chip">Production Planning</span>
+        <span class="domain-chip">Quality Control</span>
+        <span class="domain-chip">Packaging Operations</span>
+      </div>
       <p class="hero-bio">
-        Results-driven production and operations leader with 10+ years of shop-floor execution across tea cleaning, blending, automated tea-bag packaging (IMA &amp; Teepack), FFS lines, bulk packing, and caddies. Combines mechanical troubleshooting fundamentals (ITI Fitter + B.Com) with structured production planning, GMP/HACCP/FSSAI food safety governance, preventive maintenance coordination, and direct supervision of 80+ personnel.
+        Results-driven production and operations leader combining 10+ years of automated tea-bag, tea processing, and multi-format packaging execution (IMA, Teepack, FFS, bulk &amp; caddies) with mechanical troubleshooting fundamentals (ITI Fitter + B.Com), GMP/HACCP/FSSAI compliance, preventive maintenance coordination, and direct supervision of 80+ shop-floor personnel.
       </p>
-      <div class="hero-contact-line">
+      <div class="hero-meta-bar">
         <span>Howrah, West Bengal, India</span>
         <a href="tel:+919051454677">+91 9051454677</a>
         <a href="mailto:debjit9051454677@gmail.com">debjit9051454677@gmail.com</a>
       </div>
-      <div class="hero-cta-group">
+      <div class="hero-actions">
         <a
           href="https://drive.google.com/uc?export=download&amp;id=1qTdYLF2kCX2ypAVDBZVrm82FYcen8hA2"
           target="_blank"
           rel="noopener"
-          class="btn btn-primary-navy"
+          class="btn btn-amber"
         >
           Download CV (PDF)
         </a>
@@ -1402,74 +1632,84 @@
         >
           LinkedIn Profile
         </a>
-        <a href="mailto:debjit9051454677@gmail.com" class="btn btn-outline">
+        <a href="mailto:debjit9051454677@gmail.com" class="btn btn-glass">
           Contact Directly
         </a>
       </div>
     </div>
 
-    <!-- Right Side: Portrait in Subtle Geometric Badge + Quick-Glance Key Stats -->
-    <div class="hero-right" aria-label="Portrait and Key Operational Profile">
-      <div class="geometric-portrait-badge">
-        <img
-          src="https://drive.google.com/thumbnail?id=15QPETMTucqIkzrt_ISol45n195MqxejH&amp;sz=w1000"
-          onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/15QPETMTucqIkzrt_ISol45n195MqxejH';"
-          alt="Debjit Ghosh — Senior Production and Manufacturing Professional"
-          width="154"
-          height="176"
-        />
-      </div>
-      <div class="glance-stats-stack">
-        <div class="glance-stat-item">
-          <span class="glance-stat-label">Core Domain</span>
-          <span class="glance-stat-val">Tea Processing, Tea-Bag &amp; Multi-Format FMCG Lines</span>
+    <!-- Right Column: Executive Dossier Card with Geometric Portrait & Quick-Glance Stats -->
+    <aside class="hero-dossier" aria-label="Executive Profile Snapshot">
+      <div class="dossier-top">
+        <div class="portrait-frame">
+          <img
+            src="https://drive.google.com/thumbnail?id=15QPETMTucqIkzrt_ISol45n195MqxejH&amp;sz=w1000"
+            onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/15QPETMTucqIkzrt_ISol45n195MqxejH';"
+            alt="Debjit Ghosh — Senior Production and Manufacturing Professional"
+            width="112"
+            height="126"
+          />
         </div>
-        <div class="glance-stat-item amber">
-          <span class="glance-stat-label">Machinery Mastery</span>
-          <span class="glance-stat-val">IMA C28/C28E, EC15, Teepack Constanta &amp; FFS</span>
-        </div>
-        <div class="glance-stat-item">
-          <span class="glance-stat-label">Credentials &amp; Food Safety</span>
-          <span class="glance-stat-val">FSSAI FoSTaC Certified &bull; B.Com + ITI (Fitter)</span>
-        </div>
-        <div class="glance-stat-item amber">
-          <span class="glance-stat-label">Availability &amp; Scope</span>
-          <span class="glance-stat-val">Senior Production / Operations Lead Roles</span>
+        <div>
+          <span class="dossier-id-label">Candidate Dossier</span>
+          <div class="dossier-id-title">Production &amp; Shop-Floor Operations Leader</div>
+          <div class="dossier-id-sub">B.Com + ITI (Fitter) &bull; FSSAI FoSTaC Certified Food Safety Supervisor</div>
         </div>
       </div>
-    </div>
+
+      <div class="dossier-grid">
+        <div class="dossier-row">
+          <span class="dossier-row-k">Core Equipment &amp; Lines</span>
+          <span class="dossier-row-v">IMA C28/C28E, EC15, Teepack Constanta, FFS, Markem-Imaje CIJ</span>
+        </div>
+        <div class="dossier-row amber">
+          <span class="dossier-row-k">Process &amp; Format Scope</span>
+          <span class="dossier-row-v">Tea Cleaning, Blending, Tea Bags, Bulk Packing, Caddies &amp; Custom SKUs</span>
+        </div>
+        <div class="dossier-row">
+          <span class="dossier-row-k">Target Leadership Roles</span>
+          <span class="dossier-row-v">Senior Production Manager / Production &amp; QC / Packaging Operations</span>
+        </div>
+      </div>
+    </aside>
   </div>
 </header>
 
 <!-- Bold High-Contrast KPI Impact Bar -->
-<section class="kpi-impact-bar" id="achievements" aria-label="Documented Operational Impact">
-  <div class="kpi-impact-inner">
-    <div class="kpi-pillar">
-      <div class="kpi-pillar-top">
-        <span class="kpi-number">+18%</span>
-        <span class="kpi-label">Production Efficiency</span>
+<section class="kpi-bridge" id="achievements" aria-label="Documented Operational Impact">
+  <div class="kpi-bar">
+    <div class="kpi-cell">
+      <div>
+        <div class="kpi-metric-row">
+          <span class="kpi-val">+18%</span>
+          <span class="kpi-name">Production Efficiency</span>
+        </div>
       </div>
-      <div class="kpi-method">
+      <div class="kpi-context">
         <strong>Baseline &amp; Method:</strong> Tracked via shift machine logbooks and production MIS reports comparing actual line output against planned shift targets over a 12-month review cycle.
       </div>
     </div>
 
-    <div class="kpi-pillar emerald">
-      <div class="kpi-pillar-top">
-        <span class="kpi-number">-12%</span>
-        <span class="kpi-label">Wastage Reduction</span>
+    <div class="kpi-cell emerald">
+      <div>
+        <div class="kpi-metric-row">
+          <span class="kpi-val">-12%</span>
+          <span class="kpi-name">Wastage Reduction</span>
+        </div>
       </div>
-      <div class="kpi-method">
+      <div class="kpi-context">
         <strong>Baseline &amp; Method:</strong> Measured within a 1-year operational period by reconciling issued filter paper, envelopes, cartons, and laminates against finished-goods output.
       </div>
     </div>
 
-    <div class="kpi-pillar">
-      <div class="kpi-pillar-top">
-        <span class="kpi-number">80+</span>
-        <span class="kpi-label">Workforce Supervised</span>
+    <div class="kpi-cell navy">
+      <div>
+        <div class="kpi-metric-row">
+          <span class="kpi-val">80+</span>
+          <span class="kpi-name">Workforce Supervised</span>
+        </div>
       </div>
-      <div class="kpi-method">
+      <div class="kpi-context">
         <strong>Operational Scope:</strong> Direct multi-shift floor supervision of operators, technicians, and helpers—managing rosters, workstation allocation, safety, and daily output accountability.
       </div>
     </div>
@@ -1480,43 +1720,58 @@
 
   <!-- 1. Executive Summary -->
   <section class="section-block" id="summary">
-    <div class="section-header">
-      <h2>Executive Summary</h2>
-      <span class="section-subtitle">Shop-Floor Command &amp; Operational Discipline</span>
-    </div>
-    <div class="summary-card">
-      <p>
-        Senior Production &amp; Manufacturing Professional with <strong>10+ years of practical experience</strong> in tea manufacturing, tea processing, and FMCG food-packaging operations across domestic and export production lines. Experienced in end-to-end shop-floor execution—covering tea cleaning, tea blending, high-speed automated tea-bag packaging (IMA and Teepack lines), FFS packaging, bulk tea packing, metal/decorative caddies, and custom client orders.
-      </p>
-      <p>
-        Combines deep hands-on machinery troubleshooting and mechanical fundamentals (ITI Fitter + B.Com) with structured production planning and control (PPC), quality assurance coordination (GMP, HACCP, FSSAI, ISO audit support), preventive maintenance vendor follow-up, and continuous improvement (RCA, CAPA, 5S). Proven capability in directly supervising 80+ shop-floor personnel and aligning Quality, Maintenance, Planning, Procurement, and Warehouse teams to meet output, food-safety, and dispatch commitments.
-      </p>
-    </div>
-    <div class="role-fit-grid">
-      <div class="role-box">
-        <strong>Target Roles:</strong> Senior Production Manager &bull; Production Manager &bull; Manufacturing Manager &bull; Production &amp; QC Manager &bull; Packaging Operations Manager &bull; Production Excellence Manager (Tea Manufacturing, Food Processing &amp; FMCG).
+    <div class="section-head">
+      <div>
+        <span class="section-kicker">01 // Operational Profile</span>
+        <h2>Executive Summary</h2>
       </div>
-      <div class="mobility-box">
-        <strong>Location &amp; Availability</strong>
-        Based in Howrah / Kolkata, West Bengal. Open to leadership opportunities in West Bengal and across India; notice period and joining timeline available upon discussion.
+      <span class="section-note">Shop-Floor Mastery &amp; Production Governance</span>
+    </div>
+
+    <div class="summary-layout">
+      <div class="summary-prose-card">
+        <p>
+          Senior Production &amp; Manufacturing Professional with <strong>10+ years of practical experience</strong> in tea manufacturing, tea processing, and FMCG food-packaging operations across domestic and export production lines. Experienced in end-to-end shop-floor execution—covering tea cleaning, tea blending, high-speed automated tea-bag packaging (IMA and Teepack lines), FFS packaging, bulk tea packing, metal/decorative caddies, and custom client orders.
+        </p>
+        <p>
+          Combines deep hands-on machinery troubleshooting and mechanical fundamentals (ITI Fitter + B.Com) with structured production planning and control (PPC), quality assurance coordination (GMP, HACCP, FSSAI, ISO audit support), preventive maintenance vendor follow-up, and continuous improvement (RCA, CAPA, 5S). Proven capability in directly supervising 80+ shop-floor personnel and aligning Quality, Maintenance, Planning, Procurement, and Warehouse teams to meet output, food-safety, and dispatch commitments.
+        </p>
+      </div>
+
+      <div class="summary-sidebar">
+        <div class="side-panel">
+          <h3>Target Roles</h3>
+          <p>
+            Senior Production Manager &bull; Production Manager &bull; Manufacturing Manager &bull; Production &amp; QC Manager &bull; Packaging Operations Manager &bull; Production Excellence Manager (Tea Manufacturing, Food Processing &amp; FMCG).
+          </p>
+        </div>
+        <div class="side-panel amber">
+          <h3>Location &amp; Availability</h3>
+          <p>
+            Based in Howrah / Kolkata, West Bengal. Open to leadership opportunities in West Bengal and across India; notice period and joining timeline available upon discussion.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- 2. Experience & Vertical Progression Timeline -->
   <section class="section-block" id="experience">
-    <div class="section-header">
-      <h2>Experience &amp; Career Timeline</h2>
-      <span class="section-subtitle">2016 – Present &bull; Progressive Tea &amp; FMCG Manufacturing</span>
+    <div class="section-head">
+      <div>
+        <span class="section-kicker">02 // Career Progression</span>
+        <h2>Experience &amp; Operational Timeline</h2>
+      </div>
+      <span class="section-note">2016 – Present &bull; Tea &amp; FMCG Manufacturing</span>
     </div>
 
     <div class="timeline">
       <!-- Role 1: Premier Tea Limited -->
-      <article class="timeline-card">
-        <span class="timeline-node" aria-hidden="true"></span>
-        <div class="exp-header">
-          <div class="exp-brand">
-            <div class="company-badge">
+      <article class="exp-card">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div class="exp-top">
+          <div class="exp-identity">
+            <div class="logo-tile">
               <img
                 src="https://drive.google.com/thumbnail?id=1249WwDpLzX-IeovxGHMecdUEJLvwD7yC&amp;sz=w400"
                 onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1249WwDpLzX-IeovxGHMecdUEJLvwD7yC';"
@@ -1524,23 +1779,23 @@
                 loading="lazy"
               />
             </div>
-            <div class="exp-heading">
+            <div class="exp-role-info">
               <h3>Senior Production Manager – Production &amp; QC</h3>
-              <div class="exp-company-name">Premier Tea Limited | Kolkata, West Bengal</div>
+              <div class="exp-company">Premier Tea Limited | Kolkata, West Bengal</div>
             </div>
           </div>
-          <span class="exp-date-pill">May 2026 – Present</span>
+          <span class="date-badge">May 2026 – Present</span>
         </div>
 
-        <div class="wins-strip">
-          <span class="win-chip">Production MIS &amp; Live Tracking</span>
-          <span class="win-chip">Online OEE / Efficiency Monitoring</span>
-          <span class="win-chip amber">16 Work Orders &amp; Container Dispatches</span>
-          <span class="win-chip">PM Stock Inventory &amp; Vendor Control</span>
-          <span class="win-chip amber">Microwave Heat-Treatment Upgrade</span>
+        <div class="wins-ribbon">
+          <span class="win-pill">Production MIS &amp; Live Tracking</span>
+          <span class="win-pill">Online OEE / Efficiency Monitoring</span>
+          <span class="win-pill amber">16 Work Orders &amp; Container Dispatches</span>
+          <span class="win-pill">PM Stock Inventory &amp; Vendor Control</span>
+          <span class="win-pill amber">Microwave Heat-Treatment Upgrade</span>
         </div>
 
-        <ul class="clean-list">
+        <ul class="bullet-list">
           <li><strong>End-to-End Domestic &amp; Export Production:</strong> Manage daily shop-floor operations across tea cleaning systems, tea blending systems, automated tea-bag packaging lines, FFS lines, bulk tea packing, decorative caddies, and custom client orders to meet planned output, quality, and delivery schedules.</li>
           <li><strong>Production MIS &amp; Real-Time Tracking Systems:</strong> Introduced structured production MIS reporting and real-time production tracking to monitor shift-wise output, machine utilization, downtime reasons, and order status.</li>
           <li><strong>Online Efficiency Monitoring &amp; Process Improvement:</strong> Implemented active online efficiency monitoring on running lines to identify micro-stops early, tighten changeover discipline, and improve line throughput.</li>
@@ -1548,10 +1803,10 @@
           <li><strong>Quality &amp; Food Safety Enforcement:</strong> Maintained shop-floor adherence to GMP, HACCP, FSSAI, ISO, and workplace safety protocols through routine process checks and documentation.</li>
         </ul>
 
-        <details class="expandable-wins" open>
+        <details class="exp-accordion" open>
           <summary>Operational Wins, Technical Upgrades &amp; Cross-Functional Coordination</summary>
-          <div class="expandable-body">
-            <ul class="clean-list">
+          <div class="exp-accordion-content">
+            <ul class="bullet-list">
               <li><strong>Work Orders &amp; Container Dispatches:</strong> Coordinated production execution, quality clearance, and warehouse readiness across <strong>16 work orders</strong> and export container dispatches.</li>
               <li><strong>Microwave Heat-Treatment Upgrade Coordination:</strong> Coordinated technical execution and vendor follow-up supporting the plant's microwave heat-treatment system upgrade.</li>
               <li><strong>IMA Technical Knowledge Transfer:</strong> Conducted structured technical knowledge transfer on IMA tea-bag machinery operation, setup, and troubleshooting for shop-floor operators and technical staff.</li>
@@ -1563,11 +1818,11 @@
       </article>
 
       <!-- Role 2: Aditya Birla Global Trading India Pvt. Ltd. -->
-      <article class="timeline-card">
-        <span class="timeline-node" aria-hidden="true"></span>
-        <div class="exp-header">
-          <div class="exp-brand">
-            <div class="company-badge">
+      <article class="exp-card">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div class="exp-top">
+          <div class="exp-identity">
+            <div class="logo-tile">
               <img
                 src="https://drive.google.com/thumbnail?id=189QWHU_GXlBN71F5UN1hQ_iRNZjg_NdG&amp;sz=w400"
                 onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/189QWHU_GXlBN71F5UN1hQ_iRNZjg_NdG';"
@@ -1575,35 +1830,35 @@
                 loading="lazy"
               />
             </div>
-            <div class="exp-heading">
+            <div class="exp-role-info">
               <h3>Production Engineer – Operations</h3>
-              <div class="exp-company-name">Aditya Birla Global Trading India Pvt. Ltd.</div>
-              <div class="hr-disclosure">
+              <div class="exp-company">Aditya Birla Global Trading India Pvt. Ltd.</div>
+              <div class="hr-note-pill">
                 Official HR designation: Technician; functional responsibilities performed in production operations.
               </div>
             </div>
           </div>
-          <span class="exp-date-pill">January 2016 – April 2026</span>
+          <span class="date-badge">January 2016 – April 2026</span>
         </div>
 
-        <div class="wins-strip">
-          <span class="win-chip">10-Year Automated Line Execution</span>
-          <span class="win-chip">IMA C28 / EC15 &amp; Teepack Constanta</span>
-          <span class="win-chip amber">Preventive Maintenance &amp; AMC Follow-Up</span>
-          <span class="win-chip">Machine Logbooks &amp; Shift Supervision</span>
+        <div class="wins-ribbon">
+          <span class="win-pill">10-Year Automated Line Execution</span>
+          <span class="win-pill">IMA C28 / EC15 &amp; Teepack Constanta</span>
+          <span class="win-pill amber">Preventive Maintenance &amp; AMC Follow-Up</span>
+          <span class="win-pill">Machine Logbooks &amp; Shift Supervision</span>
         </div>
 
-        <ul class="clean-list">
+        <ul class="bullet-list">
           <li><strong>Tea-Bag Manufacturing &amp; Production Execution:</strong> Executed daily tea-bag manufacturing and packaging operations across multi-shift schedules, aligning machine output with production plans and delivery priorities.</li>
           <li><strong>Hands-On Machine Operation &amp; Troubleshooting:</strong> Operated and performed mechanical/operational troubleshooting on <strong>IMA C28, IMA EC15, Teepack Constanta, FFS packaging machines, CIJ coding systems, premix units, and plant compressors</strong>.</li>
           <li><strong>Manpower &amp; Shift Supervision:</strong> Supervised shop-floor operators and labour allocation across shifts while enforcing floor discipline, workplace safety, and uninterrupted process continuity.</li>
           <li><strong>Breakdown Monitoring &amp; Preventive Maintenance Coordination:</strong> Tracked machine breakdowns, maintained detailed <strong>machine logbooks and production reports</strong>, and coordinated preventive maintenance schedules, spare-parts requirements, and AMC vendor service visits.</li>
         </ul>
 
-        <details class="expandable-wins">
+        <details class="exp-accordion">
           <summary>Material Coordination, Quality Checks &amp; Floor Discipline Details</summary>
-          <div class="expandable-body">
-            <ul class="clean-list">
+          <div class="exp-accordion-content">
+            <ul class="bullet-list">
               <li><strong>Raw Material &amp; Packaging Material Coordination:</strong> Coordinated with stores, planning, and warehouse teams to verify tea blend and packaging material availability, supporting timely line feeding and dispatch readiness.</li>
               <li><strong>Quality Checks &amp; Process Improvement:</strong> Performed routine in-process quality checks, supported HACCP implementation and ISO audit documentation, and contributed to shop-floor process improvement initiatives.</li>
             </ul>
@@ -1615,59 +1870,62 @@
 
   <!-- 3. Categorized Machinery & Tech Grid -->
   <section class="section-block" id="machinery">
-    <div class="section-header">
-      <h2>Machinery &amp; Technical Exposure</h2>
-      <span class="section-subtitle">Categorized Equipment &amp; Shop-Floor Systems</span>
+    <div class="section-head">
+      <div>
+        <span class="section-kicker">03 // Equipment &amp; Plant Systems</span>
+        <h2>Machinery &amp; Technical Exposure</h2>
+      </div>
+      <span class="section-note">Categorized Shop-Floor Hardware &amp; Utilities</span>
     </div>
 
     <div class="machinery-grid">
       <!-- Card 1: Tea Packaging Lines -->
-      <div class="machine-card emerald-top">
+      <div class="tech-module">
         <div>
-          <span class="machine-card-tier">Hands-On Operation &amp; Troubleshooting</span>
+          <span class="module-tag">Hands-On Operation &amp; Troubleshooting</span>
           <h3>Tea Packaging Lines</h3>
           <p>
-            10+ years of direct shop-floor operation, changeover setup, mechanical adjustment, fault diagnosis, and technical knowledge transfer on high-speed automated tea-bag packaging lines.
+            10+ years of direct shop-floor operation, changeover setup, mechanical adjustment, fault diagnosis, and technical knowledge transfer on high-speed automated tea-bag lines.
           </p>
         </div>
-        <div class="tech-badge-list">
-          <span class="tech-badge highlight">IMA C28 / C28E</span>
-          <span class="tech-badge highlight">IMA EC15</span>
-          <span class="tech-badge highlight">Teepack Constanta</span>
+        <div class="badge-cluster">
+          <span class="machine-badge primary">IMA C28 / C28E</span>
+          <span class="machine-badge primary">IMA EC15</span>
+          <span class="machine-badge primary">Teepack Constanta</span>
         </div>
       </div>
 
-      <!-- Card 2: Pouch Packing / FFS & Multi-Format Lines -->
-      <div class="machine-card amber-top">
+      <!-- Card 2: Pouch Packing / FFS -->
+      <div class="tech-module amber">
         <div>
-          <span class="machine-card-tier amber">Production Execution &amp; Supervision</span>
-          <h3>Pouch Packing / FFS &amp; Tea Processing</h3>
+          <span class="module-tag">Production Execution &amp; Supervision</span>
+          <h3>Pouch Packing / FFS &amp; Processing</h3>
           <p>
-            End-to-end production execution across upstream tea preparation and downstream flexible pouch, bulk, and specialty container packing lines.
+            End-to-end production execution across upstream tea cleaning and blending systems as well as downstream flexible pouch, bulk, and decorative caddy packing.
           </p>
         </div>
-        <div class="tech-badge-list">
-          <span class="tech-badge highlight">FFS Packaging Systems</span>
-          <span class="tech-badge">Tea Cleaning &amp; Blending</span>
-          <span class="tech-badge">Bulk Tea &amp; Caddy Packing</span>
-          <span class="tech-badge">Conveyors &amp; Line Flow</span>
+        <div class="badge-cluster">
+          <span class="machine-badge primary">FFS Packaging Systems</span>
+          <span class="machine-badge">Tea Cleaning &amp; Blending</span>
+          <span class="machine-badge">Bulk Tea &amp; Caddy Packing</span>
+          <span class="machine-badge">Conveyors &amp; Line Flow</span>
         </div>
       </div>
 
       <!-- Card 3: Utilities & Coding -->
-      <div class="machine-card">
+      <div class="tech-module navy">
         <div>
-          <span class="machine-card-tier">Operation &amp; Maintenance Coordination</span>
-          <h3>Utilities &amp; Coding Systems</h3>
+          <span class="module-tag">Operation &amp; Maintenance Coordination</span>
+          <h3>Utilities &amp; Coding</h3>
           <p>
-            Batch coding accuracy, compressed-air utility monitoring, auxiliary unit synchronization, and preventive maintenance coordination supported by ITI (Fitter) mechanical training.
+            Batch coding accuracy, compressed-air utility monitoring, auxiliary equipment synchronization, and preventive maintenance coordination supported by ITI (Fitter) mechanical training.
           </p>
         </div>
-        <div class="tech-badge-list">
-          <span class="tech-badge highlight">Markem-Imaje / CIJ Coding</span>
-          <span class="tech-badge">Compressors &amp; Air Systems</span>
-          <span class="tech-badge">Premix Machines</span>
-          <span class="tech-badge">Microwave Heat-Treatment</span>
+        <div class="badge-cluster">
+          <span class="machine-badge primary">Markem-Imaje / CIJ Coding</span>
+          <span class="machine-badge">Compressors &amp; Air Systems</span>
+          <span class="machine-badge">Premix Machines</span>
+          <span class="machine-badge">Microwave Heat-Treatment</span>
         </div>
       </div>
     </div>
@@ -1675,95 +1933,102 @@
 
   <!-- 4. Core Competencies & Side-by-Side Visual Frameworks -->
   <section class="section-block" id="competencies">
-    <div class="section-header">
-      <h2>Core Competencies &amp; Visual Frameworks</h2>
-      <span class="section-subtitle">12 Operational Pillars &amp; Capability Models</span>
+    <div class="section-head">
+      <div>
+        <span class="section-kicker">04 // Operational Capabilities</span>
+        <h2>Core Competencies &amp; Visual Frameworks</h2>
+      </div>
+      <span class="section-note">12 Core Pillars &amp; Capability Architecture</span>
     </div>
 
     <div class="competencies-grid">
-      <div class="comp-card">
-        <span class="comp-index">01</span>
+      <div class="pillar-card">
+        <span class="pillar-code">PILLAR 01</span>
         <h3>Production Planning &amp; Execution</h3>
         <p>Translating domestic and export schedules into daily shift targets, line allocation, and on-time order fulfillment.</p>
       </div>
-      <div class="comp-card">
-        <span class="comp-index">02</span>
+      <div class="pillar-card">
+        <span class="pillar-code">PILLAR 02</span>
         <h3>Tea Processing, Blending &amp; Packaging</h3>
         <p>Managing cleaning, batch blending consistency, tea-bag lines, bulk packing, caddies, and custom SKUs.</p>
       </div>
-      <div class="comp-card">
-        <span class="comp-index">03</span>
+      <div class="pillar-card">
+        <span class="pillar-code">PILLAR 03</span>
         <h3>Automated Packaging Machinery</h3>
         <p>Hands-on operation, changeover control, and troubleshooting across IMA, Teepack, FFS, and coding systems.</p>
       </div>
-      <div class="comp-card">
-        <span class="comp-index">04</span>
+      <div class="pillar-card">
+        <span class="pillar-code">PILLAR 04</span>
         <h3>Quality Assurance &amp; Food Safety</h3>
         <p>Enforcing in-process quality checks, hygiene discipline, batch traceability, and audit-ready shop-floor records.</p>
       </div>
-      <div class="comp-card">
-        <span class="comp-index">05</span>
+      <div class="pillar-card">
+        <span class="pillar-code">PILLAR 05</span>
         <h3>Preventive Maintenance &amp; Breakdown Coordination</h3>
         <p>Minimizing unplanned downtime through PM schedules, spare-parts inventory tracking, and AMC vendor coordination.</p>
       </div>
-      <div class="comp-card">
-        <span class="comp-index">06</span>
+      <div class="pillar-card">
+        <span class="pillar-code">PILLAR 06</span>
         <h3>Manpower &amp; Shift Management</h3>
         <p>Direct supervision of 80+ shop-floor personnel, shift rostering, skill deployment, and workplace safety discipline.</p>
       </div>
-      <div class="comp-card">
-        <span class="comp-index">07</span>
+      <div class="pillar-card">
+        <span class="pillar-code">PILLAR 07</span>
         <h3>Root Cause Analysis &amp; CAPA</h3>
         <p>Investigating recurring machine stoppages and quality deviations to implement lasting corrective and preventive actions.</p>
       </div>
-      <div class="comp-card">
-        <span class="comp-index">08</span>
+      <div class="pillar-card">
+        <span class="pillar-code">PILLAR 08</span>
         <h3>Lean Manufacturing, 5S &amp; Continuous Improvement</h3>
         <p>Driving workplace organization, waste reduction (-12%), and line efficiency gains (+18%) on the shop floor.</p>
       </div>
-      <div class="comp-card">
-        <span class="comp-index">09</span>
+      <div class="pillar-card">
+        <span class="pillar-code">PILLAR 09</span>
         <h3>MIS, KPI &amp; Production Reporting</h3>
         <p>Maintaining accurate shift logbooks, online efficiency trackers, and management MIS dashboards.</p>
       </div>
-      <div class="comp-card">
-        <span class="comp-index">10</span>
+      <div class="pillar-card">
+        <span class="pillar-code">PILLAR 10</span>
         <h3>Inventory &amp; Material Coordination</h3>
         <p>Aligning raw tea, packaging BOMs, and preventive maintenance spares with stores and procurement teams.</p>
       </div>
-      <div class="comp-card">
-        <span class="comp-index">11</span>
+      <div class="pillar-card">
+        <span class="pillar-code">PILLAR 11</span>
         <h3>Dispatch &amp; Client Coordination</h3>
         <p>Coordinating finished-goods readiness, work-order completion, and export container dispatches to client specs.</p>
       </div>
-      <div class="comp-card">
-        <span class="comp-index">12</span>
+      <div class="pillar-card">
+        <span class="pillar-code">PILLAR 12</span>
         <h3>Cross-Functional Collaboration</h3>
         <p>Bridging Production, Quality, Maintenance, Planning, Procurement, and Warehouse for smooth plant flow.</p>
       </div>
     </div>
 
     <!-- Side-by-Side Skill Pyramid & Operational Visual -->
-    <div class="visual-showcase-grid">
-      <figure class="visual-box">
-        <img
-          src="https://drive.google.com/thumbnail?id=12goomvBMHSuE5hyteIBbQltBIPVgqm7K&amp;sz=w1200"
-          onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/12goomvBMHSuE5hyteIBbQltBIPVgqm7K';"
-          alt="Debjit Ghosh Pyramid of Skills — From Core Technical Mastery to Leadership"
-          loading="lazy"
-        />
+    <div class="visual-pair">
+      <figure class="visual-card">
+        <div class="visual-img-stage">
+          <img
+            src="https://drive.google.com/thumbnail?id=12goomvBMHSuE5hyteIBbQltBIPVgqm7K&amp;sz=w1200"
+            onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/12goomvBMHSuE5hyteIBbQltBIPVgqm7K';"
+            alt="Debjit Ghosh Pyramid of Skills — From Core Technical Mastery to Leadership"
+            loading="lazy"
+          />
+        </div>
         <figcaption>
           <strong>My Pyramid of Skills:</strong> Progression from foundational technical mastery on IMA and Teepack lines up through quality compliance, planning, continuous improvement, and shop-floor team supervision.
         </figcaption>
       </figure>
 
-      <figure class="visual-box">
-        <img
-          src="https://drive.google.com/thumbnail?id=1BehgT0BbjXca4OOV_4m9MLJ9BWCFvoyp&amp;sz=w1200"
-          onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1BehgT0BbjXca4OOV_4m9MLJ9BWCFvoyp';"
-          alt="Debjit Ghosh Production and Manufacturing Operations Visual Overview"
-          loading="lazy"
-        />
+      <figure class="visual-card">
+        <div class="visual-img-stage">
+          <img
+            src="https://drive.google.com/thumbnail?id=1BehgT0BbjXca4OOV_4m9MLJ9BWCFvoyp&amp;sz=w1200"
+            onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1BehgT0BbjXca4OOV_4m9MLJ9BWCFvoyp';"
+            alt="Debjit Ghosh Production and Manufacturing Operations Visual Overview"
+            loading="lazy"
+          />
+        </div>
         <figcaption>
           <strong>Operational Excellence &amp; Manufacturing Execution:</strong> End-to-end shop-floor discipline, machine utilization, quality compliance, and cross-functional coordination.
         </figcaption>
@@ -1773,32 +2038,35 @@
 
   <!-- 5. Quality, Food Safety & Compliance Systems -->
   <section class="section-block" id="compliance">
-    <div class="section-header">
-      <h2>Quality, Food Safety &amp; Compliance Systems</h2>
-      <span class="section-subtitle">Distinguishing Formal Certification, Practical Execution &amp; System Exposure</span>
+    <div class="section-head">
+      <div>
+        <span class="section-kicker">05 // Governance &amp; Standards</span>
+        <h2>Quality, Food Safety &amp; Compliance Systems</h2>
+      </div>
+      <span class="section-note">Formal Certification, Floor Execution &amp; System Exposure</span>
     </div>
 
     <div class="compliance-grid">
-      <div class="compliance-card">
+      <div class="compliance-box">
         <h3>Formal Certification</h3>
-        <ul class="clean-list">
+        <ul class="bullet-list">
           <li><strong>FSSAI FoSTaC Certified Food Safety Supervisor (Advance Manufacturing):</strong> Formally certified via offline training at Smart Management Consultancy (SMC Training Centre), Kolkata (Issued: 20 July 2026; Valid through 20 July 2028).</li>
           <li>Applies statutory food-safety, hygiene, and critical-control-point principles directly to tea processing and packaging lines.</li>
         </ul>
       </div>
 
-      <div class="compliance-card">
+      <div class="compliance-box">
         <h3>Practical Shop-Floor Execution</h3>
-        <ul class="clean-list">
+        <ul class="bullet-list">
           <li><strong>GMP &amp; Plant Hygiene:</strong> Enforcing personal hygiene, line clearance, foreign-matter control, and clean-room discipline across tea cleaning, blending, and packing zones.</li>
           <li><strong>HACCP &amp; ISO Audit Support:</strong> Executing HACCP critical control monitoring, maintaining batch traceability logs, and supporting internal/external ISO audit readiness.</li>
           <li><strong>In-Process Inspection &amp; QC:</strong> Conducting weight checks, seal-integrity verification, coding accuracy checks, and corrective action follow-up.</li>
         </ul>
       </div>
 
-      <div class="compliance-card">
+      <div class="compliance-box">
         <h3>Operational Systems &amp; ERP Exposure</h3>
-        <ul class="clean-list">
+        <ul class="bullet-list">
           <li><strong>SAP Exposure:</strong> Practical working exposure to SAP for production tracking, material availability checks, and inventory coordination alongside warehouse and planning teams.</li>
           <li><strong>Documentation &amp; Traceability:</strong> Governing shift machine logbooks, batch blending records, preventive maintenance logs, and MIS reporting.</li>
         </ul>
@@ -1808,48 +2076,51 @@
 
   <!-- 6. Education & Verified Credentials -->
   <section class="section-block" id="education">
-    <div class="section-header">
-      <h2>Education &amp; Verified Credentials</h2>
-      <span class="section-subtitle">Academic, Technical &amp; Computer Qualifications</span>
+    <div class="section-head">
+      <div>
+        <span class="section-kicker">06 // Academic &amp; Technical Foundation</span>
+        <h2>Education &amp; Verified Credentials</h2>
+      </div>
+      <span class="section-note">Verified Degrees, Technical Trade &amp; Certificates</span>
     </div>
 
     <div class="edu-grid">
-      <div class="edu-card">
+      <div class="edu-box">
         <h3>Academic &amp; Technical Education</h3>
-        <ul class="credential-list">
+        <ul class="cred-list">
           <li>
             <strong>Bachelor of Commerce (B.Com)</strong>
-            <span class="credential-meta">University of Calcutta &bull; 2013</span>
+            <span class="cred-sub">University of Calcutta &bull; 2013</span>
           </li>
           <li>
             <strong>ITI (Fitter) – NCVT</strong>
-            <span class="credential-meta">Don Bosco Technical School &bull; 2015</span>
+            <span class="cred-sub">Don Bosco Technical School &bull; 2015</span>
           </li>
           <li>
             <strong>Higher Secondary (ISC) &amp; Secondary (ICSE)</strong>
-            <span class="credential-meta">Little Star High School &bull; ISC (2009) &amp; ICSE (2007)</span>
+            <span class="cred-sub">Little Star High School &bull; ISC (2009) &amp; ICSE (2007)</span>
           </li>
         </ul>
       </div>
 
-      <div class="edu-card">
+      <div class="edu-box">
         <h3>Verified Certifications &amp; Languages</h3>
-        <ul class="credential-list">
+        <ul class="cred-list">
           <li>
             <strong>FoSTaC Certified – Food Safety Supervisor (Advance Manufacturing)</strong>
-            <span class="credential-meta">FSSAI / Smart Management Consultancy &bull; Issued July 2026</span>
+            <span class="cred-sub">FSSAI / Smart Management Consultancy &bull; Issued July 2026</span>
           </li>
           <li>
             <strong>Computer Software Engineering / Computer Engineering Certification</strong>
-            <span class="credential-meta">Ramakrishna Mission Shilpa Mandira Computer Centre &bull; 2009</span>
+            <span class="cred-sub">Ramakrishna Mission Shilpa Mandira Computer Centre &bull; 2009</span>
           </li>
           <li>
             <strong>Microsoft Office Specialist</strong>
-            <span class="credential-meta">Ramakrishna Mission Shilpa Mandira Computer Centre &bull; 2008</span>
+            <span class="cred-sub">Ramakrishna Mission Shilpa Mandira Computer Centre &bull; 2008</span>
           </li>
           <li>
             <strong>SAP Exposure</strong>
-            <span class="credential-meta">Operational exposure in production &amp; inventory coordination</span>
+            <span class="cred-sub">Operational exposure in production &amp; inventory coordination</span>
           </li>
           <li>
             <strong>Languages:</strong> Bengali (Native) &bull; English (Fluent) &bull; Hindi (Working Proficiency)
@@ -1861,22 +2132,25 @@
 
   <!-- 7. Video Introductions -->
   <section class="section-block" id="videos">
-    <div class="section-header">
-      <h2>Video Introductions</h2>
-      <span class="section-subtitle">Direct Overview of Background &amp; Shop-Floor Experience</span>
+    <div class="section-head">
+      <div>
+        <span class="section-kicker">07 // Executive Media</span>
+        <h2>Video Introductions</h2>
+      </div>
+      <span class="section-note">Direct Walkthrough of Experience &amp; Technical Background</span>
     </div>
 
     <div class="video-grid">
-      <div class="video-card">
+      <div class="video-box">
         <iframe
-          class="video-embed"
+          class="video-frame"
           src="https://drive.google.com/file/d/1E_3fgPM4nLEnlSGK9CNycpYpjhQyMoB2/preview"
           allow="autoplay; fullscreen"
           allowfullscreen
           loading="lazy"
           title="Debjit Ghosh — Executive Introduction Video"
         ></iframe>
-        <div class="video-body">
+        <div class="video-caption">
           <div>
             <h3>Executive Introduction</h3>
             <p>Brief introduction covering 10+ years in tea-bag and FMCG manufacturing, production planning, preventive maintenance coordination, and GMP/FSSAI compliance.</p>
@@ -1885,23 +2159,23 @@
             href="https://drive.google.com/file/d/1E_3fgPM4nLEnlSGK9CNycpYpjhQyMoB2/view"
             target="_blank"
             rel="noopener"
-            class="direct-link"
+            class="drive-link"
           >
             Open video directly in Google Drive
           </a>
         </div>
       </div>
 
-      <div class="video-card">
+      <div class="video-box">
         <iframe
-          class="video-embed"
+          class="video-frame"
           src="https://drive.google.com/file/d/1fuCK3D9vri3yvFVf8cMSuOKabIA6S4ES/preview"
           allow="autoplay; fullscreen"
           allowfullscreen
           loading="lazy"
           title="Debjit Ghosh — Career Overview and Technical Background Video"
         ></iframe>
-        <div class="video-body">
+        <div class="video-caption">
           <div>
             <h3>Career &amp; Technical Background Walkthrough</h3>
             <p>Overview of B.Com + ITI (Fitter) foundation, hands-on IMA and Teepack machine troubleshooting, RCA/CAPA discipline, and shop-floor leadership.</p>
@@ -1910,7 +2184,7 @@
             href="https://drive.google.com/file/d/1fuCK3D9vri3yvFVf8cMSuOKabIA6S4ES/view"
             target="_blank"
             rel="noopener"
-            class="direct-link"
+            class="drive-link"
           >
             Open video directly in Google Drive
           </a>
@@ -1919,21 +2193,21 @@
     </div>
   </section>
 
-  <!-- 8. Direct Contact & CV Download -->
+  <!-- 8. Executive Contact Callout -->
   <section class="section-block" id="contact" aria-label="Contact and CV Download">
-    <div class="contact-panel">
+    <div class="cta-banner">
       <div>
         <h3>Connect for Production &amp; Manufacturing Leadership Roles</h3>
         <p>
           Available for Senior Production Manager, Production Manager, Manufacturing Manager, and Production &amp; QC leadership discussions in tea manufacturing, food processing, and FMCG operations.
         </p>
       </div>
-      <div class="contact-links">
+      <div class="cta-buttons">
         <a
           href="https://drive.google.com/uc?export=download&amp;id=1qTdYLF2kCX2ypAVDBZVrm82FYcen8hA2"
           target="_blank"
           rel="noopener"
-          class="btn btn-amber-solid"
+          class="btn btn-amber"
         >
           Download CV (PDF)
         </a>
@@ -1941,18 +2215,18 @@
           href="https://drive.google.com/file/d/1qTdYLF2kCX2ypAVDBZVrm82FYcen8hA2/view"
           target="_blank"
           rel="noopener"
-          class="btn btn-ghost-light"
+          class="btn btn-glass"
         >
           View CV Online
         </a>
-        <a href="mailto:debjit9051454677@gmail.com" class="btn btn-ghost-light">
+        <a href="mailto:debjit9051454677@gmail.com" class="btn btn-glass">
           debjit9051454677@gmail.com
         </a>
         <a
           href="https://www.linkedin.com/in/debjit-ghosh-038348166"
           target="_blank"
           rel="noopener"
-          class="btn btn-ghost-light"
+          class="btn btn-emerald"
         >
           LinkedIn
         </a>
@@ -1990,9 +2264,9 @@
       });
     }
 
-    var sections = document.querySelectorAll("main section[id], section.kpi-impact-bar[id]");
+    var sections = document.querySelectorAll("main section[id], section.kpi-bridge[id]");
     window.addEventListener("scroll", function () {
-      var scrollPos = window.scrollY + 120;
+      var scrollPos = window.scrollY + 130;
       for (var j = 0; j < sections.length; j++) {
         var sec = sections[j];
         var top = sec.offsetTop;

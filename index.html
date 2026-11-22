@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -85,7 +85,7 @@
 
   <style>
     :root {
-      /* Light Mode (Default Precision Harvest Palette) */
+      /* Light Mode (Precision Harvest Palette) */
       --charcoal: #12212c;
       --navy: #162a38;
       --forest: #1b4332;
@@ -113,7 +113,7 @@
       --radius: 8px;
     }
 
-    /* Dark Mode Overrides */
+    /* Dark Mode Default Palette */
     html[data-theme="dark"] {
       --bg: #0c141b;
       --surface-warm: #1a2834;
@@ -172,7 +172,8 @@
     }
 
     a:focus-visible,
-    button:focus-visible {
+    button:focus-visible,
+    summary:focus-visible {
       outline: 2.5px solid var(--amber-light);
       outline-offset: 2px;
     }
@@ -562,9 +563,9 @@
       padding-bottom: 0.55rem;
       display: flex;
       flex-wrap: wrap;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
-      gap: 0.5rem;
+      gap: 0.75rem;
       position: relative;
     }
 
@@ -576,6 +577,13 @@
       width: 68px;
       height: 2px;
       background: var(--amber);
+    }
+
+    .section-title-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.4rem 1rem;
     }
 
     .section-header h2 {
@@ -590,6 +598,101 @@
       font-size: 0.85rem;
       color: var(--muted);
       font-weight: 500;
+    }
+
+    /* Global & Section Expand / Collapse Controls */
+    .section-controls {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .ctrl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--surface-warm);
+      color: var(--heading-color);
+      border: 1px solid var(--pill-border);
+      padding: 0.32rem 0.72rem;
+      border-radius: 5px;
+      font-size: 0.77rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .ctrl-btn:hover {
+      background: var(--forest-soft);
+      border-color: var(--forest-border);
+      color: var(--accent-label);
+    }
+
+    /* Collapsible Section Body */
+    .section-collapsible {
+      transition: opacity 0.2s ease;
+    }
+
+    .section-collapsible.is-collapsed {
+      display: none;
+    }
+
+    /* Expandable Details Card (<details>) */
+    .detail-drawer {
+      margin-top: 1.05rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface-warm);
+      overflow: hidden;
+    }
+
+    .detail-drawer summary {
+      padding: 0.72rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--heading-color);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      user-select: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .detail-drawer summary:hover {
+      background: var(--forest-soft);
+    }
+
+    .detail-drawer summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .drawer-indicator {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--badge-amber-text);
+      background: var(--amber-tint);
+      border: 1px solid var(--amber-border);
+      padding: 0.18rem 0.58rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .detail-drawer[open] .drawer-indicator::before {
+      content: "− Collapse";
+    }
+
+    .detail-drawer:not([open]) .drawer-indicator::before {
+      content: "+ Expand";
+    }
+
+    .drawer-body {
+      padding: 0.9rem 1.1rem 1rem;
+      background: var(--white);
+      border-top: 1px solid var(--border);
     }
 
     /* Profile Summary & Target Opportunities */
@@ -688,26 +791,13 @@
     .achievement-desc {
       font-size: 0.89rem;
       color: var(--slate);
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.75rem;
     }
 
     .achievement-basis {
-      background: var(--amber-tint);
-      border: 1px solid var(--amber-border);
-      border-radius: 6px;
-      padding: 0.65rem 0.8rem;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--slate);
-      line-height: 1.45;
-    }
-
-    .achievement-basis strong {
-      color: var(--heading-color);
-      display: block;
-      margin-bottom: 0.15rem;
-      font-size: 0.77rem;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
+      line-height: 1.5;
     }
 
     /* Career Timeline */
@@ -833,11 +923,7 @@
       text-transform: uppercase;
       letter-spacing: 0.45px;
       color: var(--accent-label);
-      margin: 1rem 0 0.5rem;
-    }
-
-    .exp-group-label:first-of-type {
-      margin-top: 0;
+      margin: 0 0 0.55rem;
     }
 
     .clean-list {
@@ -968,11 +1054,11 @@
 
     /* Visual Skills Pyramid */
     .visual-framework {
-      margin-top: 1.5rem;
+      margin-top: 1.25rem;
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1.5rem;
+      padding: 1.25rem 1.5rem 1.5rem;
       text-align: center;
       box-shadow: var(--shadow-sm);
       transition: background-color 0.25s ease, border-color 0.25s ease;
@@ -1197,8 +1283,12 @@
       .contact-panel,
       .skip-link,
       .hero-motif,
+      .section-controls,
       #videos {
         display: none !important;
+      }
+      .section-collapsible.is-collapsed {
+        display: block !important;
       }
       body {
         background: #ffffff !important;
@@ -1348,11 +1438,11 @@
         type="button"
         class="theme-toggle-btn"
         id="themeToggle"
-        aria-pressed="false"
+        aria-pressed="true"
         aria-label="Toggle dark and light theme"
       >
         <span class="toggle-track" aria-hidden="true"><span class="toggle-thumb"></span></span>
-        <span id="themeToggleText">Dark Mode</span>
+        <span id="themeToggleText">Light Mode</span>
       </button>
 
       <button
@@ -1452,27 +1542,43 @@
 
 <main id="main-content">
 
+  <!-- Global Expand / Collapse All Toolbar -->
+  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 1.75rem; padding: 0.75rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm);">
+    <span style="font-size: 0.84rem; font-weight: 600; color: var(--muted);">Section &amp; Detail Controls</span>
+    <div class="section-controls">
+      <button type="button" class="ctrl-btn" id="expandAllBtn">+ Expand All Details</button>
+      <button type="button" class="ctrl-btn" id="collapseAllBtn">&minus; Collapse All Details</button>
+    </div>
+  </div>
+
   <!-- 1. Professional Summary -->
   <section class="section-block" id="summary">
     <div class="section-header">
-      <h2>Professional Summary</h2>
-      <span class="section-subtitle">Shop-Floor Mastery &amp; Production Management Capability</span>
-    </div>
-    <div class="summary-card">
-      <p>
-        Senior Production &amp; Manufacturing Professional with <strong>10+ years of practical experience</strong> in tea manufacturing, tea processing, and FMCG food-packaging operations across domestic and export production lines. Experienced in end-to-end shop-floor execution—covering tea cleaning, tea blending, high-speed automated tea-bag packaging (IMA and Teepack lines), FFS packaging, bulk tea packing, metal/decorative caddies, and custom client orders.
-      </p>
-      <p>
-        Combines deep hands-on machinery troubleshooting and mechanical fundamentals (ITI Fitter + B.Com) with structured production planning and control (PPC), quality assurance coordination (GMP, HACCP, FSSAI, ISO audit support), preventive maintenance vendor follow-up, and continuous improvement (RCA, CAPA, 5S). Proven capability in directly supervising 80+ shop-floor personnel and aligning Quality, Maintenance, Planning, Procurement, and Warehouse teams to meet output, food-safety, and dispatch commitments.
-      </p>
-    </div>
-    <div class="recruiter-fit-grid">
-      <div class="role-alignment-bar">
-        <strong>Target Roles:</strong> Senior Production Manager &bull; Production Manager &bull; Manufacturing Manager &bull; Production &amp; QC Manager &bull; Packaging Operations Manager &bull; Production Excellence Manager (Tea Manufacturing, Food Processing &amp; FMCG).
+      <div class="section-title-group">
+        <h2>Professional Summary</h2>
+        <span class="section-subtitle">Shop-Floor Mastery &amp; Production Management Capability</span>
       </div>
-      <div class="availability-box">
-        <strong>Availability &amp; Location</strong>
-        Based in Howrah / Kolkata, West Bengal. Open to leadership opportunities in West Bengal and across India; notice period and joining timeline available upon discussion.
+      <div class="section-controls">
+        <button type="button" class="ctrl-btn section-toggle-btn" data-target="summaryBody" aria-expanded="true">&minus; Collapse Section</button>
+      </div>
+    </div>
+    <div class="section-collapsible" id="summaryBody">
+      <div class="summary-card">
+        <p>
+          Senior Production &amp; Manufacturing Professional with <strong>10+ years of practical experience</strong> in tea manufacturing, tea processing, and FMCG food-packaging operations across domestic and export production lines. Experienced in end-to-end shop-floor execution—covering tea cleaning, tea blending, high-speed automated tea-bag packaging (IMA and Teepack lines), FFS packaging, bulk tea packing, metal/decorative caddies, and custom client orders.
+        </p>
+        <p>
+          Combines deep hands-on machinery troubleshooting and mechanical fundamentals (ITI Fitter + B.Com) with structured production planning and control (PPC), quality assurance coordination (GMP, HACCP, FSSAI, ISO audit support), preventive maintenance vendor follow-up, and continuous improvement (RCA, CAPA, 5S). Proven capability in directly supervising 80+ shop-floor personnel and aligning Quality, Maintenance, Planning, Procurement, and Warehouse teams to meet output, food-safety, and dispatch commitments.
+        </p>
+      </div>
+      <div class="recruiter-fit-grid">
+        <div class="role-alignment-bar">
+          <strong>Target Roles:</strong> Senior Production Manager &bull; Production Manager &bull; Manufacturing Manager &bull; Production &amp; QC Manager &bull; Packaging Operations Manager &bull; Production Excellence Manager (Tea Manufacturing, Food Processing &amp; FMCG).
+        </div>
+        <div class="availability-box">
+          <strong>Availability &amp; Location</strong>
+          Based in Howrah / Kolkata, West Bengal. Open to leadership opportunities in West Bengal and across India; notice period and joining timeline available upon discussion.
+        </div>
       </div>
     </div>
   </section>
@@ -1480,211 +1586,271 @@
   <!-- 2. Documented Operational Achievements -->
   <section class="section-block" id="achievements">
     <div class="section-header">
-      <h2>Documented Operational Achievements</h2>
-      <span class="section-subtitle">Verified Shop-Floor Metrics &amp; Measurement Context</span>
+      <div class="section-title-group">
+        <h2>Documented Operational Achievements</h2>
+        <span class="section-subtitle">Verified Shop-Floor Metrics &amp; Measurement Context</span>
+      </div>
+      <div class="section-controls">
+        <button type="button" class="ctrl-btn section-toggle-btn" data-target="achievementsBody" aria-expanded="true">&minus; Collapse Section</button>
+      </div>
     </div>
-    <div class="achievements-grid">
-      <article class="achievement-card">
-        <div>
-          <div class="achievement-metric">+18%</div>
-          <h3 class="achievement-title">Production Efficiency Improvement</h3>
-          <p class="achievement-desc">
-            Improved line output and machine utilization through structured shift alignment, line balancing, bottleneck reduction, and disciplined operator deployment.
-          </p>
-        </div>
-        <div class="achievement-basis">
-          <strong>Measurement Context</strong>
-          Tracked via shift-wise machine logbooks and production MIS reports comparing actual line output against planned standard shift targets over a 12-month operational review cycle.
-        </div>
-      </article>
+    <div class="section-collapsible" id="achievementsBody">
+      <div class="achievements-grid">
+        <article class="achievement-card">
+          <div>
+            <div class="achievement-metric">+18%</div>
+            <h3 class="achievement-title">Production Efficiency Improvement</h3>
+            <p class="achievement-desc">
+              Improved line output and machine utilization through structured shift alignment, line balancing, bottleneck reduction, and disciplined operator deployment.
+            </p>
+          </div>
+          <details class="detail-drawer" open>
+            <summary>
+              <span>Measurement Baseline &amp; Method</span>
+              <span class="drawer-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="drawer-body">
+              <p class="achievement-basis">
+                Tracked via shift-wise machine logbooks and production MIS reports comparing actual line output against planned standard shift targets over a 12-month operational review cycle.
+              </p>
+            </div>
+          </details>
+        </article>
 
-      <article class="achievement-card">
-        <div>
-          <div class="achievement-metric">-12%</div>
-          <h3 class="achievement-title">Material Wastage Reduction</h3>
-          <p class="achievement-desc">
-            Reduced packaging material scrap and rework through tighter machine setup discipline, seal-integrity monitoring, changeover control, and root-cause corrective actions.
-          </p>
-        </div>
-        <div class="achievement-basis">
-          <strong>Measurement Context</strong>
-          Measured within a 1-year operational period by reconciling issued filter paper, envelopes, cartons, and laminates against finished-goods output in routine production and material tracking records.
-        </div>
-      </article>
+        <article class="achievement-card">
+          <div>
+            <div class="achievement-metric">-12%</div>
+            <h3 class="achievement-title">Material Wastage Reduction</h3>
+            <p class="achievement-desc">
+              Reduced packaging material scrap and rework through tighter machine setup discipline, seal-integrity monitoring, changeover control, and root-cause corrective actions.
+            </p>
+          </div>
+          <details class="detail-drawer" open>
+            <summary>
+              <span>Measurement Baseline &amp; Method</span>
+              <span class="drawer-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="drawer-body">
+              <p class="achievement-basis">
+                Measured within a 1-year operational period by reconciling issued filter paper, envelopes, cartons, and laminates against finished-goods output in routine production and material tracking records.
+              </p>
+            </div>
+          </details>
+        </article>
 
-      <article class="achievement-card">
-        <div>
-          <div class="achievement-metric">80+ Personnel</div>
-          <h3 class="achievement-title">Direct Workforce Supervision</h3>
-          <p class="achievement-desc">
-            Directly supervised multi-shift shop-floor operators, technicians, and line helpers—managing shift rosters, workstation allocation, safety discipline, and daily output accountability.
-          </p>
-        </div>
-        <div class="achievement-basis">
-          <strong>Operational Scope</strong>
-          Direct day-to-day floor supervision across automated packaging and packing lines, ensuring attendance alignment, GMP hygiene adherence, and skill deployment.
-        </div>
-      </article>
+        <article class="achievement-card">
+          <div>
+            <div class="achievement-metric">80+ Personnel</div>
+            <h3 class="achievement-title">Direct Workforce Supervision</h3>
+            <p class="achievement-desc">
+              Directly supervised multi-shift shop-floor operators, technicians, and line helpers—managing shift rosters, workstation allocation, safety discipline, and daily output accountability.
+            </p>
+          </div>
+          <details class="detail-drawer" open>
+            <summary>
+              <span>Operational Scope &amp; Governance</span>
+              <span class="drawer-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="drawer-body">
+              <p class="achievement-basis">
+                Direct day-to-day floor supervision across automated packaging and packing lines, ensuring attendance alignment, GMP hygiene adherence, and skill deployment.
+              </p>
+            </div>
+          </details>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- 3. Career Timeline & Experience -->
   <section class="section-block" id="experience">
     <div class="section-header">
-      <h2>Career Timeline &amp; Experience</h2>
-      <span class="section-subtitle">2016 – Present &bull; Progressive Tea &amp; FMCG Operations</span>
+      <div class="section-title-group">
+        <h2>Career Timeline &amp; Experience</h2>
+        <span class="section-subtitle">2016 – Present &bull; Progressive Tea &amp; FMCG Operations</span>
+      </div>
+      <div class="section-controls">
+        <button type="button" class="ctrl-btn section-toggle-btn" data-target="experienceBody" aria-expanded="true">&minus; Collapse Section</button>
+      </div>
     </div>
 
-    <div class="timeline">
-      <!-- Role 1: Premier Tea Limited -->
-      <article class="timeline-item">
-        <span class="timeline-marker" aria-hidden="true"></span>
-        <div class="exp-top">
-          <div class="exp-identity">
-            <div class="company-logo-box">
-              <img
-                src="https://drive.google.com/thumbnail?id=1249WwDpLzX-IeovxGHMecdUEJLvwD7yC&amp;sz=w400"
-                onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1249WwDpLzX-IeovxGHMecdUEJLvwD7yC';"
-                alt="Premier Tea Limited Logo"
-                loading="lazy"
-              />
-            </div>
-            <div class="exp-title-group">
-              <h3>Senior Production Manager – Production &amp; QC</h3>
-              <div class="exp-company">Premier Tea Limited | Kolkata, West Bengal</div>
-            </div>
-          </div>
-          <span class="exp-period">May 2026 – Present</span>
-        </div>
-
-        <div class="exp-group-label">Direct Production Ownership &amp; Systems Implemented</div>
-        <ul class="clean-list">
-          <li><strong>End-to-End Domestic &amp; Export Production:</strong> Manage daily shop-floor operations across tea cleaning systems, tea blending systems, automated tea-bag packaging lines, FFS lines, bulk tea packing, decorative caddies, and custom client orders to meet planned output, quality, and delivery schedules.</li>
-          <li><strong>Production MIS &amp; Real-Time Tracking Systems:</strong> Introduced structured production MIS reporting and real-time production tracking to monitor shift-wise output, machine utilization, downtime reasons, and order status.</li>
-          <li><strong>Online Efficiency Monitoring &amp; Process Improvement:</strong> Implemented active online efficiency monitoring on running lines to identify micro-stops early, tighten changeover discipline, and improve line throughput.</li>
-          <li><strong>Preventive Maintenance Stock Inventory &amp; Vendor Coordination:</strong> Established preventive maintenance (PM) spare-parts stock inventory tracking and coordinated directly with external PM and service vendors to reduce breakdown delays.</li>
-          <li><strong>Production, Machinery &amp; Ancillary Equipment Troubleshooting:</strong> Led hands-on troubleshooting on primary packaging lines and coordinated ancillary machine production to keep downstream packing synchronized.</li>
-          <li><strong>Quality &amp; Food Safety Enforcement:</strong> Maintained shop-floor adherence to GMP, HACCP, FSSAI, ISO, and workplace safety protocols through routine process checks and documentation.</li>
-        </ul>
-
-        <div class="exp-group-label">Cross-Functional Coordination, Technical Upgrade &amp; Team Contributions</div>
-        <ul class="clean-list">
-          <li><strong>Work Orders &amp; Container Dispatches:</strong> Coordinated production execution, quality clearance, and warehouse readiness across <strong>16 work orders</strong> and export container dispatches.</li>
-          <li><strong>Microwave Heat-Treatment Upgrade Coordination:</strong> Coordinated technical execution and vendor follow-up supporting the plant's microwave heat-treatment system upgrade.</li>
-          <li><strong>IMA Technical Knowledge Transfer:</strong> Conducted structured technical knowledge transfer on IMA tea-bag machinery operation, setup, and troubleshooting for shop-floor operators and technical staff.</li>
-          <li><strong>Client Coordination &amp; Business Opportunity Support:</strong> Managed client specification alignment across Quality, Planning, Procurement, and Warehouse teams, and contributed technical and production feasibility inputs supporting <strong>four new business opportunities</strong>.</li>
-        </ul>
-      </article>
-
-      <!-- Role 2: Aditya Birla Global Trading India Pvt. Ltd. -->
-      <article class="timeline-item">
-        <span class="timeline-marker" aria-hidden="true"></span>
-        <div class="exp-top">
-          <div class="exp-identity">
-            <div class="company-logo-box">
-              <img
-                src="https://drive.google.com/thumbnail?id=189QWHU_GXlBN71F5UN1hQ_iRNZjg_NdG&amp;sz=w400"
-                onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/189QWHU_GXlBN71F5UN1hQ_iRNZjg_NdG';"
-                alt="Aditya Birla Global Trading India Pvt. Ltd. Logo"
-                loading="lazy"
-              />
-            </div>
-            <div class="exp-title-group">
-              <h3>Production Engineer – Operations</h3>
-              <div class="exp-company">Aditya Birla Global Trading India Pvt. Ltd.</div>
-              <div class="designation-note">
-                Official HR designation: Technician; functional responsibilities performed in production operations across a 10-year progressive tenure.
+    <div class="section-collapsible" id="experienceBody">
+      <div class="timeline">
+        <!-- Role 1: Premier Tea Limited -->
+        <article class="timeline-item">
+          <span class="timeline-marker" aria-hidden="true"></span>
+          <div class="exp-top">
+            <div class="exp-identity">
+              <div class="company-logo-box">
+                <img
+                  src="https://drive.google.com/thumbnail?id=1249WwDpLzX-IeovxGHMecdUEJLvwD7yC&amp;sz=w400"
+                  onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1249WwDpLzX-IeovxGHMecdUEJLvwD7yC';"
+                  alt="Premier Tea Limited Logo"
+                  loading="lazy"
+                />
+              </div>
+              <div class="exp-title-group">
+                <h3>Senior Production Manager – Production &amp; QC</h3>
+                <div class="exp-company">Premier Tea Limited | Kolkata, West Bengal</div>
               </div>
             </div>
+            <span class="exp-period">May 2026 – Present</span>
           </div>
-          <span class="exp-period">January 2016 – April 2026</span>
-        </div>
 
-        <ul class="clean-list">
-          <li><strong>Tea-Bag Manufacturing &amp; Production Execution:</strong> Executed daily tea-bag manufacturing and packaging operations across multi-shift schedules, aligning machine output with production plans and delivery priorities.</li>
-          <li><strong>Hands-On Machine Operation &amp; Troubleshooting:</strong> Operated and performed mechanical/operational troubleshooting on <strong>IMA C28, IMA EC15, Teepack Constanta, FFS packaging machines, CIJ coding systems, premix units, and plant compressors</strong>.</li>
-          <li><strong>Manpower &amp; Shift Supervision:</strong> Supervised shop-floor operators and labour allocation across shifts while enforcing floor discipline, workplace safety, and uninterrupted process continuity.</li>
-          <li><strong>Breakdown Monitoring &amp; Preventive Maintenance Coordination:</strong> Tracked machine breakdowns, maintained detailed <strong>machine logbooks and production reports</strong>, and coordinated preventive maintenance schedules, spare-parts requirements, and AMC vendor service visits.</li>
-          <li><strong>Raw Material &amp; Packaging Material Coordination:</strong> Coordinated with stores, planning, and warehouse teams to verify tea blend and packaging material availability, supporting timely line feeding and dispatch readiness.</li>
-          <li><strong>Quality Checks &amp; Process Improvement:</strong> Performed routine in-process quality checks, supported HACCP implementation and ISO audit documentation, and contributed to shop-floor process improvement initiatives.</li>
-        </ul>
-      </article>
+          <div class="exp-group-label">Direct Production Ownership &amp; Systems Implemented</div>
+          <ul class="clean-list">
+            <li><strong>End-to-End Domestic &amp; Export Production:</strong> Manage daily shop-floor operations across tea cleaning systems, tea blending systems, automated tea-bag packaging lines, FFS lines, bulk tea packing, decorative caddies, and custom client orders to meet planned output, quality, and delivery schedules.</li>
+            <li><strong>Production MIS &amp; Real-Time Tracking Systems:</strong> Introduced structured production MIS reporting and real-time production tracking to monitor shift-wise output, machine utilization, downtime reasons, and order status.</li>
+            <li><strong>Online Efficiency Monitoring &amp; Process Improvement:</strong> Implemented active online efficiency monitoring on running lines to identify micro-stops early, tighten changeover discipline, and improve line throughput.</li>
+            <li><strong>Preventive Maintenance Stock Inventory &amp; Vendor Coordination:</strong> Established preventive maintenance (PM) spare-parts stock inventory tracking and coordinated directly with external PM and service vendors to reduce breakdown delays.</li>
+            <li><strong>Production, Machinery &amp; Ancillary Equipment Troubleshooting:</strong> Led hands-on troubleshooting on primary packaging lines and coordinated ancillary machine production to keep downstream packing synchronized.</li>
+            <li><strong>Quality &amp; Food Safety Enforcement:</strong> Maintained shop-floor adherence to GMP, HACCP, FSSAI, ISO, and workplace safety protocols through routine process checks and documentation.</li>
+          </ul>
+
+          <details class="detail-drawer" open>
+            <summary>
+              <span>Cross-Functional Coordination, Technical Upgrade &amp; Team Contributions (4 Items)</span>
+              <span class="drawer-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="drawer-body">
+              <ul class="clean-list">
+                <li><strong>Work Orders &amp; Container Dispatches:</strong> Coordinated production execution, quality clearance, and warehouse readiness across <strong>16 work orders</strong> and export container dispatches.</li>
+                <li><strong>Microwave Heat-Treatment Upgrade Coordination:</strong> Coordinated technical execution and vendor follow-up supporting the plant's microwave heat-treatment system upgrade.</li>
+                <li><strong>IMA Technical Knowledge Transfer:</strong> Conducted structured technical knowledge transfer on IMA tea-bag machinery operation, setup, and troubleshooting for shop-floor operators and technical staff.</li>
+                <li><strong>Client Coordination &amp; Business Opportunity Support:</strong> Managed client specification alignment across Quality, Planning, Procurement, and Warehouse teams, and contributed technical and production feasibility inputs supporting <strong>four new business opportunities</strong>.</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <!-- Role 2: Aditya Birla Global Trading India Pvt. Ltd. -->
+        <article class="timeline-item">
+          <span class="timeline-marker" aria-hidden="true"></span>
+          <div class="exp-top">
+            <div class="exp-identity">
+              <div class="company-logo-box">
+                <img
+                  src="https://drive.google.com/thumbnail?id=189QWHU_GXlBN71F5UN1hQ_iRNZjg_NdG&amp;sz=w400"
+                  onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/189QWHU_GXlBN71F5UN1hQ_iRNZjg_NdG';"
+                  alt="Aditya Birla Global Trading India Pvt. Ltd. Logo"
+                  loading="lazy"
+                />
+              </div>
+              <div class="exp-title-group">
+                <h3>Production Engineer – Operations</h3>
+                <div class="exp-company">Aditya Birla Global Trading India Pvt. Ltd.</div>
+                <div class="designation-note">
+                  Official HR designation: Technician; functional responsibilities performed in production operations across a 10-year progressive tenure.
+                </div>
+              </div>
+            </div>
+            <span class="exp-period">January 2016 – April 2026</span>
+          </div>
+
+          <ul class="clean-list">
+            <li><strong>Tea-Bag Manufacturing &amp; Production Execution:</strong> Executed daily tea-bag manufacturing and packaging operations across multi-shift schedules, aligning machine output with production plans and delivery priorities.</li>
+            <li><strong>Hands-On Machine Operation &amp; Troubleshooting:</strong> Operated and performed mechanical/operational troubleshooting on <strong>IMA C28, IMA EC15, Teepack Constanta, FFS packaging machines, CIJ coding systems, premix units, and plant compressors</strong>.</li>
+            <li><strong>Manpower &amp; Shift Supervision:</strong> Supervised shop-floor operators and labour allocation across shifts while enforcing floor discipline, workplace safety, and uninterrupted process continuity.</li>
+            <li><strong>Breakdown Monitoring &amp; Preventive Maintenance Coordination:</strong> Tracked machine breakdowns, maintained detailed <strong>machine logbooks and production reports</strong>, and coordinated preventive maintenance schedules, spare-parts requirements, and AMC vendor service visits.</li>
+          </ul>
+
+          <details class="detail-drawer">
+            <summary>
+              <span>Material Coordination, Quality Checks &amp; Audit Readiness Details</span>
+              <span class="drawer-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="drawer-body">
+              <ul class="clean-list">
+                <li><strong>Raw Material &amp; Packaging Material Coordination:</strong> Coordinated with stores, planning, and warehouse teams to verify tea blend and packaging material availability, supporting timely line feeding and dispatch readiness.</li>
+                <li><strong>Quality Checks &amp; Process Improvement:</strong> Performed routine in-process quality checks, supported HACCP implementation and ISO audit documentation, and contributed to shop-floor process improvement initiatives.</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- 4. Technical Expertise & Machinery Exposure -->
   <section class="section-block" id="technical">
     <div class="section-header">
-      <h2>Technical Expertise &amp; Machinery Exposure</h2>
-      <span class="section-subtitle">Differentiated by Hands-On Operation, Troubleshooting &amp; Coordination</span>
+      <div class="section-title-group">
+        <h2>Technical Expertise &amp; Machinery Exposure</h2>
+        <span class="section-subtitle">Differentiated by Hands-On Operation, Troubleshooting &amp; Coordination</span>
+      </div>
+      <div class="section-controls">
+        <button type="button" class="ctrl-btn section-toggle-btn" data-target="technicalBody" aria-expanded="true">&minus; Collapse Section</button>
+      </div>
     </div>
 
-    <div class="tech-grid">
-      <div class="tech-card">
-        <div class="tech-card-head">
-          <h3>Automated Tea-Bag &amp; Pouch Packaging Lines</h3>
-          <span class="exposure-badge amber">Hands-On Operation &amp; Troubleshooting</span>
+    <div class="section-collapsible" id="technicalBody">
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-card-head">
+            <h3>Automated Tea-Bag &amp; Pouch Packaging Lines</h3>
+            <span class="exposure-badge amber">Hands-On Operation &amp; Troubleshooting</span>
+          </div>
+          <p>
+            10+ years of direct shop-floor operation, changeover setup, mechanical adjustment, fault diagnosis, and technical knowledge transfer on high-speed tea-bag and pouch machinery.
+          </p>
+          <div class="pill-list">
+            <span class="pill">IMA C28 / C28E</span>
+            <span class="pill">IMA EC15</span>
+            <span class="pill">Teepack Constanta</span>
+            <span class="pill">FFS Packaging Systems</span>
+            <span class="pill">CIJ Coding Systems</span>
+          </div>
         </div>
-        <p>
-          10+ years of direct shop-floor operation, changeover setup, mechanical adjustment, fault diagnosis, and technical knowledge transfer on high-speed tea-bag and pouch machinery.
-        </p>
-        <div class="pill-list">
-          <span class="pill">IMA C28 / C28E</span>
-          <span class="pill">IMA EC15</span>
-          <span class="pill">Teepack Constanta</span>
-          <span class="pill">FFS Packaging Systems</span>
-          <span class="pill">CIJ Coding Systems</span>
-        </div>
-      </div>
 
-      <div class="tech-card">
-        <div class="tech-card-head">
-          <h3>Tea Processing, Blending &amp; Multi-Format Packing</h3>
-          <span class="exposure-badge amber">Production Execution &amp; Supervision</span>
+        <div class="tech-card">
+          <div class="tech-card-head">
+            <h3>Tea Processing, Blending &amp; Multi-Format Packing</h3>
+            <span class="exposure-badge amber">Production Execution &amp; Supervision</span>
+          </div>
+          <p>
+            End-to-end shop-floor execution across upstream tea preparation and downstream domestic/export packing formats, including custom SKU and BOM alignment.
+          </p>
+          <div class="pill-list">
+            <span class="pill">Tea Cleaning Systems</span>
+            <span class="pill">Tea Blending Systems</span>
+            <span class="pill">Bulk Tea Packing</span>
+            <span class="pill">Metal &amp; Decorative Caddies</span>
+            <span class="pill">Custom Client Orders</span>
+            <span class="pill">Conveyors &amp; Line Flow</span>
+          </div>
         </div>
-        <p>
-          End-to-end shop-floor execution across upstream tea preparation and downstream domestic/export packing formats, including custom SKU and BOM alignment.
-        </p>
-        <div class="pill-list">
-          <span class="pill">Tea Cleaning Systems</span>
-          <span class="pill">Tea Blending Systems</span>
-          <span class="pill">Bulk Tea Packing</span>
-          <span class="pill">Metal &amp; Decorative Caddies</span>
-          <span class="pill">Custom Client Orders</span>
-          <span class="pill">Conveyors &amp; Line Flow</span>
-        </div>
-      </div>
 
-      <div class="tech-card">
-        <div class="tech-card-head">
-          <h3>Plant Utilities &amp; Auxiliary Systems</h3>
-          <span class="exposure-badge">Operation &amp; Maintenance Coordination</span>
+        <div class="tech-card">
+          <div class="tech-card-head">
+            <h3>Plant Utilities &amp; Auxiliary Systems</h3>
+            <span class="exposure-badge">Operation &amp; Maintenance Coordination</span>
+          </div>
+          <p>
+            Routine operational monitoring, breakdown follow-up, and preventive maintenance coordination for plant utility and auxiliary production equipment (supported by ITI Fitter mechanical training).
+          </p>
+          <div class="pill-list">
+            <span class="pill">Compressors &amp; Compressed-Air Systems</span>
+            <span class="pill">Premix Machines</span>
+            <span class="pill">Ancillary Packaging Equipment</span>
+            <span class="pill">Microwave Heat-Treatment Upgrade (Coordination)</span>
+          </div>
         </div>
-        <p>
-          Routine operational monitoring, breakdown follow-up, and preventive maintenance coordination for plant utility and auxiliary production equipment (supported by ITI Fitter mechanical training).
-        </p>
-        <div class="pill-list">
-          <span class="pill">Compressors &amp; Compressed-Air Systems</span>
-          <span class="pill">Premix Machines</span>
-          <span class="pill">Ancillary Packaging Equipment</span>
-          <span class="pill">Microwave Heat-Treatment Upgrade (Coordination)</span>
-        </div>
-      </div>
 
-      <div class="tech-card">
-        <div class="tech-card-head">
-          <h3>Shop-Floor Tracking, Maintenance &amp; ERP Tools</h3>
-          <span class="exposure-badge">Operational Reporting &amp; Exposure</span>
-        </div>
-        <p>
-          Structured production tracking, preventive maintenance governance, and inventory coordination tools used to run daily shift operations.
-        </p>
-        <div class="pill-list">
-          <span class="pill">Production MIS &amp; KPI Tracking</span>
-          <span class="pill">Machine Logbooks</span>
-          <span class="pill">PM Stock &amp; AMC Follow-Up</span>
-          <span class="pill">SAP (Operational Exposure)</span>
-          <span class="pill">Microsoft Office</span>
+        <div class="tech-card">
+          <div class="tech-card-head">
+            <h3>Shop-Floor Tracking, Maintenance &amp; ERP Tools</h3>
+            <span class="exposure-badge">Operational Reporting &amp; Exposure</span>
+          </div>
+          <p>
+            Structured production tracking, preventive maintenance governance, and inventory coordination tools used to run daily shift operations.
+          </p>
+          <div class="pill-list">
+            <span class="pill">Production MIS &amp; KPI Tracking</span>
+            <span class="pill">Machine Logbooks</span>
+            <span class="pill">PM Stock &amp; AMC Follow-Up</span>
+            <span class="pill">SAP (Operational Exposure)</span>
+            <span class="pill">Microsoft Office</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1693,117 +1859,139 @@
   <!-- 5. Core Competencies -->
   <section class="section-block" id="competencies">
     <div class="section-header">
-      <h2>Core Competencies</h2>
-      <span class="section-subtitle">12 Core Operational Pillars</span>
-    </div>
-
-    <div class="competencies-grid">
-      <div class="comp-item">
-        <span class="comp-num">01</span>
-        <h3>Production Planning &amp; Execution</h3>
-        <p>Translating domestic and export schedules into daily shift targets, line allocation, and on-time order fulfillment.</p>
+      <div class="section-title-group">
+        <h2>Core Competencies</h2>
+        <span class="section-subtitle">12 Core Operational Pillars &amp; Pyramid of Skills</span>
       </div>
-      <div class="comp-item">
-        <span class="comp-num">02</span>
-        <h3>Tea Processing, Blending &amp; Packaging</h3>
-        <p>Managing cleaning, batch blending consistency, tea-bag lines, bulk packing, caddies, and custom SKUs.</p>
-      </div>
-      <div class="comp-item">
-        <span class="comp-num">03</span>
-        <h3>Automated Packaging Machinery</h3>
-        <p>Hands-on operation, changeover control, and troubleshooting across IMA, Teepack, FFS, and coding systems.</p>
-      </div>
-      <div class="comp-item">
-        <span class="comp-num">04</span>
-        <h3>Quality Assurance &amp; Food Safety</h3>
-        <p>Enforcing in-process quality checks, hygiene discipline, batch traceability, and audit-ready shop-floor records.</p>
-      </div>
-      <div class="comp-item">
-        <span class="comp-num">05</span>
-        <h3>Preventive Maintenance &amp; Breakdown Coordination</h3>
-        <p>Minimizing unplanned downtime through PM schedules, spare-parts inventory tracking, and AMC vendor coordination.</p>
-      </div>
-      <div class="comp-item">
-        <span class="comp-num">06</span>
-        <h3>Manpower &amp; Shift Management</h3>
-        <p>Direct supervision of 80+ shop-floor personnel, shift rostering, skill deployment, and workplace safety discipline.</p>
-      </div>
-      <div class="comp-item">
-        <span class="comp-num">07</span>
-        <h3>Root Cause Analysis &amp; CAPA</h3>
-        <p>Investigating recurring machine stoppages and quality deviations to implement lasting corrective and preventive actions.</p>
-      </div>
-      <div class="comp-item">
-        <span class="comp-num">08</span>
-        <h3>Lean Manufacturing, 5S &amp; Continuous Improvement</h3>
-        <p>Driving workplace organization, waste reduction (-12%), and line efficiency gains (+18%) on the shop floor.</p>
-      </div>
-      <div class="comp-item">
-        <span class="comp-num">09</span>
-        <h3>MIS, KPI &amp; Production Reporting</h3>
-        <p>Maintaining accurate shift logbooks, online efficiency trackers, and management MIS dashboards.</p>
-      </div>
-      <div class="comp-item">
-        <span class="comp-num">10</span>
-        <h3>Inventory &amp; Material Coordination</h3>
-        <p>Aligning raw tea, packaging BOMs, and preventive maintenance spares with stores and procurement teams.</p>
-      </div>
-      <div class="comp-item">
-        <span class="comp-num">11</span>
-        <h3>Dispatch &amp; Client Coordination</h3>
-        <p>Coordinating finished-goods readiness, work-order completion, and export container dispatches to client specs.</p>
-      </div>
-      <div class="comp-item">
-        <span class="comp-num">12</span>
-        <h3>Cross-Functional Collaboration</h3>
-        <p>Bridging Production, Quality, Maintenance, Planning, Procurement, and Warehouse for smooth plant flow.</p>
+      <div class="section-controls">
+        <button type="button" class="ctrl-btn section-toggle-btn" data-target="competenciesBody" aria-expanded="true">&minus; Collapse Section</button>
       </div>
     </div>
 
-    <figure class="visual-framework">
-      <img
-        src="https://drive.google.com/thumbnail?id=12goomvBMHSuE5hyteIBbQltBIPVgqm7K&amp;sz=w1200"
-        onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/12goomvBMHSuE5hyteIBbQltBIPVgqm7K';"
-        alt="Debjit Ghosh Competency Framework — From Core Technical Mastery to Leadership"
-        loading="lazy"
-      />
-      <figcaption>
-        <strong>Competency Progression:</strong> Built from foundational machine operation and mechanical troubleshooting up through quality compliance, planning, continuous improvement, and shop-floor team supervision.
-      </figcaption>
-    </figure>
+    <div class="section-collapsible" id="competenciesBody">
+      <div class="competencies-grid">
+        <div class="comp-item">
+          <span class="comp-num">01</span>
+          <h3>Production Planning &amp; Execution</h3>
+          <p>Translating domestic and export schedules into daily shift targets, line allocation, and on-time order fulfillment.</p>
+        </div>
+        <div class="comp-item">
+          <span class="comp-num">02</span>
+          <h3>Tea Processing, Blending &amp; Packaging</h3>
+          <p>Managing cleaning, batch blending consistency, tea-bag lines, bulk packing, caddies, and custom SKUs.</p>
+        </div>
+        <div class="comp-item">
+          <span class="comp-num">03</span>
+          <h3>Automated Packaging Machinery</h3>
+          <p>Hands-on operation, changeover control, and troubleshooting across IMA, Teepack, FFS, and coding systems.</p>
+        </div>
+        <div class="comp-item">
+          <span class="comp-num">04</span>
+          <h3>Quality Assurance &amp; Food Safety</h3>
+          <p>Enforcing in-process quality checks, hygiene discipline, batch traceability, and audit-ready shop-floor records.</p>
+        </div>
+        <div class="comp-item">
+          <span class="comp-num">05</span>
+          <h3>Preventive Maintenance &amp; Breakdown Coordination</h3>
+          <p>Minimizing unplanned downtime through PM schedules, spare-parts inventory tracking, and AMC vendor coordination.</p>
+        </div>
+        <div class="comp-item">
+          <span class="comp-num">06</span>
+          <h3>Manpower &amp; Shift Management</h3>
+          <p>Direct supervision of 80+ shop-floor personnel, shift rostering, skill deployment, and workplace safety discipline.</p>
+        </div>
+        <div class="comp-item">
+          <span class="comp-num">07</span>
+          <h3>Root Cause Analysis &amp; CAPA</h3>
+          <p>Investigating recurring machine stoppages and quality deviations to implement lasting corrective and preventive actions.</p>
+        </div>
+        <div class="comp-item">
+          <span class="comp-num">08</span>
+          <h3>Lean Manufacturing, 5S &amp; Continuous Improvement</h3>
+          <p>Driving workplace organization, waste reduction (-12%), and line efficiency gains (+18%) on the shop floor.</p>
+        </div>
+        <div class="comp-item">
+          <span class="comp-num">09</span>
+          <h3>MIS, KPI &amp; Production Reporting</h3>
+          <p>Maintaining accurate shift logbooks, online efficiency trackers, and management MIS dashboards.</p>
+        </div>
+        <div class="comp-item">
+          <span class="comp-num">10</span>
+          <h3>Inventory &amp; Material Coordination</h3>
+          <p>Aligning raw tea, packaging BOMs, and preventive maintenance spares with stores and procurement teams.</p>
+        </div>
+        <div class="comp-item">
+          <span class="comp-num">11</span>
+          <h3>Dispatch &amp; Client Coordination</h3>
+          <p>Coordinating finished-goods readiness, work-order completion, and export container dispatches to client specs.</p>
+        </div>
+        <div class="comp-item">
+          <span class="comp-num">12</span>
+          <h3>Cross-Functional Collaboration</h3>
+          <p>Bridging Production, Quality, Maintenance, Planning, Procurement, and Warehouse for smooth plant flow.</p>
+        </div>
+      </div>
+
+      <details class="detail-drawer" style="margin-top: 1.35rem;" open>
+        <summary>
+          <span>View Visual Pyramid of Skills Diagram</span>
+          <span class="drawer-indicator" aria-hidden="true"></span>
+        </summary>
+        <div class="drawer-body">
+          <figure class="visual-framework" style="margin-top: 0; border: none; box-shadow: none; padding: 0.5rem 0;">
+            <img
+              src="https://drive.google.com/thumbnail?id=12goomvBMHSuE5hyteIBbQltBIPVgqm7K&amp;sz=w1200"
+              onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/12goomvBMHSuE5hyteIBbQltBIPVgqm7K';"
+              alt="Debjit Ghosh Competency Framework — From Core Technical Mastery to Leadership"
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>Competency Progression:</strong> Built from foundational machine operation and mechanical troubleshooting up through quality compliance, planning, continuous improvement, and shop-floor team supervision.
+            </figcaption>
+          </figure>
+        </div>
+      </details>
+    </div>
   </section>
 
   <!-- 6. Quality, Food Safety & Compliance Systems -->
   <section class="section-block" id="compliance">
     <div class="section-header">
-      <h2>Quality, Food Safety &amp; Compliance Systems</h2>
-      <span class="section-subtitle">Distinguishing Formal Certification, Practical Execution &amp; System Exposure</span>
+      <div class="section-title-group">
+        <h2>Quality, Food Safety &amp; Compliance Systems</h2>
+        <span class="section-subtitle">Distinguishing Formal Certification, Practical Execution &amp; System Exposure</span>
+      </div>
+      <div class="section-controls">
+        <button type="button" class="ctrl-btn section-toggle-btn" data-target="complianceBody" aria-expanded="true">&minus; Collapse Section</button>
+      </div>
     </div>
 
-    <div class="compliance-grid">
-      <div class="compliance-card">
-        <h3>Formal Certification</h3>
-        <ul class="clean-list">
-          <li><strong>FSSAI FoSTaC Certified Food Safety Supervisor (Advance Manufacturing):</strong> Formally certified via offline training at Smart Management Consultancy (SMC Training Centre), Kolkata (Issued: 20 July 2026; Valid through 20 July 2028).</li>
-          <li>Applies statutory food-safety, hygiene, and critical-control-point principles directly to tea processing and packaging lines.</li>
-        </ul>
-      </div>
+    <div class="section-collapsible" id="complianceBody">
+      <div class="compliance-grid">
+        <div class="compliance-card">
+          <h3>Formal Certification</h3>
+          <ul class="clean-list">
+            <li><strong>FSSAI FoSTaC Certified Food Safety Supervisor (Advance Manufacturing):</strong> Formally certified via offline training at Smart Management Consultancy (SMC Training Centre), Kolkata (Issued: 20 July 2026; Valid through 20 July 2028).</li>
+            <li>Applies statutory food-safety, hygiene, and critical-control-point principles directly to tea processing and packaging lines.</li>
+          </ul>
+        </div>
 
-      <div class="compliance-card">
-        <h3>Practical Shop-Floor Execution</h3>
-        <ul class="clean-list">
-          <li><strong>GMP &amp; Plant Hygiene:</strong> Enforcing personal hygiene, line clearance, foreign-matter control, and clean-room discipline across tea cleaning, blending, and packing zones.</li>
-          <li><strong>HACCP &amp; ISO Audit Support:</strong> Executing HACCP critical control monitoring, maintaining batch traceability logs, and supporting internal/external ISO audit readiness.</li>
-          <li><strong>In-Process Inspection &amp; QC:</strong> Conducting weight checks, seal-integrity verification, coding accuracy checks, and corrective action follow-up.</li>
-        </ul>
-      </div>
+        <div class="compliance-card">
+          <h3>Practical Shop-Floor Execution</h3>
+          <ul class="clean-list">
+            <li><strong>GMP &amp; Plant Hygiene:</strong> Enforcing personal hygiene, line clearance, foreign-matter control, and clean-room discipline across tea cleaning, blending, and packing zones.</li>
+            <li><strong>HACCP &amp; ISO Audit Support:</strong> Executing HACCP critical control monitoring, maintaining batch traceability logs, and supporting internal/external ISO audit readiness.</li>
+            <li><strong>In-Process Inspection &amp; QC:</strong> Conducting weight checks, seal-integrity verification, coding accuracy checks, and corrective action follow-up.</li>
+          </ul>
+        </div>
 
-      <div class="compliance-card">
-        <h3>Operational Systems &amp; ERP Exposure</h3>
-        <ul class="clean-list">
-          <li><strong>SAP Exposure:</strong> Practical working exposure to SAP for production tracking, material availability checks, and inventory coordination alongside warehouse and planning teams.</li>
-          <li><strong>Documentation &amp; Traceability:</strong> Governing shift machine logbooks, batch blending records, preventive maintenance logs, and MIS reporting.</li>
-        </ul>
+        <div class="compliance-card">
+          <h3>Operational Systems &amp; ERP Exposure</h3>
+          <ul class="clean-list">
+            <li><strong>SAP Exposure:</strong> Practical working exposure to SAP for production tracking, material availability checks, and inventory coordination alongside warehouse and planning teams.</li>
+            <li><strong>Documentation &amp; Traceability:</strong> Governing shift machine logbooks, batch blending records, preventive maintenance logs, and MIS reporting.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -1811,52 +1999,59 @@
   <!-- 7. Education & Verified Certifications -->
   <section class="section-block" id="education">
     <div class="section-header">
-      <h2>Education &amp; Verified Credentials</h2>
-      <span class="section-subtitle">Academic, Technical &amp; Computer Qualifications</span>
+      <div class="section-title-group">
+        <h2>Education &amp; Verified Credentials</h2>
+        <span class="section-subtitle">Academic, Technical &amp; Computer Qualifications</span>
+      </div>
+      <div class="section-controls">
+        <button type="button" class="ctrl-btn section-toggle-btn" data-target="educationBody" aria-expanded="true">&minus; Collapse Section</button>
+      </div>
     </div>
 
-    <div class="edu-grid">
-      <div class="edu-card">
-        <h3>Academic &amp; Technical Education</h3>
-        <ul class="credential-list">
-          <li>
-            <strong>Bachelor of Commerce (B.Com)</strong>
-            <span class="credential-meta">University of Calcutta &bull; 2013</span>
-          </li>
-          <li>
-            <strong>ITI (Fitter) – NCVT</strong>
-            <span class="credential-meta">Don Bosco Technical School &bull; 2015</span>
-          </li>
-          <li>
-            <strong>Higher Secondary (ISC) &amp; Secondary (ICSE)</strong>
-            <span class="credential-meta">Little Star High School &bull; ISC (2009) &amp; ICSE (2007)</span>
-          </li>
-        </ul>
-      </div>
+    <div class="section-collapsible" id="educationBody">
+      <div class="edu-grid">
+        <div class="edu-card">
+          <h3>Academic &amp; Technical Education</h3>
+          <ul class="credential-list">
+            <li>
+              <strong>Bachelor of Commerce (B.Com)</strong>
+              <span class="credential-meta">University of Calcutta &bull; 2013</span>
+            </li>
+            <li>
+              <strong>ITI (Fitter) – NCVT</strong>
+              <span class="credential-meta">Don Bosco Technical School &bull; 2015</span>
+            </li>
+            <li>
+              <strong>Higher Secondary (ISC) &amp; Secondary (ICSE)</strong>
+              <span class="credential-meta">Little Star High School &bull; ISC (2009) &amp; ICSE (2007)</span>
+            </li>
+          </ul>
+        </div>
 
-      <div class="edu-card">
-        <h3>Verified Certifications &amp; Languages</h3>
-        <ul class="credential-list">
-          <li>
-            <strong>FoSTaC Certified – Food Safety Supervisor (Advance Manufacturing)</strong>
-            <span class="credential-meta">FSSAI / Smart Management Consultancy &bull; Issued July 2026</span>
-          </li>
-          <li>
-            <strong>Computer Software Engineering / Computer Engineering Certification</strong>
-            <span class="credential-meta">Ramakrishna Mission Shilpa Mandira Computer Centre &bull; 2009</span>
-          </li>
-          <li>
-            <strong>Microsoft Office Specialist</strong>
-            <span class="credential-meta">Ramakrishna Mission Shilpa Mandira Computer Centre &bull; 2008</span>
-          </li>
-          <li>
-            <strong>SAP Exposure</strong>
-            <span class="credential-meta">Operational exposure in production &amp; inventory coordination</span>
-          </li>
-          <li>
-            <strong>Languages:</strong> Bengali (Native) &bull; English (Fluent) &bull; Hindi (Working Proficiency)
-          </li>
-        </ul>
+        <div class="edu-card">
+          <h3>Verified Certifications &amp; Languages</h3>
+          <ul class="credential-list">
+            <li>
+              <strong>FoSTaC Certified – Food Safety Supervisor (Advance Manufacturing)</strong>
+              <span class="credential-meta">FSSAI / Smart Management Consultancy &bull; Issued July 2026</span>
+            </li>
+            <li>
+              <strong>Computer Software Engineering / Computer Engineering Certification</strong>
+              <span class="credential-meta">Ramakrishna Mission Shilpa Mandira Computer Centre &bull; 2009</span>
+            </li>
+            <li>
+              <strong>Microsoft Office Specialist</strong>
+              <span class="credential-meta">Ramakrishna Mission Shilpa Mandira Computer Centre &bull; 2008</span>
+            </li>
+            <li>
+              <strong>SAP Exposure</strong>
+              <span class="credential-meta">Operational exposure in production &amp; inventory coordination</span>
+            </li>
+            <li>
+              <strong>Languages:</strong> Bengali (Native) &bull; English (Fluent) &bull; Hindi (Working Proficiency)
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -1864,58 +2059,65 @@
   <!-- 8. Video Introductions -->
   <section class="section-block" id="videos">
     <div class="section-header">
-      <h2>Video Introductions</h2>
-      <span class="section-subtitle">Direct Overview of Background &amp; Shop-Floor Experience</span>
+      <div class="section-title-group">
+        <h2>Video Introductions</h2>
+        <span class="section-subtitle">Direct Overview of Background &amp; Shop-Floor Experience</span>
+      </div>
+      <div class="section-controls">
+        <button type="button" class="ctrl-btn section-toggle-btn" data-target="videosBody" aria-expanded="true">&minus; Collapse Section</button>
+      </div>
     </div>
 
-    <div class="video-grid">
-      <div class="video-card">
-        <iframe
-          class="video-embed"
-          src="https://drive.google.com/file/d/1E_3fgPM4nLEnlSGK9CNycpYpjhQyMoB2/preview"
-          allow="autoplay; fullscreen"
-          allowfullscreen
-          loading="lazy"
-          title="Debjit Ghosh — Executive Introduction Video"
-        ></iframe>
-        <div class="video-body">
-          <div>
-            <h3>Executive Introduction</h3>
-            <p>Brief introduction covering 10+ years in tea-bag and FMCG manufacturing, production planning, preventive maintenance coordination, and GMP/FSSAI compliance.</p>
+    <div class="section-collapsible" id="videosBody">
+      <div class="video-grid">
+        <div class="video-card">
+          <iframe
+            class="video-embed"
+            src="https://drive.google.com/file/d/1E_3fgPM4nLEnlSGK9CNycpYpjhQyMoB2/preview"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            loading="lazy"
+            title="Debjit Ghosh — Executive Introduction Video"
+          ></iframe>
+          <div class="video-body">
+            <div>
+              <h3>Executive Introduction</h3>
+              <p>Brief introduction covering 10+ years in tea-bag and FMCG manufacturing, production planning, preventive maintenance coordination, and GMP/FSSAI compliance.</p>
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1E_3fgPM4nLEnlSGK9CNycpYpjhQyMoB2/view"
+              target="_blank"
+              rel="noopener"
+              class="direct-link"
+            >
+              Open video directly in Google Drive
+            </a>
           </div>
-          <a
-            href="https://drive.google.com/file/d/1E_3fgPM4nLEnlSGK9CNycpYpjhQyMoB2/view"
-            target="_blank"
-            rel="noopener"
-            class="direct-link"
-          >
-            Open video directly in Google Drive
-          </a>
         </div>
-      </div>
 
-      <div class="video-card">
-        <iframe
-          class="video-embed"
-          src="https://drive.google.com/file/d/1fuCK3D9vri3yvFVf8cMSuOKabIA6S4ES/preview"
-          allow="autoplay; fullscreen"
-          allowfullscreen
-          loading="lazy"
-          title="Debjit Ghosh — Career Overview and Technical Background Video"
-        ></iframe>
-        <div class="video-body">
-          <div>
-            <h3>Career &amp; Technical Background Walkthrough</h3>
-            <p>Overview of B.Com + ITI (Fitter) foundation, hands-on IMA and Teepack machine troubleshooting, RCA/CAPA discipline, and shop-floor leadership.</p>
+        <div class="video-card">
+          <iframe
+            class="video-embed"
+            src="https://drive.google.com/file/d/1fuCK3D9vri3yvFVf8cMSuOKabIA6S4ES/preview"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            loading="lazy"
+            title="Debjit Ghosh — Career Overview and Technical Background Video"
+          ></iframe>
+          <div class="video-body">
+            <div>
+              <h3>Career &amp; Technical Background Walkthrough</h3>
+              <p>Overview of B.Com + ITI (Fitter) foundation, hands-on IMA and Teepack machine troubleshooting, RCA/CAPA discipline, and shop-floor leadership.</p>
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1fuCK3D9vri3yvFVf8cMSuOKabIA6S4ES/view"
+              target="_blank"
+              rel="noopener"
+              class="direct-link"
+            >
+              Open video directly in Google Drive
+            </a>
           </div>
-          <a
-            href="https://drive.google.com/file/d/1fuCK3D9vri3yvFVf8cMSuOKabIA6S4ES/view"
-            target="_blank"
-            rel="noopener"
-            class="direct-link"
-          >
-            Open video directly in Google Drive
-          </a>
         </div>
       </div>
     </div>
@@ -1967,29 +2169,33 @@
 
 <script>
   (function () {
-    // Theme Toggle (Light / Dark with localStorage persistence)
+    // 1. Theme Toggle (Defaults to Dark Mode, switches smoothly to Light Mode)
     var root = document.documentElement;
     var themeBtn = document.getElementById("themeToggle");
     var themeText = document.getElementById("themeToggleText");
 
     function applyTheme(theme) {
-      if (theme === "dark") {
-        root.setAttribute("data-theme", "dark");
-        if (themeBtn) themeBtn.setAttribute("aria-pressed", "true");
-        if (themeText) themeText.textContent = "Light Mode";
-      } else {
+      if (theme === "light") {
         root.removeAttribute("data-theme");
         if (themeBtn) themeBtn.setAttribute("aria-pressed", "false");
         if (themeText) themeText.textContent = "Dark Mode";
+      } else {
+        root.setAttribute("data-theme", "dark");
+        if (themeBtn) themeBtn.setAttribute("aria-pressed", "true");
+        if (themeText) themeText.textContent = "Light Mode";
       }
     }
 
     try {
       var savedTheme = localStorage.getItem("portfolio_theme");
-      if (savedTheme === "dark") {
+      if (savedTheme === "light") {
+        applyTheme("light");
+      } else {
         applyTheme("dark");
       }
-    } catch (e) {}
+    } catch (e) {
+      applyTheme("dark");
+    }
 
     if (themeBtn) {
       themeBtn.addEventListener("click", function () {
@@ -2002,7 +2208,49 @@
       });
     }
 
-    // Mobile Navigation Toggle
+    // 2. Section & Drawer Expand / Collapse Controls
+    var sectionBtns = document.querySelectorAll(".section-toggle-btn");
+    for (var s = 0; s < sectionBtns.length; s++) {
+      sectionBtns[s].addEventListener("click", function () {
+        var targetId = this.getAttribute("data-target");
+        var targetEl = document.getElementById(targetId);
+        if (!targetEl) return;
+        var collapsed = targetEl.classList.toggle("is-collapsed");
+        this.setAttribute("aria-expanded", collapsed ? "false" : "true");
+        this.innerHTML = collapsed ? "+ Expand Section" : "&minus; Collapse Section";
+      });
+    }
+
+    var expandAllBtn = document.getElementById("expandAllBtn");
+    var collapseAllBtn = document.getElementById("collapseAllBtn");
+
+    if (expandAllBtn) {
+      expandAllBtn.addEventListener("click", function () {
+        var collapsibles = document.querySelectorAll(".section-collapsible");
+        for (var c = 0; c < collapsibles.length; c++) {
+          collapsibles[c].classList.remove("is-collapsed");
+        }
+        for (var b = 0; b < sectionBtns.length; b++) {
+          sectionBtns[b].setAttribute("aria-expanded", "true");
+          sectionBtns[b].innerHTML = "&minus; Collapse Section";
+        }
+        var drawers = document.querySelectorAll("details.detail-drawer");
+        for (var d = 0; d < drawers.length; d++) {
+          drawers[d].setAttribute("open", "");
+        }
+      });
+    }
+
+    if (collapseAllBtn) {
+      collapseAllBtn.addEventListener("click", function () {
+        var drawers = document.querySelectorAll("details.detail-drawer");
+        for (var d = 0; d < drawers.length; d++) {
+          drawers[d].removeAttribute("open");
+        }
+      });
+    }
+
+    // 3. Mobile Navigation Toggle
     var toggle = document.getElementById("navToggle");
     var links = document.getElementById("primaryNavLinks");
     if (!toggle || !links) return;
@@ -2020,7 +2268,7 @@
       });
     }
 
-    // Scroll Spy
+    // 4. Scroll Spy
     var sections = document.querySelectorAll("main section[id]");
     window.addEventListener("scroll", function () {
       var scrollPos = window.scrollY + 120;

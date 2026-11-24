@@ -116,7 +116,7 @@
       --radius: 8px;
     }
 
-    /* Dark Mode Default Palette (The Precision Harvest Dark Theme You Loved) */
+    /* Dark Mode Default Palette */
     html[data-theme="dark"] {
       --bg: #0c141b;
       --surface-warm: #1a2834;
@@ -192,7 +192,7 @@
     }
 
     /* =========================================================
-       CLEAR, VISIBLE WATERMARK LAYER: GEARS, SPANNERS, SPREADSHEETS & GRAPHS
+       WATERMARK LAYER: GEARS, SPANNERS, SPREADSHEETS & GRAPHS
     ========================================================= */
     .watermark-layer {
       position: fixed;
@@ -207,7 +207,6 @@
       will-change: transform;
     }
 
-    /* Interlocking Mechanical Gears (Left & Right) */
     .wm-gear-main {
       top: 12%;
       left: -36px;
@@ -235,7 +234,6 @@
       animation: gearRotateCCW 44s linear infinite;
     }
 
-    /* Double-Ended Spanners / Wrenches */
     .wm-spanner-left {
       bottom: 14%;
       left: 2.5%;
@@ -254,7 +252,6 @@
       animation: floatBobReverse 8.5s ease-in-out infinite;
     }
 
-    /* MIS Production Spreadsheet & KPI Table Watermark */
     .wm-spreadsheet {
       top: 16%;
       right: 2%;
@@ -264,7 +261,6 @@
       animation: floatBob 9s ease-in-out infinite;
     }
 
-    /* OEE & Efficiency Trend Graph Watermark */
     .wm-graph {
       top: 56%;
       left: 2%;
@@ -311,11 +307,6 @@
     @keyframes pulseBeacon {
       0%, 100% { transform: scale(1); opacity: 1; }
       50% { transform: scale(1.35); opacity: 0.65; }
-    }
-
-    @keyframes graphBarGrow {
-      0%, 100% { transform: scaleY(1); }
-      50% { transform: scaleY(0.84); }
     }
 
     .hero-anim-1 { animation: heroFadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both; }
@@ -466,7 +457,7 @@
     }
 
     /* =========================================================
-       HERO SECTION — PRECISION HARVEST
+       HERO SECTION — PRECISION HARVEST (RECTANGULAR PORTRAIT)
     ========================================================= */
     .hero {
       position: relative;
@@ -513,30 +504,30 @@
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 168px 1fr;
-      gap: 2.25rem;
+      grid-template-columns: 224px 1fr;
+      gap: 2.5rem;
       align-items: center;
     }
 
     .hero-photo-frame {
-      width: 168px;
-      height: 168px;
-      border-radius: 50%;
-      padding: 3px;
+      width: 224px;
+      height: 274px;
+      border-radius: 14px;
+      padding: 4px;
       background: linear-gradient(145deg, var(--amber-light), var(--forest-mid));
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.42);
       transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
     .hero-photo-frame:hover {
-      transform: scale(1.03);
-      box-shadow: 0 14px 32px rgba(227, 184, 104, 0.25);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 18px 38px rgba(227, 184, 104, 0.28);
     }
 
     .hero-photo-frame img {
       width: 100%;
       height: 100%;
-      border-radius: 50%;
+      border-radius: 10px;
       object-fit: cover;
       object-position: top center;
       display: block;
@@ -565,7 +556,7 @@
     }
 
     .hero-content h1 {
-      font-size: 2.32rem;
+      font-size: 2.38rem;
       font-weight: 800;
       letter-spacing: -0.3px;
       line-height: 1.16;
@@ -574,14 +565,14 @@
     }
 
     .hero-headline {
-      font-size: 1.14rem;
+      font-size: 1.16rem;
       font-weight: 700;
       color: #f8fafc;
-      margin-bottom: 0.32rem;
+      margin-bottom: 0.35rem;
     }
 
     .hero-domain-strip {
-      font-size: 0.91rem;
+      font-size: 0.92rem;
       color: #c8dcd2;
       font-weight: 500;
       margin-bottom: 0.95rem;
@@ -1601,6 +1592,11 @@
         justify-items: center;
       }
 
+      .hero-photo-frame {
+        width: 210px;
+        height: 256px;
+      }
+
       .hero-eyebrow,
       .hero-meta,
       .hero-actions {
@@ -1676,11 +1672,9 @@
     <line x1="10" y1="114" x2="190" y2="114" />
     <line x1="65" y1="10" x2="65" y2="140" />
     <line x1="128" y1="10" x2="128" y2="140" />
-    <!-- Header Cells -->
     <line x1="22" y1="23" x2="52" y2="23" stroke-width="3" stroke-linecap="round" />
     <line x1="78" y1="23" x2="115" y2="23" stroke-width="3" stroke-linecap="round" />
     <line x1="140" y1="23" x2="176" y2="23" stroke-width="3" stroke-linecap="round" />
-    <!-- Data Rows -->
     <line x1="22" y1="49" x2="48" y2="49" stroke-linecap="round" />
     <line x1="78" y1="49" x2="108" y2="49" stroke-linecap="round" />
     <line x1="140" y1="49" x2="170" y2="49" stroke-linecap="round" />
@@ -1704,12 +1698,10 @@
     <line x1="20" y1="130" x2="185" y2="130" stroke-width="2.5" />
     <line x1="20" y1="95" x2="185" y2="95" stroke-dasharray="4 4" />
     <line x1="20" y1="60" x2="185" y2="60" stroke-dasharray="4 4" />
-    <!-- Bar Columns -->
     <rect x="36" y="92" width="18" height="38" rx="2" />
     <rect x="68" y="74" width="18" height="56" rx="2" />
     <rect x="100" y="58" width="18" height="72" rx="2" />
     <rect x="132" y="36" width="18" height="94" rx="2" />
-    <!-- Upward Efficiency Trend Line -->
     <polyline points="45,82 77,64 109,48 141,26 174,18" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
     <circle cx="45" cy="82" r="3.5" fill="currentColor" />
     <circle cx="77" cy="64" r="3.5" fill="currentColor" />
@@ -1793,8 +1785,8 @@
         src="https://drive.google.com/thumbnail?id=15QPETMTucqIkzrt_ISol45n195MqxejH&amp;sz=w1000"
         onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/15QPETMTucqIkzrt_ISol45n195MqxejH';"
         alt="Debjit Ghosh — Senior Production and Manufacturing Professional"
-        width="168"
-        height="168"
+        width="224"
+        height="274"
       />
     </div>
     <div class="hero-content">

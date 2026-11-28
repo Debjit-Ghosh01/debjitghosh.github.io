@@ -1640,6 +1640,29 @@
         left: -1.25rem;
       }
     }
+
+    /* ===== Portfolio Deck Viewer ===== */
+    .pf-viewer { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .pf-stage { position: relative; background: #0c141b; aspect-ratio: 1376 / 768; }
+    .pf-stage img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .pf-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.85rem 1.1rem; border-top: 1px solid var(--border); }
+    .pf-nav { display: flex; align-items: center; gap: 0.6rem; }
+    .pf-nav button { font: inherit; font-weight: 700; font-size: 0.85rem; padding: 0.5rem 0.95rem; border-radius: var(--radius); border: 1px solid var(--pill-border); background: var(--white); color: var(--heading-color); cursor: pointer; }
+    .pf-nav button:hover:not(:disabled) { background: var(--forest-soft); border-color: var(--forest); }
+    .pf-nav button:disabled { opacity: 0.45; cursor: not-allowed; }
+    .pf-count { font-size: 0.85rem; font-weight: 700; color: var(--slate); min-width: 4.5rem; text-align: center; }
+    .pf-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .pf-thumbs { display: flex; gap: 0.45rem; overflow-x: auto; padding: 0.7rem 1.1rem 0.9rem; border-top: 1px solid var(--border); }
+    .pf-thumbs button { flex: 0 0 auto; padding: 0; border: 2px solid transparent; border-radius: 4px; background: none; cursor: pointer; opacity: 0.65; }
+    .pf-thumbs button[aria-current="true"] { border-color: var(--forest-mid); opacity: 1; }
+    .pf-thumbs img { width: 96px; height: auto; display: block; border-radius: 2px; }
+    .pf-text { margin-top: 1.1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--white); }
+    .pf-text summary { cursor: pointer; padding: 0.9rem 1.1rem; font-weight: 700; color: var(--heading-color); }
+    .pf-text-body { padding: 0 1.1rem 1.1rem; color: var(--slate); font-size: 0.9rem; }
+    .pf-text-body h4 { margin: 1rem 0 0.3rem; font-size: 0.92rem; color: var(--heading-color); }
+    .pf-text-body p, .pf-text-body ul { margin: 0 0 0.4rem; }
+    .pf-text-body ul { padding-left: 1.2rem; }
+    @media (max-width: 560px) { .pf-thumbs img { width: 72px; } }
   </style>
 </head>
 <body>
@@ -1738,6 +1761,7 @@
       <li><a href="#competencies">Competencies</a></li>
       <li><a href="#compliance">Quality &amp; Systems</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#portfolio-deck">Portfolio Deck</a></li>
       <li><a href="#videos">Videos</a></li>
     </ul>
 
@@ -2366,6 +2390,108 @@
     </div>
   </section>
 
+  <!-- 7b. Portfolio Deck -->
+  <section class="section-block reveal-on-scroll" id="portfolio-deck">
+    <div class="section-header">
+      <div class="section-title-group">
+        <h2>Manufacturing Leadership Portfolio</h2>
+        <span class="section-subtitle">11-Slide Visual Overview of Experience, Impact &amp; Capabilities</span>
+      </div>
+      <div class="section-controls">
+        <button type="button" class="ctrl-btn section-toggle-btn" data-target="portfolioDeckBody" aria-expanded="true">&minus; Collapse Section</button>
+      </div>
+    </div>
+
+    <div class="section-collapsible" id="portfolioDeckBody">
+      <div class="pf-viewer" id="pfViewer" tabindex="0" aria-label="Portfolio slide viewer. Use left and right arrow keys to change slides.">
+        <div class="pf-stage">
+          <img id="pfImage" src="deck/slide-01.png" alt="01. Senior Production & Manufacturing Leadership — Debjit Ghosh" width="1376" height="768" />
+        </div>
+        <div class="pf-bar">
+          <div class="pf-nav">
+            <button type="button" id="pfPrev" aria-label="Previous slide" disabled>&larr; Prev</button>
+            <span class="pf-count" id="pfCount" aria-live="polite">1 / 11</span>
+            <button type="button" id="pfNext" aria-label="Next slide">Next &rarr;</button>
+          </div>
+          <div class="pf-actions">
+            <a href="Debjit%20Ghosh%20Manufacturing%20Leadership%20Portfolio.pdf" download id="pfPdfDownload" class="btn btn-forest">Download Portfolio (PDF)</a>
+            <a href="Debjit%20Ghosh%20Manufacturing%20Leadership%20Portfolio.pdf" target="_blank" rel="noopener" id="pfPdfOpen" class="btn btn-outline-dark">Open Full PDF</a>
+          </div>
+        </div>
+        <div class="pf-thumbs" id="pfThumbs" aria-label="Slide thumbnails"></div>
+      </div>
+
+      <details class="pf-text">
+        <summary>Read the portfolio as text</summary>
+        <div class="pf-text-body">
+          <h4>1. Senior Production &amp; Manufacturing Leadership &mdash; Debjit Ghosh</h4>
+          <p>10+ Years Shop-Floor Mastery | FMCG &amp; Tea Manufacturing | High-Speed Automation | Plant Compliance. Location: Howrah, West Bengal. Domain: Tea Processing &amp; FMCG Packaging. Availability: Open to Senior Roles.</p>
+
+          <h4>2. Bridging Mechanical Execution and Operational Strategy</h4>
+          <ul>
+            <li>Mechanical Core: ITI Fitter (NCVT) &ndash; Don Bosco Technical School.</li>
+            <li>Commercial Core: Bachelor of Commerce (B.Com) &ndash; University of Calcutta.</li>
+            <li>Systems Core: Computer Engineering Certification.</li>
+            <li>10+ years of progressive experience navigating from a foundational machinery technician to Senior Production Manager: End-to-End Tea Bag Manufacturing, Preventive Maintenance Coordination, Production Planning &amp; Shift Alignment, Quality Control (GMP / HACCP / FSSAI).</li>
+            <li>Direct supervision of 80+ shop-floor personnel across multi-shift FMCG and tea-processing environments.</li>
+          </ul>
+
+          <h4>3. Verified Shop-Floor Impact Metrics</h4>
+          <ul>
+            <li>+18% Production Efficiency Improvement: tracked via shift-wise machine logbooks and production MIS reports; actual line output compared against planned standard shift targets over a 12-month operational review cycle; driven by line balancing and bottleneck reduction.</li>
+            <li>-12% Material Wastage Reduction: measured over a 1-year period by reconciling issued filter paper, envelopes, cartons, and laminates against finished-goods output; achieved through tighter machine setup discipline and seal-integrity monitoring.</li>
+            <li>80+ Shop-Floor Personnel Supervised: direct multi-shift supervision of operators, technicians, and line helpers; managed shift rosters, workstation allocation, GMP hygiene adherence, and daily output accountability.</li>
+          </ul>
+
+          <h4>4. The Pyramid of Production Competence</h4>
+          <ul>
+            <li>Base &mdash; Execution &amp; Machinery: Automated Packaging Machinery (hands-on operation and changeovers: IMA, Teepack, FFS); Tea Processing &amp; Blending; Manpower &amp; Shift Management; Preventive Maintenance (PM schedules and spare-parts tracking).</li>
+            <li>Middle &mdash; Planning &amp; Quality: Production Planning &amp; Execution; Quality Assurance &amp; Food Safety; Inventory &amp; Material Coordination; MIS, KPI &amp; Production Reporting.</li>
+            <li>Peak &mdash; Leadership &amp; Optimization: Cross-Functional Collaboration; Root Cause Analysis (RCA) &amp; CAPA; Lean Manufacturing &amp; 5S; Dispatch &amp; Client Coordination (export container readiness and custom SKU alignment).</li>
+          </ul>
+
+          <h4>5. Plant Ecosystem &amp; Machinery Capability Matrix</h4>
+          <ul>
+            <li>Automated Tea-Bag &amp; Pouch Lines (IMA C28/C28E, IMA EC15, Teepack Constanta, FFS Packaging, CIJ Coding): direct execution and mastery in hands-on operation, troubleshooting, maintenance coordination, and system integration.</li>
+            <li>Tea Processing &amp; Blending (Tea Cleaning Systems, Batch Blending, Bulk Packing, Caddies, Conveyors): direct execution in hands-on operation, maintenance coordination, and system integration.</li>
+            <li>Plant Utilities &amp; Auxiliary (Compressors, Compressed-Air Systems, Premix Machines, Microwave Heat-Treatment): coordination and exposure in hands-on operation, troubleshooting, and maintenance coordination.</li>
+            <li>Operational Systems &amp; ERP (SAP, Production MIS, Machine Logbooks, Microsoft Office): direct execution in hands-on operation and system integration.</li>
+          </ul>
+
+          <h4>6. End-to-End Shop-Floor Execution Workflow</h4>
+          <p>Raw Tea &amp; Packaging BOM &rarr; Tea Cleaning &amp; Blending &rarr; High-Speed Automated Packaging (IMA/Teepack) &rarr; Quality Clearance &amp; FFS Packing &rarr; Finished Goods &amp; Export Dispatch. Supported by SAP material verification &amp; procurement alignment; online MIS efficiency monitoring &amp; PM vendor coordination; 16+ work order client specifications &amp; container dispatch alignment; GMP clean-room discipline &amp; 5S organization; shift rostering (80+ personnel) &amp; CIJ coding accuracy checks; FSSAI/HACCP critical control monitoring &amp; seal-integrity verification.</p>
+
+          <h4>7. Operational Methodology: The 12% Wastage Reduction Loop</h4>
+          <p>Continuous improvement driven by data and mechanical fundamentals, fed by the MIS reports data stream: Micro-Stop Identification &rarr; Root Cause Analysis (RCA) &rarr; Corrective &amp; Preventive Action (CAPA) &rarr; Standardization &amp; Supervision.</p>
+
+          <h4>8. The Compliance &amp; Quality Shield</h4>
+          <ul>
+            <li>Statutory &amp; Certification Layer: FSSAI FoSTaC Certified &mdash; Food Safety Supervisor (Advance Manufacturing). Issued July 2026, valid through 2028 via SMC Training Centre.</li>
+            <li>Systemic Framework Layer: HACCP &amp; ISO Audit Support &mdash; critical control point monitoring, batch traceability logs, and internal/external audit readiness.</li>
+            <li>Practical Floor Execution Layer: GMP &amp; In-Process QC &mdash; personal hygiene, line clearance, foreign-matter control across blending zones, weight checks, seal-integrity verification, and coding accuracy checks.</li>
+          </ul>
+
+          <h4>9. Career Trajectory: From Execution to Ownership</h4>
+          <ul>
+            <li>The Technical Foundation (Jan 2016 &ndash; Apr 2026): Production Engineer / Technician at Aditya Birla Global Trading India. 10 years of deep, hands-on machine operation and troubleshooting (IMA C28, Teepack, FFS). Mastered preventive maintenance coordination, daily multi-shift execution, and shop-floor manpower supervision.</li>
+            <li>Cross-Functional Leadership (May 2026 &ndash; Present): Senior Production Manager (Production &amp; QC) at Premier Tea Limited. Direct production ownership, production MIS implementation, and real-time tracking systems. Managing 16+ work orders/export dispatches, supporting microwave heat-treatment upgrades, executing technical knowledge transfers, and aligning Procurement, QA, and Warehouse teams.</li>
+          </ul>
+
+          <h4>10. Verified Credentials &amp; Academic Framework</h4>
+          <ul>
+            <li>Academic Education: Bachelor of Commerce (B.Com) &ndash; University of Calcutta (2013); Higher Secondary (ISC) &amp; Secondary (ICSE) &ndash; Little Star High School (2009 / 2007).</li>
+            <li>Technical &amp; Mechanical: ITI (Fitter) &ndash; NCVT, Don Bosco Technical School (2015).</li>
+            <li>Software &amp; ERP Exposure: Computer Software / Engineering Certification &ndash; Ramakrishna Mission Shilpa Mandira (2009); Microsoft Office Specialist (2008); practical SAP exposure for production tracking, materials routing, and inventory control.</li>
+            <li>Languages: Bengali (native), English (fluent / professional working proficiency), Hindi (working proficiency).</li>
+          </ul>
+
+          <h4>11. Executive Availability &amp; Next Steps</h4>
+          <p>Target roles: Senior Production Manager | Manufacturing Manager | Production &amp; QC Manager | Production Excellence Manager. Sectors: Tea Manufacturing, Food Processing, FMCG. Based in Howrah / Kolkata; open to opportunities across India (notice period discussable). Phone: +91 9051454677. Email: debjit9051454677@gmail.com.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
   <!-- 8. Video Introductions -->
   <section class="section-block reveal-on-scroll" id="videos">
     <div class="section-header">
@@ -2544,7 +2670,7 @@
           sectionBtns[b].setAttribute("aria-expanded", "true");
           sectionBtns[b].innerHTML = "&minus; Collapse Section";
         }
-        var drawers = document.querySelectorAll("details.drawer");
+        var drawers = document.querySelectorAll("details.detail-drawer");
         for (var d = 0; d < drawers.length; d++) {
           drawers[d].setAttribute("open", "");
         }
@@ -2553,7 +2679,7 @@
 
     if (collapseAllBtn) {
       collapseAllBtn.addEventListener("click", function () {
-        var drawers = document.querySelectorAll("details.drawer");
+        var drawers = document.querySelectorAll("details.detail-drawer");
         for (var d = 0; d < drawers.length; d++) {
           drawers[d].removeAttribute("open");
         }
@@ -2617,19 +2743,19 @@
     // 4. Mobile Navigation Toggle
     var toggle = document.getElementById("navToggle");
     var links = document.getElementById("primaryNavLinks");
-    if (!toggle || !links) return;
-
-    toggle.addEventListener("click", function () {
-      var isOpen = links.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-
-    var navAnchors = links.querySelectorAll("a");
-    for (var i = 0; i < navAnchors.length; i++) {
-      navAnchors[i].addEventListener("click", function () {
-        links.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
+    if (toggle && links) {
+      toggle.addEventListener("click", function () {
+        var isOpen = links.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
       });
+
+      var navAnchors = links.querySelectorAll("a");
+      for (var i = 0; i < navAnchors.length; i++) {
+        navAnchors[i].addEventListener("click", function () {
+          links.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      }
     }
 
     // 5. Scroll Spy
@@ -2641,7 +2767,7 @@
         var top = sec.offsetTop;
         var height = sec.offsetHeight;
         var id = sec.getAttribute("id");
-        var link = links.querySelector('a[href="#' + id + '"]');
+        var link = links ? links.querySelector('a[href="#' + id + '"]') : null;
         if (link) {
           if (scrollPos >= top && scrollPos < top + height) {
             link.classList.add("active");
@@ -2651,8 +2777,73 @@
         }
       }
     }, { passive: true });
+
+    // 6. Portfolio Deck Viewer
+    var slides = [
+      { src: "deck/slide-01.png", alt: "01. Senior Production & Manufacturing Leadership — Debjit Ghosh" },
+      { src: "deck/slide-02.png", alt: "02. Bridging Mechanical Execution and Operational Strategy" },
+      { src: "deck/slide-03.png", alt: "03. Verified Shop-Floor Impact Metrics (+18% Efficiency, -12% Wastage, 80+ Personnel)" },
+      { src: "deck/slide-04.png", alt: "04. The Pyramid of Production Competence" },
+      { src: "deck/slide-05.png", alt: "05. Plant Ecosystem & Machinery Capability Matrix" },
+      { src: "deck/slide-06.png", alt: "06. End-to-End Shop-Floor Execution Workflow" },
+      { src: "deck/slide-07.png", alt: "07. Operational Methodology: The 12% Wastage Reduction Loop" },
+      { src: "deck/slide-08.png", alt: "08. The Compliance & Quality Shield" },
+      { src: "deck/slide-09.png", alt: "09. Career Trajectory: From Execution to Ownership" },
+      { src: "deck/slide-10.png", alt: "10. Verified Credentials & Academic Framework" },
+      { src: "deck/slide-11.png", alt: "11. Executive Availability & Next Steps" }
+    ];
+
+    var pfIdx = 0;
+    var pfImage = document.getElementById("pfImage");
+    var pfCount = document.getElementById("pfCount");
+    var pfPrev = document.getElementById("pfPrev");
+    var pfNext = document.getElementById("pfNext");
+    var pfThumbs = document.getElementById("pfThumbs");
+    var pfViewer = document.getElementById("pfViewer");
+
+    function showSlide(n) {
+      pfIdx = Math.max(0, Math.min(slides.length - 1, n));
+      if (pfImage) {
+        pfImage.src = slides[pfIdx].src;
+        pfImage.alt = slides[pfIdx].alt;
+      }
+      if (pfCount) pfCount.textContent = (pfIdx + 1) + " / " + slides.length;
+      if (pfPrev) pfPrev.disabled = pfIdx === 0;
+      if (pfNext) pfNext.disabled = pfIdx === slides.length - 1;
+      if (pfThumbs) {
+        var btns = pfThumbs.querySelectorAll("button");
+        for (var t = 0; t < btns.length; t++) {
+          btns[t].setAttribute("aria-current", t === pfIdx ? "true" : "false");
+        }
+      }
+    }
+
+    if (pfThumbs) {
+      slides.forEach(function (s, i) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.setAttribute("aria-label", "Go to slide " + (i + 1));
+        btn.setAttribute("aria-current", i === 0 ? "true" : "false");
+        var tImg = document.createElement("img");
+        tImg.src = s.src;
+        tImg.alt = "";
+        tImg.loading = "lazy";
+        btn.appendChild(tImg);
+        btn.addEventListener("click", function () { showSlide(i); });
+        pfThumbs.appendChild(btn);
+      });
+    }
+
+    if (pfPrev) pfPrev.addEventListener("click", function () { showSlide(pfIdx - 1); });
+    if (pfNext) pfNext.addEventListener("click", function () { showSlide(pfIdx + 1); });
+    if (pfViewer) {
+      pfViewer.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") showSlide(pfIdx - 1);
+        if (e.key === "ArrowRight") showSlide(pfIdx + 1);
+      });
+    }
+    showSlide(0);
   })();
 </script>
-
 </body>
 </html>

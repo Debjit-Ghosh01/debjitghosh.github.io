@@ -2410,7 +2410,13 @@
     <div class="section-collapsible" id="portfolioDeckBody">
       <div class="pf-viewer" id="pfViewer" tabindex="0" aria-label="Portfolio slide viewer. Use left and right arrow keys to change slides.">
         <div class="pf-stage">
-          <img id="pfImage" src="deck/slide-01.png" alt="01. Senior Production & Manufacturing Leadership — Debjit Ghosh" width="1376" height="768" />
+          <img
+            id="pfImage"
+            src="https://drive.google.com/thumbnail?id=1MEGzqUbkYvZiaYNWOf_Q9fDqScqLE8zc&amp;sz=w1600"
+            alt="01. Senior Production &amp; Manufacturing Leadership — Debjit Ghosh"
+            width="1376"
+            height="768"
+          />
         </div>
         <div class="pf-bar">
           <div class="pf-nav">
@@ -2419,8 +2425,24 @@
             <button type="button" id="pfNext" aria-label="Next slide">Next &rarr;</button>
           </div>
           <div class="pf-actions">
-            <a href="Debjit%20Ghosh%20Manufacturing%20Leadership%20Portfolio.pdf" download id="pfPdfDownload" class="btn btn-forest">Download Portfolio (PDF)</a>
-            <a href="Debjit%20Ghosh%20Manufacturing%20Leadership%20Portfolio.pdf" target="_blank" rel="noopener" id="pfPdfOpen" class="btn btn-outline-dark">Open Full PDF</a>
+            <a
+              href="https://drive.google.com/uc?export=download&amp;id=1qtkTC1iqQPiz_P1s0dxt6jQNGE_sExzk"
+              target="_blank"
+              rel="noopener"
+              id="pfPdfDownload"
+              class="btn btn-forest"
+            >
+              Download Portfolio (PDF)
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1qtkTC1iqQPiz_P1s0dxt6jQNGE_sExzk/view"
+              target="_blank"
+              rel="noopener"
+              id="pfPdfOpen"
+              class="btn btn-outline-dark"
+            >
+              Open Full PDF
+            </a>
           </div>
         </div>
         <div class="pf-thumbs" id="pfThumbs" aria-label="Slide thumbnails"></div>
@@ -2784,19 +2806,29 @@
       }
     }, { passive: true });
 
-    // 6. Portfolio Deck Viewer with Adjacent Slide Preloading
+    // 6. Portfolio Deck Viewer (Google Drive Hosted Slides with Fallback & Preloading)
+    function driveSlidePrimary(id) {
+      return "https://drive.google.com/thumbnail?id=" + id + "&sz=w1600";
+    }
+    function driveSlideThumb(id) {
+      return "https://drive.google.com/thumbnail?id=" + id + "&sz=w320";
+    }
+    function driveSlideFallback(id) {
+      return "https://lh3.googleusercontent.com/d/" + id;
+    }
+
     var slides = [
-      { src: "deck/slide-01.png", alt: "01. Senior Production & Manufacturing Leadership — Debjit Ghosh" },
-      { src: "deck/slide-02.png", alt: "02. Bridging Mechanical Execution and Operational Strategy" },
-      { src: "deck/slide-03.png", alt: "03. Verified Shop-Floor Impact Metrics (+18% Efficiency, -12% Wastage, 80+ Personnel)" },
-      { src: "deck/slide-04.png", alt: "04. The Pyramid of Production Competence" },
-      { src: "deck/slide-05.png", alt: "05. Plant Ecosystem & Machinery Capability Matrix" },
-      { src: "deck/slide-06.png", alt: "06. End-to-End Shop-Floor Execution Workflow" },
-      { src: "deck/slide-07.png", alt: "07. Operational Methodology: The 12% Wastage Reduction Loop" },
-      { src: "deck/slide-08.png", alt: "08. The Compliance & Quality Shield" },
-      { src: "deck/slide-09.png", alt: "09. Career Trajectory: From Execution to Ownership" },
-      { src: "deck/slide-10.png", alt: "10. Verified Credentials & Academic Framework" },
-      { src: "deck/slide-11.png", alt: "11. Executive Availability & Next Steps" }
+      { id: "1MEGzqUbkYvZiaYNWOf_Q9fDqScqLE8zc", alt: "01. Senior Production & Manufacturing Leadership — Debjit Ghosh" },
+      { id: "1b9IWLs47ovEq_47D533PjNt0O3tupXO6", alt: "02. Bridging Mechanical Execution and Operational Strategy" },
+      { id: "19pbX0DfwDeHjKRHMKFnFCq7PVrqtdDw5", alt: "03. Verified Shop-Floor Impact Metrics (+18% Efficiency, -12% Wastage, 80+ Personnel)" },
+      { id: "1_Otup5_tDte5wWYzh-RR8PNBJtIEwNNP", alt: "04. The Pyramid of Production Competence" },
+      { id: "1ydRf9yPa7U2mXb827sRG22M5d7ku6aRb", alt: "05. Plant Ecosystem & Machinery Capability Matrix" },
+      { id: "1z0rjaSpuDlTIBmFpjBVkA9GgBYlnTOaz", alt: "06. End-to-End Shop-Floor Execution Workflow" },
+      { id: "175TfhlHjy-4zu1Ro1vYQl2_gazZCRVi0", alt: "07. Operational Methodology: The 12% Wastage Reduction Loop" },
+      { id: "1Ixwme7whzK6AT2FT8DeYcmRjQQ6dRzmG", alt: "08. The Compliance & Quality Shield" },
+      { id: "1W5DONXEl1pRVYL48rYXO2lU8r0xQPqXO", alt: "09. Career Trajectory: From Execution to Ownership" },
+      { id: "13XN399naltFvqi6xlafvdRzQFt1DIvX5", alt: "10. Verified Credentials & Academic Framework" },
+      { id: "1SWkdezRSguxsqIWgYMKPP74EMoI1eoP1", alt: "11. Executive Availability & Next Steps" }
     ];
 
     var pfIdx = 0;
@@ -2807,20 +2839,30 @@
     var pfThumbs = document.getElementById("pfThumbs");
     var pfViewer = document.getElementById("pfViewer");
 
+    if (pfImage) {
+      pfImage.onerror = function () {
+        var current = slides[pfIdx];
+        if (current && this.src.indexOf("googleusercontent.com") === -1) {
+          this.src = driveSlideFallback(current.id);
+        }
+      };
+    }
+
     function preloadAdjacent(idx) {
       [idx + 1, idx - 1].forEach(function (adj) {
         if (slides[adj]) {
           var img = new Image();
-          img.src = slides[adj].src;
+          img.src = driveSlidePrimary(slides[adj].id);
         }
       });
     }
 
     function showSlide(n) {
       pfIdx = Math.max(0, Math.min(slides.length - 1, n));
-      if (pfImage) {
-        pfImage.src = slides[pfIdx].src;
-        pfImage.alt = slides[pfIdx].alt;
+      var current = slides[pfIdx];
+      if (pfImage && current) {
+        pfImage.src = driveSlidePrimary(current.id);
+        pfImage.alt = current.alt;
       }
       if (pfCount) pfCount.textContent = (pfIdx + 1) + " / " + slides.length;
       if (pfPrev) pfPrev.disabled = pfIdx === 0;
@@ -2841,7 +2883,12 @@
         btn.setAttribute("aria-label", "Go to slide " + (i + 1));
         btn.setAttribute("aria-current", i === 0 ? "true" : "false");
         var tImg = document.createElement("img");
-        tImg.src = s.src;
+        tImg.src = driveSlideThumb(s.id);
+        tImg.onerror = function () {
+          if (this.src.indexOf("googleusercontent.com") === -1) {
+            this.src = driveSlideFallback(s.id);
+          }
+        };
         tImg.alt = "";
         tImg.loading = "lazy";
         btn.appendChild(tImg);
